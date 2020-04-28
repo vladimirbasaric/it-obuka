@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+
+<html>
+
+<body>
+
+<p id="1"></p>
+<p id="2"></p>
+
+<script>
+
+var tekst = 
+`{
+    "ime": "Pera",
+    "rodjenjestr": "1980-11-11",
+    "grad": "Beograd"
+}`
+osoba = JSON.parse(tekst);
+osoba.datumRodjenja = new Date(osoba.rodjenjestr)
+
+
+document.getElementById("1").innerHTML = osoba.rodjenjestr;
+document.getElementById("2").innerHTML = osoba.datumRodjenja;
+
+</script>
+
+</body>
+
+</html>

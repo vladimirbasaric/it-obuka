@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> DOM vežba</title>
+    <meta charset='utf-8'>
+</head>
+
+<body>
+    <div>
+        <p class='info'> Trends in JavaScript </p>
+        <p class='news'> ES7 Draft feedback </p>
+        <p class='news'> Open positions </p>
+        <p class='news'> React.js visualization </p>
+        <p class='info'> Reading resources </p>
+    </div>
+</body>
+
+<script type='text/javascript'>
+
+    /* Dohvataju se svi elementi DOM drveta koji imaju klasu news. 
+       Posto ovih elemenata ima vise, sigurni smo da je rezultat niz. 
+       Alternativa koriscenju funkcije querySelectorAll je funkcija getElementsByClassName.
+    */
+    var allNews = document.querySelectorAll('.news');
+
+    /* Broj vesi se izracunava kao duzina niza svih vesti. */
+    var numberOfNews = allNews.length;
+
+    /* Rezultat se ispisuje u konzoli. */
+    console.log(numberOfNews);
+
+</script>
+
+</html>

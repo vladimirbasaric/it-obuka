@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<html>
+
+<body>
+
+<p id="1"></p>
+<p id="2"></p>
+
+<script>
+
+var tekst = 
+`{
+    "ime": "Pera",
+    "godine": 30,
+    "grad": "Beograd",
+    "ljubimci": [
+        {
+            "zivotinja": "macka",
+            "ime": "Cica",
+            "usvojen": true
+        },
+        {
+            "zivotinja": "pas",
+            "ime": "Dzeki",
+            "usvojen": false
+        },
+        {
+            "zivotinja": "papagaj",
+            "ime": "Cira",
+            "usvojen": null
+        }
+    ]
+}`
+osoba = JSON.parse(tekst);
+
+document.getElementById("1").innerHTML = osoba.ljubimci[1].ime;
+document.getElementById("2").innerHTML = osoba.ljubimci[0]["usvojen"];
+
+</script>
+
+</body>
+
+</html>

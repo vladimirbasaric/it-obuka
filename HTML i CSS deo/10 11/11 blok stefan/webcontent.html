@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<style>
+		/* nalazi se oko ostalih elemenata. visina mu je prilagodljiva ukupnoj visini elemenata, a sirina mu je fiksna (tolika je ukupna sirina elemenata u svakom redu */
+		#omotac {
+			width: 400px;
+			margin: auto;
+			border: 5px solid black;
+		}
+
+		/* na gornjem nigde necemo postavljeti svojstvo float */
+		#gornji {
+			height: 50px;
+			width: 400px;
+			background-color: red;
+		}
+
+		/* obrisati float:left i videti gde se pomeri plavi pravougaonik */
+		#levi {
+			float: left;
+			height: 200px;
+			width: 100px;
+			background-color: blue;
+		}
+
+		/* posto su dimenzije dobro upakovane unutar omotaca, isti efekat bi se postigao i da se postavi float: left */
+		#desni {
+			float: right;
+			height: 200px;
+			width: 300px;
+			background-color: green;
+		}
+
+		/* kako su dimenzije levog i desnog u istoj visini, isti efekat bi se postigao da se clear zameni sa left ili right */
+		#donji {
+			clear: both;
+			height: 50px;
+			width: 400px;
+			background-color: orange;
+		}
+	</style>
+</head>
+
+<body>
+	<div id='omotac'>
+		<div id='gornji'></div>
+		<div id='levi'></div>
+		<div id='desni'></div>
+		<div id='donji'></div>
+	</div>
+</body>
+
+</html>

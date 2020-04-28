@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title> Kontrola prelivanja sadržaja </title>
+
+    <style>
+        div {
+            height: 200px;
+            width: 500px;
+        }
+
+        /*
+            Kada nekom elementu postavimo sirinu ili visinu 
+            na neku vrednost postoji sansa da ne moze sav 
+            sadrzaj da stane u predvidjen prostor. 
+
+            Svojstvo overflow omogucava nam da kontrlisemo 
+            da li ce i kako biti prikazan sadrzaj koji ne 
+            moze da stane u odredjene dimenzije. 
+
+            U ovom primeru div #drugi je izmesten u odnosu 
+            na roditeljski element #prvi. Obzirom na 
+            dimenzije elementa #prvi, element #drugi ne 
+            moze da stane u njega kada je izmesten sto 
+            dovodi do prelivanja. 
+
+            Vrednosti za svojstvo overflow: 
+                - visible (podrezumevano) - prikazuje sav sadrzaj, i delove koji prelivaju
+                - hidden - sav sadrzaj koji izlazi van okvira elementa nece biti prikazan
+                - scroll - dodaje horizontalni i vertikalni skrol tako da moze da se pregleda sav sadrzaj
+                - auto - dodaje samo onaj skrol koji je potreban, kad je potreban
+
+            Za vezbu probati razlicite vrednosti za 
+            overflow nad zadatim celinama sa izmenjenim 
+            dimenzijama celina tako da se i prelivanje izmeni.
+        */
+
+        #prvi {
+            background-color: lightblue;
+            position: relative;
+            overflow: hidden;
+            width: 50%;
+        }
+
+        #drugi {
+            position: absolute;
+            bottom: -50px;
+            left: 100px;
+            background-color: crimson;
+        }
+
+        #treci {
+            background-color: lightgreen;
+        }
+        
+    </style>
+</head>
+<body>
+    <div id="prvi">
+
+        <div id="drugi">
+    
+        </div>
+
+    </div>
+    
+    <div id="treci">
+
+    </div>
+</body>
+</html>

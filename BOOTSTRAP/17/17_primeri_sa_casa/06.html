@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Bootstrap tabele</title>
+    <link rel="stylesheet" type="text/css" href="./resursi/bootstrap.css">
+</head>
+<body>
+    <!--
+        Klasa table postavlja sirinu tabele na 100%, boju 
+        slova na tamno sivu, svim celijama gornji okvir 
+        svetlo sive boje debljine 1px, a donji okvir 
+        debljine 2px imaju samo celije zaglavlja.
+
+        Klasa table-striped svakom drugom redu u tbody 
+        postavlja malo tamniju pozadinu.
+
+        Klasa table-sm ce prepoloviti dimenziju padding-a
+        cime ce se smanjiti visina tabele.
+    -->
+    <table class="table table-striped table-sm text-center">
+        <thead>
+            <tr>
+                <th>Oznaka</th>
+                <th>Velicina uredjaja</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>xs</td>
+                <td>manja od 576px</td>
+            </tr>
+            <tr>
+                <td>sm</td>
+                <td>veca od 576px</td>
+            </tr>
+            <tr>
+                <td>md</td>
+                <td>veca od 768px</td>
+            </tr>
+            <tr>
+                <td>lg</td>
+                <td>veca od 992px</td>
+            </tr>
+            <tr>
+                <td>xl</td>
+                <td>veca od 1200px</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

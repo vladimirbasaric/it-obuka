@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Prilagodljiv dizaj sa bibliotekom Bootstrap</title>
+    <link rel="stylesheet" type="text/css" href="./resursi/bootstrap.css">
+    
+    <style>
+        header, footer {
+            height: 100px;
+            background-color: rgb(232, 62, 140);
+        }
+
+        .row div {
+            height: 300px;
+            background-color: rgb(32, 201, 151);
+            border: 1px solid rgb(232, 62, 140);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <!--
+                Klasa col-*, bez oznake velicine, odnosi se 
+                na najmanje uredjaje (manje od 576px). 
+                Ne moramo za sve velicine da navodimo broj 
+                kolona. Ukoliko bismo naveli samo za jednu 
+                velicinu, za sve manje velicine broj kolona
+                bi bio 12, a za vece bi broj bio isti kao i
+                za postavljenu velicinu.
+
+                Primer 1: "col-md-6" znaci da se element za 
+                uredjaje velicine md (koji je postavljen), 
+                lg i xl (koji su veci od md) prostire na 6
+                kolona, a za sve manje (sm i xs) prostire 
+                se na 12 kolona.
+
+                Primer 2: "col-sm-8 col-lg-5" znaci da se 
+                element za uredjaje velicine sm i md 
+                prostire na 8 kolona, za uredjaje lg i xl
+                na 5 kolona, a za najmanje (xs) na 12.
+
+                Primer 3: "col-12" znaci da ce za sve 
+                velicine element zauzimati 12 kolona. 
+            -->
+            <header class="col-12"></header>
+        </div>
+        <div class="row">
+            <!--
+                Ne moramo praviti elemente istih dimenzija
+                u istom redu. Za svaki mozemo definisati
+                razlicit broj kolona koje ce zauzimati.
+                Bitno je da ukupan zbir za jednu liniju 
+                bude jednak broju 12 za odredjenu 
+                velicinu da bi svi elementi bili u istoj 
+                liniji inace ce neki elementi preci u novu
+                sto dovodi do pojava praznina na kraju. 
+            -->
+            <div class="col-sm-12 col-md-7 col-lg-8 col-xl-4"></div>
+
+            <!--
+                Klasa offset-*-* oznacava koliko ce kolona 
+                biti prazno pre elementa kome postavljamo 
+                ovu klasu. Prvu zvezdicu menjamo vrednostima
+                za velicinu, a drugu za broj kolona koje 
+                zauzima. Vrednosti su opisane u prethodnom 
+                primeru.
+
+                Ako ne navedemo vrednosti za svaku velicinu
+                uredjaja, za vece uredjaje vaze ista 
+                pravila kao i za klasu col-*-*, a za manje 
+                ce offset zauzeti 0 kolona tj. nece biti 
+                vidljiv.
+            -->
+            <div class="col-sm-12 col-md-5 col-lg-3 col-xl-1 offset-lg-1"></div>
+
+            <div class="col-sm-12 col-md-6 col-lg-5 col-xl-2"></div>
+
+            <div class="col-sm-12 col-md-4 col-lg-6 col-xl-3 offset-md-2 offset-lg-1"></div>
+        </div>
+
+        <div class="row">
+            <footer class="col-12"></footer>
+        </div>
+    </div>
+</body>
+</html>

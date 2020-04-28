@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Zadatak 3</title>
+</head>
+<body>
+	<script>
+		var operacija = '+';
+		var prvi = 3;
+		var drugi = 4;
+
+		switch(operacija) {
+			case '+':
+				console.log(prvi+drugi);
+				break;
+
+			case '-':
+				console.log(prvi-drugi);
+				break;
+
+			case '*':
+				console.log(prvi*drugi);
+				break;
+
+			case '/':
+				if(drugi != 0) {
+					console.log(prvi / drugi);
+				}
+				else {
+					console.log("Deljenje nulom nije definisano!");
+				}
+				break;
+
+			default:
+				console.log("Nepoznata operacija!");
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // Napisati program koji ispisuje samo one elemente niza koji su deljivi brojem 5.
+        // Primer: za zadati broj​ [1,42,-56,15,-10,42,0,2]​  treba ispisati ​15 -10 0​.
+        // Primer: za zadati broj ​[100,250,3000,-90010] ​treba ispisati​ 100 250 3000 -90010​.
+
+
+        var niz = [1, 15, 203, -1992, -10, 0];
+        var i = 0;
+
+        while (i < niz.length) {
+            if (niz[i] % 5 != 0) {
+                i++;
+                continue;
+            }
+
+            console.log(niz[i]);
+            i++;
+        }
+
+        for (i = 0; i < niz.length; i++) {
+            if (niz[i] % 5 != 0) {
+                continue;
+            }
+
+            console.log(niz[i]);
+        }
+    </script>
+</body>
+
+</html>

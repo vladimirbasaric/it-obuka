@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Galerija</title>
+
+    <style>
+        .dugme{
+            background-color: orange;
+            color: white;
+            text-align: center;
+            text-transform: uppercase;
+            display: inline-block;
+            width: 100px;
+            height: 20px;
+            padding: 10px;
+        }
+
+        .dugme:hover{
+            cursor: pointer;
+        }
+
+        .aktivnodugme{
+            background-color: green;
+        }
+
+        #dugmad{
+            position: relative;
+            top: 25px;
+        }
+
+        #galerija{
+            border: 1px solid orange;
+            width: 220px;
+            height: 220px;
+        }
+
+        #galerija div{
+            position: absolute;
+            top: 20px;
+            left: 20px;
+        }
+
+    
+    </style>
+
+</head>
+<body>
+        <div id="galerija">
+                <div><img src="slike/prolece.jpg" alt="prolece"> </div>
+                <div><img src="slike/leto.jpg" alt="leto"></div>
+                <div><img src="slike/jesen.jpg" alt="jesen"></div>
+                <div><img src="slike/zima.jpg" alt="zima"></div>
+        </div>
+
+        <div id="dugmad">
+                <span id = "prethodna" class="dugme">prethodna</span>
+                <span id = "naredna" class="dugme">naredna</span>
+                <span id = "slideshow" class="dugme">slideshow</span>
+                <span id = "stop" class="dugme">stop</span>
+        </div>
+</body>
+
+<script src="jquery-3.3.1.min.js"></script>
+
+<!-- moze i da se povuce preko CDN-a
+<script
+    src="https://code.jquery.com/jquery-3.4.1.min.js"   
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+    crossorigin="anonymous"></script>
+-->
+
+<script> 
+ 
+
+    $(document).ready(function () {
+        
+        // cuva indeks prikazane slike iz galerije
+        var i = 0;
+        // indeks slika iz galerije na osnovu redosleda ubacivanja
+        // 0 prolece
+        // 1 leto 
+        // 2 jesen 
+        // 3 zima
+        
+        // sakrivamo sve osim prve na pocetku, tj. prikazano je prolece
+        $("#galerija div:gt(0)").hide();
+        
+         // funkcija za prikaz naredne slike iz galerije
+         function fnaredna (){
+            // sakrivamo tekucu sliku 
+            $("#galerija div:eq("+i+")").fadeOut(1000);
+            // prikazujemo narednu sliku 
+            i = i==3 ? 0 : i + 1;
+            $("#galerija div:eq("+i+")").fadeIn(1000);            
+
+        }
+
+        // funckija za prikaz prethodne slike iz galerije
+        function fprethodna(){
+            // sakrivamo tekucu sliku 
+            $("#galerija div:eq("+i+")").fadeOut(1000);
+            // prikazujemo prethodnu sliku 
+            i = i==0 ? 3 : i - 1;
+            $("#galerija div:eq("+i+")").fadeIn(1000);            
+
+        }
+
+        // dodajemo osluskivac za odabir naredne slike
+        $("#naredna").click(fnaredna);
+
+        // dodajemo osluskivac za odabir prethodne slike
+        $("#prethodna").click(fprethodna);
+
+        // cuvamo tekuca podesavanja za setInterval
+        var si;
+
+        // postavljamo osluskivac za pokretanje slideshow-a
+        $("#slideshow").click(function (){
+            
+            // brisemo stari slideshow ako je pokrenut
+            // slucaj kada korisnik vise puta za redom klikne na slideshow
+            window.clearInterval(si);
+
+            // prosledili smo anonimnu funkciju 
+            // koja predstavlja samo drugi nacin za definisanje 
+            // funkcije fnaredna
+            // moglo je i:
+            // si = window.setInterval( fnaredna, 1000);
+            si = window.setInterval( function (){
+                if(i==3){
+                    $("#galerija div:last").fadeOut(1000);
+                    $("#galerija div:first").fadeIn(1000);
+                    i = 0;
+                }
+                else{
+                    $("#galerija div:eq("+i+")")
+                        .fadeOut(1000)
+                        .next()
+                        .fadeIn(1000);
+                    i = i + 1;
+                    
+                }
+
+            }, 1000);
+
+            // dodajemo klasu da je dugme aktivno
+            $(this).addClass("aktivnodugme");
+            // onemogucavamo koriscenje dugmadi prethodna/naredna
+            $("#prethodna").off('click');
+            $("#naredna").off('click');
+
+        });
+
+        // postavljamo osluskivac za prekidanje slideshow-a
+        $("#stop").click(function (){
+            // brisemo interval
+            window.clearInterval(si);
+            // uklanjamo klasu za aktivno dugme
+            $("#slideshow").removeClass('aktivnodugme');
+            // vracamo osluskivace za dugmad prethodna/naredna
+            $("#prethodna").click(fprethodna);
+            $("#naredna").click(fnaredna);
+
+        });
+
+    });
+
+</script>
+
+
+</html>

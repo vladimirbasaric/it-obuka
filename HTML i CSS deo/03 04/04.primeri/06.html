@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Više slika na pozadini</title>
+
+    <style>
+        div {
+            height: 600px;
+            /*
+             *  pozadina elementa moze da se sastoji iz vise slika
+             *  listu slika i gradijenata koje se koriste za pozadinu navodimo ka vrednost svojstva background-image medjusobno razdvojene zarezom
+             */
+            background-image: url('./slike/snowflakes.png'), url('./slike/olaf.png'), linear-gradient(to bottom, rgb(5, 48, 84),  rgb(255, 255, 255));
+
+            /*
+             *   za svaku sliku redom navodimo kako se ponavlja, njihove dimenzije i pozicije
+             *  ukoliko navedemo samo jednu vrednost za neko svojstvo onda se tavrednost odnosi na sve pozadinske slike
+            */
+            background-repeat: repeat-x, no-repeat, repeat-y;
+            background-size: 10%, 300px, 100%;
+            background-position: left top, right bottom, left top; 
+        }
+    
+    </style>
+</head>
+<body>
+    <div></div>
+</body>
+</html>

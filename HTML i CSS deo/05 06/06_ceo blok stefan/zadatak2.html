@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <style>
+            /* svi pasusi su inline-block. ne bi bilo nikakve razlike i da smo ostavili i da gornji i donji budu block, tj. da imaju default vrednost */
+            p {
+                display: inline-block;
+            }
+            /* za gornji i donji je u posebnu klasu moglo da se stavi sirina i visina, jer im je ista, ali okej je i ovako da ostane, buduci da nema mnogo koda koji se ponavlja (samo dve linije za visinu i sirinu */
+            .gornji {
+                height: 100px;
+                width: 100%;
+                background-color: blue;
+            }
+            .levi {
+                height: 400px;
+                width: 30%;
+                background-color: red;
+            }
+            /* u zadatku je stavljeno 69%, a ne 70%, jer ako su crveni i zeleni pasus u zbiru 100%, zeleni ce preci u novi red (iako je inline-block), jer se dodaje margina */
+            .desni {
+                height: 400px;
+                width: 69%;
+                background-color: green;
+            }
+            .donji {
+                height: 100px;
+                width: 100%;
+                background-color: black;
+            }
+        </style>
+    </head>
+    <body>
+        <p class="gornji"></p>
+        <p class="levi"></p>
+        <p class="desni"></p>
+        <p class="donji"></p>
+    </body>
+</html>

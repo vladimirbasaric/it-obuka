@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title> Slika kao pozadina</title>
+    <style>
+
+        div {
+            width: 800px;
+            height: 375px;
+            margin:auto;
+            margin-bottom: 10px;
+        }
+
+        #d1 {
+            /* 
+                dimenzije slike i elementa div se poklapaju 
+                i cela slika lepo prekriva element bez 
+                razvlacenja ili skupljanja
+            */
+            background-image: url('./slike/pozadina.jpg');
+        }
+
+        #d2 {
+            /*
+             *  dimenzije slike su manje od dimenzija 
+                elementa i prema podrazumevanim 
+                podesavanjima slika se nadovezuje sa desne
+                i sa donje strane onoliko puta koliko je
+                potrebno da bi ceo element bio prekriven slikom
+             
+             *  ova slika nije pogodna za takvo 
+                nadovezivanje zbog cega se na elementu 
+                jasno vide spojevi dve slike 
+             */
+            background-image: url('./slike/neponavljajuca.jpg');
+        }
+
+        #d3 {
+            /*
+             *  dimenzije slike su manje od dimenzija 
+                elementa i prema podrazumevanim 
+                podesavanjima slika se nadovezuje sa desne
+                i sa donje strane onoliko puta koliko je
+                potrebno da bi ceo element bio prekriven slikom
+             
+             *  ova slika jeste pogodna za takvo 
+                nadovezivanje zbog cega se na elementu 
+                ne vide spojevi dve slike 
+            */
+            background-image: url('./slike/ponavljajuca.jpg');
+        }
+
+    </style>
+</head>
+<body>
+
+    <div id="d1">
+
+    </div>
+
+    <div id="d2">
+
+    </div>
+
+    <div id="d3">
+
+    </div>
+    
+</body>
+</html>

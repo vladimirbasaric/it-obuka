@@ -1,0 +1,19 @@
+BOOTSTRAP 4
+
+Navigation bar:
+https://www.w3schools.com/bootstrap4/bootstrap_navbar.asp
+
+Alerts:
+https://www.w3schools.com/bootstrap4/bootstrap_alerts.asp
+
+Dropdowns:
+https://www.w3schools.com/bootstrap4/bootstrap_dropdowns.asp
+
+Collapse:
+https://www.w3schools.com/bootstrap4/bootstrap_collapse.asp
+
+Carousel:
+https://www.w3schools.com/bootstrap4/bootstrap_carousel.asp
+
+
+

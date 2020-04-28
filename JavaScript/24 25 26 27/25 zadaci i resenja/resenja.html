@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>Blok 25 - resenja</title>
+</head>
+
+<body>
+
+    <h1>Resenja zadataka</h1>
+
+    <h3>If naredba</h3>
+
+    <p id="1.1"></p>
+    <p id="1.2"></p>
+    <p id="1.3"></p>
+    <p id="1.4"></p>
+    <p id="1.5"></p>
+
+    <h3>Stringovi</h3>
+
+    <p id="2.1"></p>
+    <p id="2.2"></p>
+    <p id="2.3"></p>
+    <p id="2.4"></p>
+    <p id="2.5"></p>
+
+    <h3>Nizovi</h3>
+
+    <p id="3.1"></p>
+    <p id="3.2"></p>
+    <p id="3.3"></p>
+    <p id="3.4"></p>
+    <p id="3.5"></p>
+
+    <script>
+        // IF NAREDBA
+
+        //1.1 Odrediti da li je broj paran ili neparan.
+        var broj = 10;
+        if (broj % 2 == 0) {
+            document.getElementById("1.1").innerHTML = "broj je paran";
+        } else {
+            document.getElementById("1.1").innerHTML = "broj je neparan";
+        }
+
+        // 1.2 Odrediti maksimum dva broja.
+        // pretpostavimo da su brojevi razliciti
+        var broj1 = 5;
+        var broj2 = 6;
+        if (broj1 > broj2) {
+            document.getElementById("1.2").innerHTML = "prvi je veci";
+        } else {
+            document.getElementById("1.2").innerHTML = "drugi je veci";
+        }
+
+        // 1.3 Odrediti minimum tri broja.
+        // pretpostavimo da su brojevi razliciti
+        var broj1 = 7;
+        var broj2 = 10;
+        var broj3 = 4;
+        if (broj1 < broj2 && broj1 < broj3) {
+            document.getElementById("1.3").innerHTML = "prvi je najmanji";
+        } else if (broj2 < broj1 && broj2 < broj3) {
+            document.getElementById("1.3").innerHTML = "drugi je najmanji";
+        } else {
+            document.getElementById("1.3").innerHTML = "treci je najmanji";
+        }
+
+        // 1.4 Da li je broj pozitivan, negativan ili jednak nuli.
+        var broj = -7;
+        if (broj > 0) {
+            document.getElementById("1.4").innerHTML = "broj je pozitivan";
+        } else if (broj == 0) {
+            document.getElementById("1.4").innerHTML = "broj je 0";
+        } else {
+            document.getElementById("1.4").innerHTML = "broj je negativan";
+        }
+
+        // 1.5 Proizvod parnih brojeva.
+        var broj1 = 7;
+        var broj2 = 4;
+        var broj3 = 10;
+        // ovu promenljivu cemo da mnozimo sa svim brojeva koji su parni
+        // ona je po defaultu jednaka 1
+        var proizvod = 1;
+        if (broj1 % 2 == 0) {
+            proizvod = proizvod * broj1;
+        }
+        // ne treba else izmedju
+        // sve brojeve posmatramo nezvisno
+        if (broj2 % 2 == 0) {
+            proizvod = proizvod * broj2;
+        }
+        if (broj3 % 2 == 0) {
+            proizvod = proizvod * broj3;
+        }
+        document.getElementById("1.5").innerHTML = "proizvod je " + proizvod;
+
+
+        // STRINGOVI
+
+
+        // 2.1 Od datog niza od 4 strina, ispisati string koji se dobija njihovim nadovezivanjem.
+        var strniz = ["ab", "cd", "e", "fgh"];
+        var str = strniz[0] + strniz[1] + strniz[2] + strniz[3];
+        document.getElementById("2.1").innerHTML = str;
+
+        // 2.2 Proveriti da li je drugi karakter u stringu jednak slovu "a".
+        var str = "abababababa";
+        if (str.charAt(2) == "a") {
+            document.getElementById("2.2").innerHTML = "jeste jednak a";
+        } else {
+            document.getElementById("2.2").innerHTML = "nije jednak a";
+        }
+
+        // 2.3  Ispisati srednji karakter stringa.
+        var str = "abcdedcba";
+        document.getElementById("2.3").innerHTML = str.charAt(length / 2);
+
+        // 2.4 Karaktere od 10 do 15 mesta u stringu zameniti stringom "abc123".
+        var str = "abcdefghijklmnopqrstuvwxyz";
+        // najpre izdvojimo podstring koji je od 10. do 15. mesta
+        var podstring = str.substr(10, 6);
+        // njega sada ubacimo u funkciju replace
+        str = str.replace(podstring, "abc123");
+        document.getElementById("2.4").innerHTML = str;
+
+        // 2.5 Za dati string od 5 slova, zameniti mesta prvom i poslednjem slovu.
+        var str = "abcde";
+        // izdvojimo podstringove koji oznacavaju prvi i poslednji karakter
+        var prvi = str.substr(0, 1);
+        var poslednji = str.substr(str.length - 1, 1);
+        // pa onda izvrsimo zamenu ovim redom
+        str = str.replace(poslednji, prvi);
+        str = str.replace(prvi, poslednji);
+        document.getElementById("2.5").innerHTML = str;
+
+
+        //NIZOVI 
+
+
+        // 3.1 Zameniti vrednost prvom i poslednjem elementu niza.
+        var niz = [6, 3, 4, 1, 10, 5, 23];
+        /*
+        potrebna nam je pomocna promenljiva, jer dve naredbe
+        niz[0] = niz[niz.length - 1]
+        niz[niz.length - 1] = niz[0]
+        nece razmeniti vrednosti
+        */
+        var pomocna = niz[0];
+        niz[0] = niz[niz.length - 1];
+        niz[niz.length - 1] = pomocna;
+        document.getElementById("3.1").innerHTML = niz;
+
+        // 3.2 Zameniti srednji element niza brojem 10.
+        // pretpostavimo da niz ima neparan broj elemenata
+        // inace smo mogli raditi samo ako je if (niz.length % 2 == 1)
+        var srednji = (niz.length - 1) / 2;
+        niz[srednji] = 10;
+        document.getElementById("3.2").innerHTML = niz;
+
+        // 3.3 Ispisati sve parne elemente niza (peske).
+        // napravimo niz parnih brojeva, koji je na pocetku prazan
+        var parni = [];
+        // moze if da se pise i bez viticastih zagrada, a moze i u redu
+        if (niz[0] % 2 == 0) parni.push(niz[0]);
+        if (niz[1] % 2 == 0) parni.push(niz[1]);
+        if (niz[2] % 2 == 0) parni.push(niz[2]);
+        if (niz[3] % 2 == 0) parni.push(niz[3]);
+        if (niz[4] % 2 == 0) parni.push(niz[4]);
+        if (niz[5] % 2 == 0) parni.push(niz[5]);
+        if (niz[6] % 2 == 0) parni.push(niz[6]);
+        document.getElementById("3.3").innerHTML = parni;
+
+        // 3.4 Negativne elemente niza pomnoziti sa 2.
+        // promenimo bar prvi i poslednji da budu neki negativni brojevi:
+        niz[0] = -2;
+        niz[1] = -3;
+        // a *= b je kraci zapis od a = a * b
+        // slicno vazi i za ostale racunske operacije
+        if (niz[0] < 0) niz[0] *= 2;
+        if (niz[1] < 0) niz[1] *= 2;
+        if (niz[2] < 0) niz[2] *= 2;
+        if (niz[3] < 0) niz[3] *= 2;
+        if (niz[4] < 0) niz[4] *= 2;
+        if (niz[5] < 0) niz[5] *= 2;
+        if (niz[6] < 0) niz[6] *= 2;
+        document.getElementById("3.4").innerHTML = niz;
+
+        // 3.5 Odrediti zbir svih elemenata u nizu.
+        var zbir = niz[0] + niz[1] + niz[2] + niz[3] + niz[4] + niz[5] + niz[6];
+        // rezultat bi trebalo da bude -4+(-6)+4+10+10+5+6=25 - i jeste
+        document.getElementById("3.5").innerHTML = zbir;
+    </script>
+
+</body>
+
+</html>

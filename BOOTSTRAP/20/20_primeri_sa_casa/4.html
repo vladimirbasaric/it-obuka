@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="bootstrap.css">
+    <title>List-group</title>
+</head>
+<body>
+    <!--
+		Klasa list-group postavlja sirinu listi na 100% i 
+		ima okvir takodje svetlo sive boje.
+
+        Sirinu mozemo menjati nekom od klasa w-* ili 
+        postavljanjem width svojstva.
+    -->
+    <ul class="list-group w-25  mx-auto my-2">
+        <!--
+			Stavke liste obelezavamo klasom list-group-item.
+			Postavljen je veci padding i okvir je svetlo sive boje.
+
+            Klasa active menja stil jedne stavke, tako da 
+			boja slova bude bela i boja pozadne i okvira je 
+			plava (primary).
+        -->
+        <li class="list-group-item active">Prva</li>
+
+        <!--
+            Klasa disabled menja slova u sivu.
+            Naznacava korisniku da je to nesto sto se ne 
+            moze kliknuti.
+        -->
+        <li class="list-group-item disabled">Druga</li>
+
+        <!--
+            Kao stavku liste mozemo koristiti elemente <a>
+            i <button> kojima postavljamo klasu 
+            list-group-item da bi imali podesavanja kao 
+            stavke liste.
+
+            Pored toga, ovim elementima mozemo dodati klasu
+            list-group-item-action koja ce izmeniti izgled
+			u slucaju prelaska misa preko elementa (hover) 
+			i kada se klikne na element (active). Dodatno, 
+			ova klasa postavlja elementu sirinu na 100%, 
+			poravnanje teksta je nasledjeno od roditelja i
+			boja slova je tamno siva.
+        -->
+        <a href="#" class="list-group-item list-group-item-action list-group-item-info">
+            Treca
+        </a>
+
+        <button type="button" class="list-group-item list-group-item-action">
+            Cetvrta
+        </button>
+
+        <li class="list-group-item">Peta</li>
+    </ul>
+
+    <!--
+        Klasa list-group-flush uklanja okvire sa strane.
+    -->
+    <ul class="list-group w-50 list-group-flush mx-auto mt-5">
+		<li class="list-group-item ">Prva</li>
+		
+		<li class="list-group-item disabled">Druga</li>
+		
+		<a href="#" class="list-group-item list-group-item-action">Treca</a>
+		
+		<button type="button" class="list-group-item list-group-item-action">Cetvrta</button>
+		
+        <li class="list-group-item list-group-item-danger">Peta</li>
+    </ul>
+
+    <!--
+        Klasa list-group-horizontal-* redja elemente liste
+        jedan do drugog. Umesto * treba navesti dimenziju 
+        uredjaja za koju ce vaziti ovakav raspored, a za
+        sve manje uredjaje ce elementi biti jedan ispod 
+        drugog.
+    -->
+    <ul class="list-group  list-group-horizontal-md mt-5">
+		<li class="list-group-item">Prva</li>
+		
+		<li class="list-group-item disabled">Druga</li>
+		
+		<a href="#" class="list-group-item list-group-item-action">Treca</a>
+		
+		<button type="button" class="list-group-item list-group-item-action">Cetvrta</button>
+		
+        <li class="list-group-item list-group-item-warning">Peta</li>
+    </ul>
+</body>
+</html>

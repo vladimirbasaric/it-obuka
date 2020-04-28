@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Zadatak 2</title>
+</head>
+<body>
+	<script>
+		var mesec = "jun";
+		var dan = 22;
+
+		switch(mesec) {
+			case "januar":
+			case "februar":
+				console.log("zima");
+				break;
+			case "mart":
+				if(dan < 20) {
+					console.log("zima");
+				}
+				else {
+					console.log("prolece");
+				}
+				break;
+
+			case "april":
+			case "maj":
+				console.log("prolece");
+				break;
+			case "jun":
+				if(dan < 22) {
+					console.log("prolece");
+				}
+				else {
+					console.log("leto");
+				}
+				break;
+			case "jul":
+			case "avgust":
+				console.log("leto");
+				break;
+			case "septembar":
+				if(dan < 23) {
+					console.log("leto");
+				}
+				else {
+					console.log("jesen");
+				}
+				break;
+			case "oktobar":
+			case "novembar":
+				console.log("jesen");
+				break;
+			case "decembar":
+				if(dan < 22) {
+					console.log("jesen");
+				}
+				else {
+					console.log("zima");
+				}
+				break;
+			default:
+				console.log("greska");
+		}
+	</script>
+</body>
+</html>

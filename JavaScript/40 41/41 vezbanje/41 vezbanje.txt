@@ -1,0 +1,24 @@
+Vezbanje:
+1. ES6: Kreirati funkciju koja za proizvoljno argumenata sve uvecava za 5.
+2. ES6: Koristiti spread operator za nadovezivanje dva niza niski.
+3. a) ES6: Za objekat PetarPetrovic koji ima postavljeno ime, prezime, kafa (omiljena kafa) i slatkis (omiljeni slatkis), koristeci destructuring izvojiti pojedine delove objekta i ispisati tekst Petar Petrovic najvise voli da uz <ime_slatkisa> pije <ime_kafe>.
+   b) ES6: Za niz elemenata sadrzajObuke koji je niz brojeva i sadrzi koliko blokova je posvecemo svakoj od tema (HTML, CSS, Bootstrap, Linux komande, GitHub, JavaScript, JQuery), koristeci destructuring izvojiti u zasebne promenljive cija imena odgovaraju imenima oblasti koliko skolskih casova je posveceno za svaku temu na osnovu podataka iz niza. Niz na pocetku popuniti brojevima blokova prema svojoj proceni, a potom mapiranjem svaki element pomnoziti sa 4 (jedan blok vremenski odgovara 4 skolska casa).
+4. Koristiti transpiler Babel (https://babeljs.io/) da se sve iz prethodnih primera prevede u verziju ES5.
+5. Koristiti transpiler Babel (https://babeljs.io/) za ES6 primere od prethodne nedelje.
+6. Dopuniti 02primer.html iz materijala tako da se klikom na dugme dodaj dodaju polaznici u listu.
+7. Kreirati HTML stranicu koja sadrzi dugme 'SLEDECI' i 4 paragrafa oznacena labelama redom:
+	- priozvodjac racunara
+	- oznaka procesora
+	- godina proizvodnje
+	- velicina ekrana. 
+Deklarisana je promenljiva tekst gde je u JSON formatu zapisan niz racunara sa karateristikama koje odgovaraju prethodnim labelama redom. Klikom na dugme sledeci se iz teksta upisuju se u odgovarajuce paragrafe informacije za jedan po jedan racunar (koristeci JSON.parse).
+8. Promeniti prethodni primer tako da se umesto tekst koristi zaseban dokument racunari.json.
+
+Isprobati neki od narednih javnih API-ji: 
+Geolokacijski API: https://ipstack.com/ (moze da se dobije free API key)
+Vremenski API: https://openweathermap.org/api (moze da se dobije free API key)
+Muzicki API: https://www.last.fm/api (moze da se dobije free API key)
+Filmski API: http://www.omdbapi.com/ 
+GitHub API: https://developer.github.com/v3/
+Vicevi o Cak Norisu: https://api.chucknorris.io/
+Mace: https://thecatapi.com/

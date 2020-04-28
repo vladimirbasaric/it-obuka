@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript Functions</h2>
+
+<p>U ovom primeru se prikazuje koriscenje Callback funkcije.</p>
+
+<p id="demo"></p>
+
+<script>
+/* Funkcije viseg reda. Kao sto objekti mogu biti argumenti funkcija, tako argumenti mogu biti i druge funkcije. */
+
+let first = function(){
+   return 10;
+};
+
+let second = function(callback){
+   var x = callback();
+   return x*100;
+};
+
+document.getElementById("demo").innerHTML = "second(first) = "+ second(first);
+</script>
+
+</body>
+</html>

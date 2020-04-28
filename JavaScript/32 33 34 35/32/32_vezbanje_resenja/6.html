@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> DOM vežba</title>
+    <meta charset='utf-8'>
+    <style type='text/css'>
+        .decoration {
+            color: orange;
+            font-style: italic;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <p class='info'> Trends in JavaScript </p>
+        <p class='news'> ES7 Draft feedback </p>
+        <p class='news'> Open positions </p>
+        <p class='news'> React.js visualization </p>
+        <p class='info'> Reading resources </p>
+    </div>
+</body>
+
+<script type='text/javascript'>
+
+    /* Dohvataju se svi elementi DOM drveta koji imaju klasu news. 
+      Posto ovih elemenata ima vise, sigurni smo da je rezultat niz. 
+      Alternativa koriscenju funkcije querySelectorAll je funkcija getElementsByClassName.
+   */
+    var allNews = document.querySelectorAll('.news');
+
+    /* Prolazi se kroz niz. */
+    for (var i = 0; i < allNews.length; i++) {
+        /* 
+            Tekucem elementu niza se dodaje klasa decoration. 
+            S obzirom da zelimo da zadrzimo i polaznu klasu news koju je element imao, 
+            pridruzujemo obe klase odjednom. 
+
+            Neke od alternativa su: 
+            1) allNews[i].className += ' decoration'; kojom se na postojece ime klase nadovezuje ime nove klase.
+            Ovde je pocetna belina u stringu ' decoration' obavezna zbog propisnog razdvajanja klasa. 
+
+            2) 
+            var oldClass = allNews[i].className; 
+            var newClass = oldClass + ' decoration'; 
+            allNews[i].className = newClass; 
+        */
+        allNews[i].className = 'decoration news';
+    }
+</script>
+
+</html>

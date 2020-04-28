@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+
+<html>
+
+<body>
+
+<p id="1"></p>
+<p id="2"></p>
+
+<script>
+
+var tekst = 
+`{
+    "ime": "Pera",
+    "godine": 30,
+    "grad": "Beograd"
+}`
+// u praksi se koristi putanja do samog fajla
+// npr. JSON.parse('podaci.json');
+osoba = JSON.parse(tekst);
+
+document.getElementById("1").innerHTML = osoba.ime;
+document.getElementById("2").innerHTML = osoba['grad'];
+
+</script>
+
+</body>
+
+</html>

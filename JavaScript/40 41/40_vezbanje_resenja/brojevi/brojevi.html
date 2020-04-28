@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Brojevi</title>
+    <style>
+        form{
+            border: 2px solid #0000ff;
+            padding: 20px;
+            width: 200px;
+            margin: 20px;
+           
+        }
+        form legend{
+            color: blue;
+        }
+        input, select{
+            margin: 5px;
+        }
+        input[type="button"]{
+            margin-top: 20px;
+            color:blue;
+        }
+        input[type="button"]:hover{
+            cursor: pointer;
+        }
+        #odeljak{
+            margin: 20px; 
+        }
+    
+    </style>
+
+</head>
+<body>
+    <form>
+        <fieldset>
+            <legend>Podaci o brojevima</legend>
+            <div>
+                <label for="duzina">Opseg brojeva:</label> 
+                <select name="" id="opseg">
+                    <option value="" id = "o1">0 - 100</option>
+                    <option value="" id = "o2">101 - 200</option>
+                    <option value="" id = "o3">201 - 1000</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="broj">Broj brojeva:</label> 
+                <input type="number" name="" id="broj">
+            </div>
+
+
+        </fieldset>
+
+       
+        <input type="button" value="Generiši brojeve" id = "dugme">
+
+    </form>
+
+    <div id="odeljak">Generisani brojevi su:
+        <ol id = "lista"> 
+            
+        </ol>
+    </div>
+</body>
+
+<script type="text/javascript" src="jquery-3.3.1.min.js"></script>
+
+<script>
+    $(document).ready( function(){
+
+      $("#dugme").click( function(){
+
+          // ocitavamo koliko je brojeva korisnik zadao
+          var broj = $("#broj").val();
+          // provera opsega
+          if(broj>10 ||broj<1){
+                window.alert("Možete generisati najmanje 1, a najviše 10 brojeva");
+                return false;
+          }
+
+          // promenljive koje cuvaju levu i desnu granicu opsega
+          // iz kog treba generisati brojeve
+          var levaGranica;
+          var desnaGranica;
+
+          // koristimo selected selektor za option elemente 
+          if($("#o1").is(':selected')){
+              // selektovan je prvi opseg [0,100]
+              levaGranica = 0;
+              desnaGranica = 100;
+
+          }
+          else if($("#o2").is(':selected')){
+              // selektovan je drugi opseg [101,200]
+              levaGranica = 101;
+              desnaGranica = 200;
+
+          }
+          else if($("#o3").is(':selected')){
+              // selektovan je treci opseg [201,1000]
+              levaGranica = 201;
+              desnaGranica = 1000;
+
+          }
+          else {
+                window.alert("Niste odabrali opseg brojeva.");
+                return false;
+          }
+
+          // generisanje brojeva
+          // pre toga obrisemo sve postojece elemente liste
+          // da se ne bi novi brojevi dodavali u staru listu
+          $("#lista").empty();
+
+          // promenljiva u kojoj cuvamo novi broj 
+          var noviBroj;
+          // promenljiva koja sadrzi indeks maksimuma
+          var imax;
+          // promenljiva koja sadrzi maksimum
+          var max; 
+          for(var i = 0; i<broj; i++){
+            // koristimo random funkciju koja vraca nasumican broj iz [0,1)
+            // skaliramo tu vrednost na [levaGranica,desnaGranica]
+            // dodatno, floor funkciju koristimo da bismo generisali ceo broj
+            noviBroj = Math.floor(Math.random()*(desnaGranica-levaGranica)) + levaGranica;
+            if(i==0){
+                // prvi broj je ujedno i najveci do tada
+                imax = 0;
+                max = noviBroj;
+            }
+            else{
+                // uporedjujemo do tada najveci broj sa novim
+                if(noviBroj>max){
+                    imax = i;
+                    max = noviBroj;
+                }
+            }
+            // dodajemo novi li element listi 
+            $("#lista").append("<li>"+noviBroj+"</li>");
+          }
+          // potrebno je da boldujemo najveci u listi
+          // imax sadrzi indeks maksimuma -> to je ujedno indeks deteta liste
+          $("#lista li:eq("+imax+")").css({
+            'font-weight':'bold'
+          });
+           
+      });
+    });
+
+</script>
+
+</html>

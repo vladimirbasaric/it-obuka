@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Statičko pozicioniranje</title>
+
+    <style>
+        div {
+            height: 200px;
+            width: 500px;
+        }
+
+        #prvi {
+            background-color: lightblue;
+        }
+        
+        /*
+            Koriscenjem svojstava top, bottom, left i right 
+            mozemo pomerati element u odnosu na 
+            odgovarajucu ivicu.
+
+            Svojstvom position podesavamo kako ce neko od 
+            navedenih svojstava uticati na poziciju 
+            elementa tj. u odnosu na ciju ivicu ce se 
+            element pozicionirati.
+            
+            Vrednost static je podrazumevana i ona zapravo 
+            ne menja poziciju elementa tj. svojstva top, 
+            bottom, left i right nemaju uticaja na staticki 
+            pozicionirane elemente. Element ostaje na 
+            svojoj poziciji u normalnom toku stranice bez 
+            obzira koje vrednosti zadamo svojstvima za 
+            pomeranje.
+            
+            Normalan tok stranice odnosi se na redjanje 
+            blokovskih i linijskih elemenata u slucaju kada 
+            nisu menjana podesavanja. Da se podsetimo, 
+            blokovski elementi redjaju se jedan ispod 
+            drugog, pocevsi od gornjeg levog ugla, redom 
+            kojim su navedeni u html-u i zauzimaju celu 
+            sirinu roditeljskog elementa. Sa druge strane, 
+            linijski elementi zauzimaju onoliko prostora 
+            koliko je potrebno da se sadrzaj smesti i 
+            redjaju se horizontalno jedan do drugog redom 
+            kojim su navedeni u html-u. Ukoliko u liniji 
+            vise nema mesta za elemente redjanje se 
+            nastavlja u narednoj liniji.
+        */
+
+        #drugi {
+            position: static;
+            /*
+                Iako smo postavili vrednost za svojstvo 
+                rigth, element ostaje na svom originalnom 
+                mestu u normalnom toku stranice jer je 
+                staticki pozicioniran.
+            */
+            right: 100px;
+            background-color: crimson;
+        }
+
+        #treci {
+            background-color: lightgreen;
+        }
+    </style>
+
+</head>
+<body>
+    <div id="prvi">
+
+    </div>
+
+    <div id="drugi">
+
+    </div>
+
+    <div id="treci">
+
+    </div>
+</body>
+</html>

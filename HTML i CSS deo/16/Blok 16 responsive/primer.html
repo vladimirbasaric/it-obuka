@@ -1,0 +1,43 @@
+<!--
+Napraviti stranicu na kojoj je ispisan tekst "Zdravo svima", a element koji ga
+sadrži uređen je na različite načine, u zavisnosti od veličine ekrana i to:
+• za uređaje do 400px postaviti crvenu boju slova
+• za uređaje do 700px postaviti narandžastu boju slova
+• za uređaje do 1000px promeniti pozadinu elementa na sivu
+• za veće uređaje postaviti veličinu fonta na 30px
+-->
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title> :: media queries demo :: </title>
+		<meta charset="utf-8">
+		<style type="text/css">
+		@media screen and (max-width: 400px){
+			#test{
+				color: red;
+			}
+		}
+		@media screen and (min-width: 401px) and (max-width: 700px){
+			#test{
+				color: orange;
+			}
+		}
+		@media screen and (min-width: 701px) and (max-width: 1000px) {
+			#test{
+				background-color: gray;
+			}
+		}	
+		@media screen and (min-width: 1001px) {
+			#test{
+				font-size: 30px;
+			}	
+		}	
+		</style>
+	</head>
+	<body>
+		<div id="test">
+			Zdravo svima!
+		</div>
+	</body>
+</html>

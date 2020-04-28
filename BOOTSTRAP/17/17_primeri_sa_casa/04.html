@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Bootstrap klase za rad sa tekstom</title>
+    <link rel="stylesheet" type="text/css" href="./resursi/bootstrap.css">
+</head>
+<body>
+    <!--
+        Elementima h1-h6 je izmenjen stil tako da su slova 
+        nesto veca od standardnih velicina i "laksa" su 
+        (font-weight je 500). Pored toga, gornja margina je 
+        postavljena na 0, a donja na 0.5rem.
+
+        Izmene za ostale elemente kao i klase za 
+        stilizovanje teksta mozete pogledati na: 
+        https://www.w3schools.com/bootstrap4/bootstrap_typography.asp
+
+        Klasa display-* (* moze imati vrednosti 1, 2, 3 ili 
+        4) dodatno uvecava velicinu slova i smanjuje im 
+        tezinu na 300.
+    -->
+    <h1 class="display-1" >Lorem ipsum</h1>
+
+    <!--
+        Postoje i klase sa oznakama h1-h6 koje stilizuju 
+        element kao da je u pitanju neki od naslova.
+    -->
+    <div class="h3"> Lorem ipsum </div>
+
+    <!--
+        Paragrafima je gornja margina postavljena na 0, a 
+        donja na 1rem tj 16px.
+
+        Klasa lead cini da se paragraf istice tako sto 
+        su mu uvecana slova na 1.25rem i smanjena tezina
+        slova na 300.
+
+        Klasa text-* postavlja poravnanje teksta 
+        (text-align svojstvo), ako znak * zamenimo 
+        nekom od sledecih vrednosti: left, right, center i 
+        justify.
+
+        Dodatno, mozemo definisati razlicita poravnanja za
+        razlicite velicine uredjaja koriscenjem klasa oblika
+        text-*-*, gde se prva * menja velicinom uredjaja,
+        a druga se menja vrednostima za svojstvo test-align.
+    -->
+    <p class="lead text-right">
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptas assumenda ullam amet nostrum culpa laboriosam, sint, laborum obcaecati veniam dolor temporibus ea? Ullam omnis, fuga est modi numquam eaque magni.
+    </p>
+
+    <!--
+        Klasa text-* postavlja vrednost za svojstvo text-transform, ako se umesto * navede neka od vrednosti: uppercase, lowercase, capitalize. 
+
+        Klasa bg-* menja boju pozadine, a vrednosti za * su:
+            - primary (plava), 
+            - success (zelena), 
+            - info (svetlo plava), 
+            - warning (narandzasta), 
+            - danger (crvena),
+            - secondary (siva),
+            - dark (tamno siva),
+            - light (svetlo siva)
+
+        Klasa text-* menja boju teksta, ako * zamenimo nekom od vrendosti za boje. Pored navedenih kod 
+        boje pozadine, moguce su i vrednosti:
+            - muted (siva)
+            - white (bela)
+            - body (podrazumevana boja za body, tj. crna)
+    -->
+    <p class="text-uppercase bg-danger text-info">
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eligendi, nisi dicta? Esse molestias maxime, magni sequi hic expedita at iure animi laborum asperiores amet dolore delectus, voluptatibus dolor illum totam!
+    </p>
+
+</body>
+</html>

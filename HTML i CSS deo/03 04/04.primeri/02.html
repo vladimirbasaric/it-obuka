@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title> Ponavljanje pozadine </title>
+    <style>
+        h1 {
+            width: 70%;
+            font-size: 150px;
+            color: violet;
+            /*
+                centriranje elementa u odnosu na roditeljski element
+             */
+            margin: auto;
+            /*
+                centriranje sadrzaja elementa
+            */
+            text-align: center;
+
+            background-image: url('./slike/gradient.png');
+
+            /*
+                postavljamo da se slika na pozadini ponavlja samo horizontalno
+            */
+            background-repeat: repeat-x;
+        }
+
+
+        p {
+            width: 70%;
+            /*
+             *  ovim svojstvom podesavamo da u sirinu
+                elementa (70%, kao sto smo iznad definisali)
+                ulazi sadrzaj elementa zajedno sa punjenjem i ivicom elementa (padding i border)
+
+             *  podrazumevana vrednost je content-box 
+                kojom podesavamo da se u sirinu elementa
+                racuna samo sadrzaj elementa (content)
+             */
+            box-sizing: border-box;
+            font-size: 20px;
+            color: violet;
+            border: 1px solid green;
+            margin: auto;
+            padding-left: 150px;
+            padding-right: 15px;
+            text-align: right;
+            background-image: url('./slike/cvece.jpg');
+
+            /*
+             *  postavljamo da se slika na pozadini 
+                ponavlja samo vertikalno
+             */
+            background-repeat: repeat-y;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>
+        Lorem ipsum
+    </h1>
+
+    <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque a dignissim urna. Cras est lorem, sollicitudin
+        non
+        volutpat vitae, vestibulum in purus. Morbi nibh lacus, efficitur sodales elit vitae, malesuada molestie tortor.
+        Etiam in
+        nisl at lorem blandit dapibus. Ut consectetur, erat id aliquam dignissim, est felis suscipit nunc, nec efficitur
+        ex sem
+        id mauris. In condimentum tincidunt ex ac commodo. Nunc non rhoncus sem. Cras pretium neque eget sapien
+        molestie, sit
+        amet tempor sem sodales. Donec venenatis luctus orci vitae pulvinar.
+        In purus tortor, semper sed finibus ut, condimentum id purus. Nullam vulputate felis id quam sollicitudin,
+        pharetra
+        maximus diam mattis. Vivamus tempus in tellus non commodo. Nam id neque ultrices, sollicitudin arcu ut, vehicula
+        ipsum.
+        Fusce at facilisis mauris, eu fermentum tellus.
+
+    </p>
+
+</body>
+
+</html>

@@ -1,0 +1,17 @@
+.square {
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+}
+
+.orange {
+    background-color: orange;
+}
+
+.cadetblue {
+    background-color: cadetblue;
+}
+
+.gray {
+    background-color: gray;
+}

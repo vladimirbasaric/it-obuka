@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Stringovi</title>
+    </head>
+<body>
+
+<h1>Stringovi u Javascriptu</h1>
+
+<!-- u narednim pasusima ce biti ispisivani rezultati svih primera -->
+
+<p id="1"></p>
+<p id="2"></p>
+<p id="3"></p>
+<p id="4"></p>
+<p id="5"></p>
+<p id="6"></p>
+<p id="7"></p>
+
+<script>
+
+// stringovi mogu biti zapisani preko jednostrukih ili dvostrukih navodnika
+var str1 = "Ovo je prvi string";
+var str2 = 'Ovo je drugi string';
+// moze jednostruki biti ubacen u dvostruki i obrnuto
+var str3 = "Ovo je prvi 'izmenjeni' string"; 
+var str4 = 'Ovo je prvi "izmenjeni" string';
+// na ovaj nacin cemo da ispisujemo sve nase rezultate da bismo videli efekat
+// ova naredba zapravo generise HTML kod za pasus koji ima id jednak s1
+document.getElementById("1").innerHTML = str1 + "<br>" + str2 + "<br>" + str3 + "<br>" + str4; 
+
+// karakteri ", ' i \ mogu biti zapisani u stringu pomocu prethodnog znaka \
+var str5 = "Znak \\ je backslash";
+var str6 = 'Znak \' je jednostruki navodnik';
+var str7 = "Znak \" je dvostruki navodnik";
+document.getElementById("2").innerHTML = str5 + "<br>" + str6 + "<br>" + str7; 
+
+var str8 = "abcdefghijklmnopqrstuvwxyz";
+
+// pristup nekom elementu stringa, indeksiranje krece od nule
+// promeniti 0 u neki veci broj
+var c1 = str8.charAt(0);
+document.getElementById("3").innerHTML = c1; 
+
+// duzina stringa
+var duzina = str8.length;
+document.getElementById("4").innerHTML = duzina; 
+
+// nadovezivanje (konkatenacija) stringova
+var str9 = 'Zdravo';
+var str10 = "svima!"
+var str11 = str9 + " " + str10;
+document.getElementById("5").innerHTML = str11; 
+
+var str12 = "jabuka, kruska, sljiva";
+
+// funkcijom substr se izdvaja podstring stringa
+// prvi argument je indeks podstringa, a drugi njegova duzina
+var str13 = str12.substr(8, 6);
+document.getElementById("6").innerHTML = str13;
+
+// funkcijom replace se menja deo stringa nekim drugim sadrzajem
+var str14 = str12.replace("kruska", "grozdje");
+document.getElementById("7").innerHTML = str14;
+</script>
+
+</body>
+</html>

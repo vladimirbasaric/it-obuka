@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JS JQuery 01</title>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.js"
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+
+    <!--Svi HTML elementi podrazumevano imaju statičnu poziciju i ne mogu se pomerati.
+    Da bismo mogli da menjamo poziciju potrebno je da CSS position property elementa bude postavljeno na
+    relative, fixed, ili absolute!-->
+
+    <script>
+        // jQuery metod animate koristi se za pravljenje korisnički definisanih animacija.
+        // TO znači da pomoću ovog metoda možemo konstruisati najrazličitije animacije.
+        // Sintaksa poziva ovog metoda glasi:
+        //      $(selector).animate({params}, speed, callback);
+        // Obavezni parametar params definiše CSS svojstva koja se animiraju. Ovaj parametar
+        // uzima vrednost objekta čija su svojstva nazivi CSS svojstava koji će biti
+        // primenjeni nad elementom, a vrednosti tih svojstava su vrednosti odgovarajućih
+        // CSS svojstava — element nad kojim se metod primenjuje će na kraju animacije
+        // imati dodeljene vrednosti za data CSS svojstva. Opcioni parametar speed specifi-
+        // kuje dužinu trajanja animacije. Opcioni parametar callback je po-potrebi-pozivna
+        // funkcija koja se izvršava nakon završetka animacije. Naredni primer demonstrira
+        // upotrebu ovog metoda tako što pomera div element udesno, sve dok nije udaljen
+        // od leve ivice za 250px:
+
+        $(document).ready(function () {
+
+            // Naredni primer demonstrira
+            // upotrebu ovog metoda tako što pomera div element udesno, sve dok nije udaljen
+            // od leve ivice za 250px:
+            $("#btnAnimation1").click(function () {
+                $("div").animate({
+                    left: '250px'
+                });
+            });
+
+            // Moguće je menjati više svojstava odjednom kao u naredom primeru.  
+            // Ukoliko želimo da menjamo CSS svojstva koja su imenovana
+            // sa karakterom - u CSS jeziku, ovde moramo da ih pišemo u kamiljoj notaciji. 
+            // Tako da, na primer, pišemo paddingLeft umesto padding-left. Moguce je i
+            // koristiti 'padding-left'.
+            $("#btnAnimation2").click(function () {
+                $("div").animate({
+                    left: '500px',
+                    opacity: '0.5',
+                    height: '150px',
+                    width: '150px',
+                    marginLeft: '100px'
+                });
+            });
+
+            // Moguće je korišćenje relativnih vrednosti korišćenjem += ili -= ispred vrednosti
+            // pri čemu se dodaje ili oduzima nova vrednost od stare vrednosti. Na primer:
+            $("#btnAnimation3").click(function () {
+                $("div").animate({
+                    left: '250px',
+                    height: '+=150px',
+                    width: '+=150px'
+                });
+            });
+
+            // jQuery dolazi sa funkcionalnošću reda za animiranje. 
+            // Ukoliko napišemo više animate() poziva jedan iza drugog, jQuery napravi "interni"
+            // red od ovih poziva. Animacije se potom izvršavaju jedna po jedna. Neki od primera
+            // koji ovo ilustruju su:
+
+            $("#btnAnimation4").click(function () {
+                var div = $("div");
+                div.animate({
+                    height: '300px',
+                    opacity: '0.4'
+                }, "slow");
+                div.animate({
+                    width: '300px',
+                    opacity: '0.8'
+                }, "slow");
+                div.animate({
+                    height: '100px',
+                    opacity: '0.4'
+                }, "slow");
+                div.animate({
+                    width: '100px',
+                    opacity: '0.8'
+                }, "slow");
+            });
+
+            $("#btnAnimation5").click(function () {
+                var div = $("div");
+                div.animate({
+                    left: '100px'
+                }, "slow");
+                div.animate({
+                    fontSize: '3em'
+                }, "slow");
+
+            });
+
+
+            // Do sada smo sve jQuery naredbe pisali jednu ispod druge. Ipak, postoji tehnika
+            // koja se naziva lančanje (engl. chaining), koja nam omogućava da pokrenemo više
+            // jQuery komandi, jednu za drugom, nad istim elementom (ili nad istim elementima).
+            // Na ovaj način pregledači ne moraju da traže iste elemente više od jedanput.
+            // Da bismo ulančali akciju, potrebno je samo nadovezati novu akciju na prethodnu
+            // akciju. Sledeći primer ilustruje lančanje metoda css, slideUp i slideDown. 
+            // Element div se prvo menja u crvenu boju, pa zatim pomera naviše,
+            // pa na kraju naniže:
+            $("#btnChaining").click(function () {
+                $("div").animate({
+                    left: '500px',
+                    opacity: '0.5',
+                    height: '150px',
+                    width: '150px',
+                    marginLeft: '100px'
+                }).hide(3000).show(3000).slideUp(2000).delay(1000).slideDown(2000);
+                //Mogu se staviti i u zasebnim redovima zbog preglednosti
+                // $("div").animate({
+                //     left: '500px',
+                //     opacity: '0.5',
+                //     height: '150px',
+                //     width: '150px',
+                //     marginLeft: '100px'
+                // }).hide(3000)
+                //.show(3000)
+                //.slideUp(2000)
+                //.delay(1000)
+                //.slideDown(2000);
+            });
+
+            // jQuery stop metod se koristi za zaustavljanje animacije pre nego što se završi.
+            // Metod stop radi za sve jQuery metode koji implementiraju neki efekat, pa i za
+            // slajdere, prelaze i korisničko animiranje. Sintaksa poziva ovog metoda je
+            //      $(selector).stop(stopAll, goToEnd);
+            // Opcioni stopAll parametar specifikuje da li će se animacijski red isprazniti ili
+            // ne. Po pravilu je false , što znači da će se samo aktivna animacija zaustaviti, a da
+            // će sve naredne animacije nastaviti sa izvršavanjem, regularno. Opcioni goToEnd
+            // parametar specifikuje da li će se u momentu zaustavljanja animacija dovršiti do
+            // kraja i po pravilu je false . Dakle, podrazumevano, metod stop samo zaustavlja
+            // trenutnu animaciju koja se vrši na zadatom elementu. Primer rada metoda bez
+            // parametara:
+            $("#btnStop").click(function () {
+                $("div").stop();
+
+            });
+
+            // JavaScript naredbe se izvršavaju linija po liniju. Ipak, sa efektima, naredna linija
+            // koda se vrši iako efekat možda još nije završen. Ovo može dovesti do grešaka u radu.
+            // Da bi se ovo sprečilo, koriste se po-potrebi-pozivne funkcije. Tipična sintaksa je:
+            $("#btnHide").click(function () {
+                $("div").hide("slow", function () {
+                    alert("The paragraph is now hidden");
+                });
+                // Naredni primer ne koristi po-potrebi-pozivnu funkciju u telu funkcije-argumenta
+                // za click , pa će se prozorčić prikazati pre nego što je efekat sakrivanja završen,
+                // što je nekorektno:
+                // $("div").hide();
+                // alert("The paragraph is now hidden");
+            });
+        });
+    </script>
+</head>
+
+<body>
+
+    <button id="btnAnimation1">Start Animation 1</button>
+    <button id="btnAnimation2">Start Animation 2</button>
+    <button id="btnAnimation3">Start Animation 3</button>
+    <button id="btnAnimation4">Start Slow Animation Combo</button>
+    <button id="btnAnimation5">Start Slow Animation Combo</button>
+    <button id="btnChaining">Chaining</button>
+    <button id="btnStop">Stop</button>
+    <button id="btnHide">Hide</button>
+
+
+
+    <div style="background:red;height:100px;width:100px;position:absolute;">Red square</div>
+
+</body>
+
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <style>
+        .flex-container {
+            background-color: royalblue;
+            /* podesena je pogodna visina i sirina da stane tri elementa u red, a dva elementa u kolonu */
+            height: 190px;
+            width: 360px;
+            display: flex;
+            /* ako podesimo flex-direction: column i flex-wrap: wrap, prikazace se bas trazenim redosledom - 1,
+            pa ispod 2, pa desno 3, pa ispod 4, itd. moze da se ovo uradi i koristeci order,
+             a da se ostavi flex-direction: row, ali je ovako elegantnije */
+            flex-flow: column wrap;
+        }
+
+        .flex-container>div {
+            background-color: seashell;
+            color: royalblue;
+            width: 100px;
+            margin: 10px;
+            text-align: center;
+            line-height: 75px;
+            font-size: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="flex-container">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+    </div>
+
+</body>
+
+</html>

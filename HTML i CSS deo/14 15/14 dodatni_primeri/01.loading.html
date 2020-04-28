@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+        .spinner {
+            margin: 100px auto;
+            width: 50px;
+            height: 40px;
+            text-align: center;
+            font-size: 10px;
+        }
+
+        /*  Uzimamo sve div elemente koji su
+            direktna deca necega sto ima klasu spinner */
+        .spinner>div {
+            /* background-color: #333; */
+            height: 100%;
+            width: 6px;
+            display: inline-block;
+            animation: sk-stretchdelay 1.2s infinite ease-in-out;
+        }
+
+        .rect1 {
+            background-color: teal;
+        }
+
+        .rect2 {
+            background-color: darkturquoise;
+        }
+
+        .rect3 {
+            background-color: greenyellow;
+        }
+
+        .rect4 {
+            background-color: lightskyblue;
+        }
+
+        .rect5 {
+            background-color: magenta;
+        }
+
+        .spinner .rect2 {
+            animation-delay: -1.1s;
+        }
+
+        .spinner .rect3 {
+            animation-delay: -1.0s;
+        }
+
+        .spinner .rect4 {
+            animation-delay: -0.9s;
+        }
+
+        .spinner .rect5 {
+            animation-delay: -0.8s;
+        }
+
+        @keyframes sk-stretchdelay {
+
+            0%,
+            40%,
+            100% {
+                transform: scaleY(0.4);
+            }
+
+            20% {
+                transform: scaleY(1.0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="spinner">
+        <div class="rect1"></div>
+        <div class="rect2"></div>
+        <div class="rect3"></div>
+        <div class="rect4"></div>
+        <div class="rect5"></div>
+    </div>
+</body>
+
+</html>

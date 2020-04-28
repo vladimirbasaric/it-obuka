@@ -1,0 +1,55 @@
+body {
+    background-color: rgb(173, 212, 201);
+    background-image: url('sky.png');
+    background-repeat: repeat-x;
+    height: 800px;
+}
+
+div {
+    border: 1px solid white;
+    width: 30%;
+    height: 200px;
+    padding: 50px;
+    box-sizing: border-box;
+    position: absolute;
+    top: 200px;
+    left: 15%;
+    color: red;
+}
+
+div~div {
+    top: 200px;
+    left: 55%;
+    color: green;
+}
+
+p~div {
+    top: 550px;
+    left: 15%;
+    color: orange;
+}
+
+p~div~div {
+    top: 550px;
+    left: 55%;
+    color: purple;
+}
+
+p {
+    font-size: 25px;
+    text-align: center;
+}
+
+div>p {
+    font-style: italic;
+}
+
+div+p {
+    position: relative;
+    top: 425px;
+    left: 15%;
+    width: 70%;
+    font-weight: bold;
+    font-size: 35px;
+    color: white;
+}

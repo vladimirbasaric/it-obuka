@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> DOM vežba</title>
+    <meta charset='utf-8'>
+</head>
+
+<body>
+    <h1> List of cities </h1>
+    <ul>
+        <li> London </li>
+        <li> Madrid </li>
+        <li> Belgrade </li>
+        <li> Lyon </li>
+        <li> Vienna </li>
+        <li> Lisbon </li>
+    </ul>
+</body>
+
+<script type="text/javascript">
+
+    /* Dohvataju se svi elementi DOM drveta koji imaju ime li. 
+       Posto ovih elemenata ima vise, sigurni smo da je rezultat niz. 
+       Alternativa koriscenju funkcije querySelectorAll je funkcija getElementsByTagName.
+    */
+    var liItems = document.querySelectorAll('li');
+
+    /* Prolazi se kroz niz. */
+    for (var i = 0; i < liItems.length; i++) {
+
+        /* Ocitava se tekuci element niza. */
+        var currentLiItem = liItems[i];
+
+        /* Ocitava se tekstualni sadrzaj tekuceg elementa niza. */
+        var currentLiContent = currentLiItem.textContent.trim();
+
+        /* Ukoliko tekuci tekstualni sadrzaj pocinje velikim slovom L, 
+        boja tekuceg elementa se postavlja na plavu. 
+        Alternativa pristupa prvom karakteru niske bi bila currentLiContent[0].
+        */
+        if (currentLiContent.charAt(0) == 'L') {
+            currentLiItem.style.color = 'blue';
+        }
+
+    }
+
+</script>
+
+</html>

@@ -1,0 +1,83 @@
+/* kako bi svi delovi nalegli na same krajeve, body margina je 0 */
+body {
+  font-family: Arial;
+  margin: 0px;
+}
+
+/* slike (a to inace vazi i za ostale elemente u mnogim slucajevima) su podesene na 100% unutar svakog diva.
+ da nije ovako podesen box-sizing, one bi iskakale iz margina, 
+ a leva i desna stranica ne bi bile jedna pored druge, vec bi se desna spustila. 
+ pogledati vise o box-sizingu ovde: https://www.w3schools.com/css/css3_box-sizing.asp */
+div {
+  box-sizing: border-box;
+}
+
+/* gornji header je zut, paddingom se spusta naslov na sredinu */
+.header1 {
+  background-color: yellow;
+  padding: 5px;
+  text-align: center;
+}
+
+/* donji header ima padding 60, sto i odozgo i odozdo odvoji tekst, pa se on nalazi u sredini */
+.header2 {
+  padding: 60px;
+  text-align: center;
+  background-color: turquoise;
+  color: white;
+}
+
+/* navigation bar koji sadrzi linkove je flex container za njih, pa su oni jedan pored drugog.
+ da predju marginu, presli bi jednostavno u novi rad, zbog wrapovanja */
+.navbar {
+  display: flex;
+  background-color: black;
+  flex-wrap: wrap;
+}
+
+/* ovi linkovi se nalaze samo u navigation baru */
+a {
+  color: white;
+  padding: 14px 20px;
+  text-decoration: none;
+  text-align: center;
+}
+
+a:hover {
+  background-color: lightgray;
+  color: black;
+}
+
+/* ovaj row je flex container za glavne delove - levi i desni */
+.row {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+/* levi deo je 30% sirine */
+.side {
+  width: 30%;
+  background-color: seashell;
+  padding: 20px;
+}
+
+/* glavni, desni deo je 70% sirine. on ce se lepo uklopiti sa levim delom,
+ jer su unutar flex containera i ukupno 100% sirine */
+.main {
+  width: 70%;
+  padding: 20px;
+}
+
+/* ovo je "lazna" slika, koja sluzi da popuni mesto. koristi se na vise mesta, sirina joj je uvek 100%, a menja joj se visina u zavisnosti od mesta gde se koristi */
+.grayimage {
+  background-color: lightgray;
+  width: 100%;
+  padding: 20px;
+}
+
+/* sivi footer na dnu */
+.footer {
+  padding: 20px;
+  text-align: center;
+  background-color: lightgray;
+}

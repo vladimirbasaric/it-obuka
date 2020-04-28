@@ -1,0 +1,44 @@
+<html>
+<head>
+    <style>
+        body {
+            font-size: 24px;
+        }
+
+        .row-input {
+            width: 35%;
+            padding-top: 20px;
+            line-height: 2em;
+        }
+
+        .row-input input,
+        textarea {
+            float: right;
+            width: 50%;
+            font-size: 24px;
+        }
+    </style>
+</head>
+
+<body>
+    <form method="POST" action="http://formspree.io/VASAEMAILADRESA">
+        <h2>Send me a message</h2>
+        <div class="row-input">
+            <label>Email<input type="email" name="email" placeholder="Your email">
+            </label>
+        </div>
+        <div class="row-input">
+            <label>Your message
+                <textarea name="message" placeholder="Your message"></textarea>
+            </label>
+        </div>
+        <div class="row-input">
+            <label>Extra
+                <input type="text" name="extra" />
+            </label>
+        </div>
+        <button type="submit">Send</button>
+    </form>
+</body>
+
+</html>

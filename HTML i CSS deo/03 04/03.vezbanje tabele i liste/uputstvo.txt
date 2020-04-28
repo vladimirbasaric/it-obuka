@@ -1,0 +1,37 @@
+Table_1:
+Napraviti stranu koja izgleda kao na slici. Koristiti priblizne boje.
+-------------------------------------------------------------------------
+
+Table_2:
+Napraviti stranu koja izgleda kao na slici. Koristiti priblizne boje. 
+Za stilizovanje vrsta koristiti selektor nth-child.
+-------------------------------------------------------------------------
+
+List_1:
+Napraviti stranu koja izgleda kao na slici. 
+Koristiti slike flower i sun za stavke u okviru listi.
+-------------------------------------------------------------------------
+
+List_2:
+Napraviti stranu koja izgleda kao na slici. 
+Koristiti sliku cake za stavke u okviru listi.
+
+Naslov strane: Moja omiljena uzina
+Ime autora: Vase ime i prezime
+
+Koriscene boje: 
+braon: #8C6B4D
+bela: #FFFFFF
+narandzasta: #FFA500
+
+Korisceni fontovi: 
+Arial
+Times New Roman
+
+Koriscene velicine slova:
+16px i 14px
+
+Link vodi ka strani: 
+http://www.bbcgoodfood.com/recipes/1840634/apple-and-pear-crumble
+(i ne odgovara bas opisu :-))
+

@@ -1,0 +1,75 @@
+h1 {
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+h3 {
+    margin-top: 5px;
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+table {
+    border-collapse: collapse; 
+    border: 2px dotted purple;
+    margin: auto;
+}
+
+td {
+    width: 400px;
+    height: 400px;
+    border: 5px dotted purple;
+    padding: 10px;
+    font-size: 20px;
+}
+
+#slika {
+    text-align: center;
+}
+
+#tekst {
+    text-align: left;
+}
+
+img {
+    width: 300px;
+    height: 300px;
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+li:nth-child(odd), dt {
+    color: violet;
+}
+
+
+li:nth-child(even), dd {
+    color: yellowgreen;
+}
+
+span {
+    color: white;
+    background-color: yellowgreen;
+    font-weight: bold;
+}
+
+footer {
+    text-align: center;
+    margin-top: 15px;
+}
+
+a:link, a:visited {
+    color: violet;
+    text-decoration: none;
+    font-size: 40px;
+}
+
+a#sidro:hover {
+    background-image: radial-gradient(yellowgreen, white 80%);
+}
+
+a:active {
+    font-size: 35px;
+}

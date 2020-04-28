@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Bootstrap tabele</title>
+    <link rel="stylesheet" type="text/css" href="./resursi/bootstrap.css">
+    <style>
+    </style>
+</head>
+<body>
+    <!--
+        Klasa table-responsive-* omogucava da se tabela 
+        prilagodjava velicini uredjaja. Znak * treba 
+        zameniti dimenzijom uredjaja (sm, md, lg, xl) ili 
+        ostaviti bez dimenzije. Tabela se suzava koliko 
+        moze tako da se raspored celija ne promeni i da sav 
+        sadrzaj bude vidljiv. Dodatno, ako su sirine celija 
+        fikisirane na neku vrednost, one se nece suzavati 
+        ispod zadate vrednost. U trenutku kada vise ne moze 
+        da se smanji, ova klasa dodaje horizontalni skrol
+        tabeli kako bi sav sadrzaj mogao da se procita.
+        Ako je navedena dimenzija uredjaja, skrol se dodaje
+        ako je potreban za odredjenu velicinu uredjaja. U 
+        suprotnom, skrol se dodaje kad je potreban, 
+        nezavisno od velicine uredjaja.
+    -->
+    <div class="table-responsive-sm">
+        <table class="table table-danger">
+            <!--
+                Klasa thead-dark ce izmeniti samo celije 
+                koje se nalaze u thead elementu tako sto im 
+                dodaje tamnu pozadinu.
+            -->
+            <thead class="thead-dark">
+                <tr>
+                    <th>Prva</th>
+                    <th>Druga</th>
+                    <th>Treca</th>
+                    <th>Cetvrta</th>
+                    <th>Peta</th>
+                    <th>Sesta</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>3</td>
+                    <td>4</td>
+                    <td>5</td>
+                    <td>6</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>3</td>
+                    <td>4</td>
+                    <td>5</td>
+                    <td>6</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>3</td>
+                    <td>4</td>
+                    <td>5</td>
+                    <td>6</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae libero ut quo quidem illum quasi corrupti tempore eveniet id, aspernatur sunt nam reprehenderit ullam officia unde amet sit magnam vero? Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur voluptatum neque, ab sunt placeat aliquid nihil adipisci distinctio reprehenderit consequatur dolorem quo quos tempora, delectus unde optio laboriosam corrupti aspernatur?
+    </p>
+</body>
+</html>

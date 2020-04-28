@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Primer formulara</title>
+    <meta charset="UTF-8">
+   
+</head>
+
+<body>
+    <form>
+        <fieldset>
+            <legend> Licni podaci </legend>
+
+                <label for="ime_prezime"> Ime i prezime*: </label>
+                <input id="ime_prezime" type="text" placeholder="Pera Peric" maxlength="30" name="ime_prezime" required>
+          
+                <label for="datum_rodjenja"> Datum rodjenja: </label>
+                <input id="datum_rodjenja" type="date" name="datum_rodjenja">
+    
+                <br>
+          
+                <label for="email" > Email*: </label>
+                <input id="email" name="email" type="email" required>
+         
+                <label for="password"> Sifra*: </label>
+                <input id="password" name="sifra" required type="password"  >
+           
+        </fieldset>
+
+        <fieldset   >
+            <legend> Obrazovanje </legend>
+                    
+                    <label for="fakultet"   > Oblast: </label>
+                    <select name="fakultet" id="fakultet"  >
+                        <option value=""> drustvene nauke </option>
+                        <option value=""> prirodne nauke </option>
+                        <option value=""> umetnost </option>
+                    </select>
+            
+                    <br>
+
+                    <label for="univerzitet"   > Univerzitet: </label>
+                    <input list="svi_univerziteti" id="univerzitet" name="univerzitet" type="text"  >
+                    <datalist id="svi_univerziteti">
+                        <option value="UBG"> Univerzitet u Beogradu </option>
+                        <option value="UNS"> Univerzitet u Novom Sadu </option>
+                        <option value="UNI"> Univerzitet u Nišu </option>
+                        <option value="UKG"> Univerzitet u Kragujevcu </option>
+                    </datalist>
+             
+           
+        </fieldset>
+
+		<fieldset   >
+        <legend> Interesovanje </legend>
+           
+                Lista interesovanja:
+
+                    <input name="veb" id="veb" type="checkbox" >
+                    <label for="veb"   >veb programiranje</label>
+               
+                    <input name="html" id="html" type="checkbox" >
+                    <label for="html"   >HTML</label>
+               
+                    <input name="css" id="css" type="checkbox" >
+                    <label for="css"   >CSS</label>
+              
+                    <input name="JavaScript" id="JavaScript" type="checkbox" >
+                    <label for="JavaScript"   >JavaScript</label>
+              
+
+        </fieldset>
+
+        <fieldset   >
+            <legend> Kurs koji zelim da pohadjam </legend>
+    
+                  <input type="radio" name="kurs" value="java"> Java
+                  <input type="radio" name="kurs" value="python"> Python
+                  <input type="radio" name="kurs" value="c++"> C++
+                  <input type="radio" name="kurs" value="javascript"> JavaScript
+        </fieldset>
+		
+		<fieldset   >
+        <legend> Dodatne informacije </legend>
+          
+			    <label for="ocena">Broj casova nedeljno koji mi odgovara od 3 do 12</label>
+                <input type="number" min="3" max="12" id="ocena">
+                <br>
+
+				<label for="napomena"> Napomena: </label>
+				<br>
+				<textarea cols="80" rows="5" name="napomena" id="napomena" placeholder="Unesite napomenu..." readonly ></textarea>
+		
+		 </fieldset>
+
+         <input value="obrisi podatke" type="reset">
+         <input value="posalji podatke" type="submit">
+     
+    </form>
+
+</body>
+
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+        <meta charset="utf-8" />
+		<title>Formulari - osnove</title>
+	</head>
+	<body>
+	    <form>
+            <!--Labela - dodatno opisuje element koji sledi-->
+            <label for="ime_prezime"> Ime i prezime*: </label>
+            <!--Polje za unos tekstualnih informacija-->
+            <input id="ime_prezime" type="text" placeholder="Pera Peric" maxlength="30" name="ime_prezime" required>
+
+            <br>
+
+            <!--Polje za unos datuma-->
+            <label for="datum_rodjenja"> Datum rodjenja: </label>
+            <input id="datum_rodjenja" type="date" name="datum_rodjenja">
+
+            <br>
+
+            <!--Polje za unos email adrese-->
+            <label for="email"> Email: </label>
+            <input id="email" name="email" type="email">
+
+            <br>
+
+            <!--Polje za unos url-a-->
+            <label for="veb_adresa"> Veb adresa: </label>
+            <input id="veb_adresa" name="veb_adresa" autocomplete="off" type="url">
+
+            <br>
+
+            <!--Polje za unos lozinke. Primetite da se unos ne vidi-->
+            <label for="password"> Sifra*: </label>
+            <input id="password" name="sifra" required type="password">
+
+            <br>
+
+            <textarea rows="4" cols="50"></textarea>
+
+            <br>
+
+            <!--Dugme kojim se mogu obrisati trenutno uneti podaci-->
+            <input value="reset" type="reset">
+
+            <!--Dugme koje se koristi da se podaci posalju na obradu-->
+            <input value="posalji podatke" type="submit">
+        </form>
+	</body>
+</html>

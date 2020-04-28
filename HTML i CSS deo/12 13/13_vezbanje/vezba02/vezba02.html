@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Vezba 02</title>
+    <link rel="stylesheet" type="text/css" href="vezba02.css">
+</head>
+<body>
+    <table>
+        <caption> <span>CSS</span> Selektori</caption>
+        <tr>
+            <th>Primeri</th>
+            <th>Selektor</th>
+            <th>Opis</th>
+        </tr>
+        <tr>
+            <td rowspan="4"> 
+                <a href="../12.primeri/2.html" target="_blank">Primer 2</a>
+            </td>
+            <td>selector selector</td>
+            <td>
+                Svi elementi obuhvaceni drugim selektorom koji su <span>potomci</span> elemenata obuhvacenim prvim selektorom
+            </td>
+        </tr>
+        <tr>
+            <td>selector > selector</td>
+            <td>
+                Svi elementi obuhvaceni drugim selektorom ciji je <span>roditelj</span> element obuhvacen prvim selektorom
+            </td>
+        </tr>
+        <tr>
+            <td>selector + selector</td>
+            <td>
+                Svi elementi obuhvaceni drugim selektorom koji se nalaze <span>odmah posle</span> elemenata obuhvacenim prvim selektorom
+            </td>
+        </tr>
+        <tr>
+            <td>selector ~ selector</td>
+            <td>
+                Svi elementi obuhvaceni drugim selektorom koje su <span>rodjaci</span> elementa obuhvacenim prvim selektorom
+            </td>
+        </tr>
+        <tr>
+            <td rowspan="3"> 
+                <a href="../12.primeri/3.html" target="_blank">Primer 3</a>
+            </td>
+            <td>
+                [attribute] 
+            </td>
+            <td>
+                Sve elementi sa postavljenim <span>atributom</span> koji zadat u zagradama.
+            </td>
+        </tr>
+        <tr>
+            <td>
+                [attribute=value] 
+            </td>
+            <td>
+                Sve elementi sa postavljenim <span>atributom</span> na odgovarajucu <span>vrednost</span>.
+            </td>
+        </tr>
+        <tr>
+            <td>
+                selector[attribute] 
+            </td>
+            <td>
+                Svi elementi obuhvaceni <span>selektorom</span> kojima je postavljen zadati atribut.
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

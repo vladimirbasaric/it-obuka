@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <style>
+    /* osim menjanja vrednosti samih atributa (kao sto stoji u komentarima, menjati velicinu stranice
+ i videti kako se pravougaonici ponasaju i rasporedjuju unutar omotaca */
+
+    .flex-container {
+      background-color: royalblue;
+      height: 400px;
+
+      /* ovo svojstvo mora biti navedeno */
+      display: flex;
+
+      /* promeniti na column, column-reverse ili row-reverse i videti efekat */
+      flex-direction: row;
+
+      /* promeniti na nowrap ili wrap-reverse i videti efekat */
+      flex-wrap: wrap;
+
+      /* zakomentarisati flex-direction i flex-wrap, pa ovde navesti svojstva ta dva atributa.
+       dobice se isti efekat */
+
+      /*flex-flow: row wrap;*/
+
+      /* promeniti na flex-end, center, space-around ili space-between i videti efekat */
+      justify-content: flex-start;
+
+      /* promeniti na flex-end, stretch ili center i videti efekat */
+      align-items: flex-start;
+
+      /* promeniti u space-around, strech, center, flex-end, ili space-between i videti efekat */
+      align-content: flex-start;
+    }
+
+    .flex-container>div {
+      background-color: seashell;
+      color: royalblue;
+      width: 100px;
+      margin: 10px;
+      text-align: center;
+      line-height: 75px;
+      font-size: 30px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="flex-container">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+    <div>5</div>
+    <div>6</div>
+    <div>7</div>
+    <div>8</div>
+    <div>9</div>
+    <div>10</div>
+    <div>11</div>
+  </div>
+
+</body>
+
+</html>

@@ -1,0 +1,25 @@
+Prvi zadatak - formular1:
+
+Po uzoru na zadatu fotografiju napravite odgovarajuci formular. 
+
+Slika u pozadini naslova je cvece.jpg.
+
+-----------------------------------------------------------------------
+Drugi zadatak - formular2:
+
+Po uzoru na zadatu fotografiju napravite odgovarajuci formular.
+
+Dodatno:
+	- postaviti da polja name, address i email budu obavezna 
+	- povezati sva radio dugmad za istu opciju, tj. obezbediti da je moguce
+	izabrati samo jednu od stavki
+	- za prikaz stavki omiljenog voca iskoristiti opadajucu listu, a zatim
+	umesto opadajuce liste iskoristiti input element sa unapred definisanim
+	vrednostima za omiljeno voce
+	- koriscenjem odgovarajuce pseudo-klase, obojiti pozadinu fokusiranog elementa u zeleno
+	- koriscenjem odgovarajuce pseudo-klase, odabrano radio dugme uvecati
+	- koriscenjem odgovarajuce pseudo-klase, svim obaveznim tekstualnim poljima dodati ivicu od 2px zelene boje
+	
+	
+	
+ 

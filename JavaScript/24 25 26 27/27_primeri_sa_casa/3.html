@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Switch</title>
+</head>
+<body>
+	<script>
+		var x = 'a';
+		
+		/*
+			Propadanje kroz ostale slucajeve moze biti 
+			korisno ukoliko za vise razlicitih vrednosti 
+			zelimo da se izvrse iste instrukcije.
+
+			Na primer, za sve samoglasnike ispisujemo istu 
+			poruku, pa cemo dozvoliti da se udje u slucaj i 
+			propada do poslednjeg gde se ispisuje poruka 
+			jednom, a zatim izlazi iz switch-a zbog naredbe 
+			break.
+		*/
+		switch (x) {
+			case 'a':
+			case 'e':
+			case 'i':
+			case 'o':
+			case 'u':
+				console.log("Samoglasnik");
+				break;
+			default:
+				console.log("Suglasnik");
+		}
+	</script>	
+</body>
+</html>

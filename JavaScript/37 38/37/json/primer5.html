@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+
+<html>
+
+<body>
+
+<p id="1"></p>
+
+<script>
+
+var tekst = 
+`{
+    "ime": "Pera",
+    "godine": 30,
+    "grad": "Beograd",
+    "automobili": [
+        {
+            "tip": "Ford",
+            "modeli": ["Fiesta", "Focus", "Mustang"]
+        },
+        {
+            "tip": "BMW",
+            "modeli": ["X3", "X5", "320"]
+        },
+        {
+            "tip": "Fiat",
+            "modeli": ["Panda", "500"]
+        }
+    ]
+}`;
+var osoba = JSON.parse(tekst);
+var s = '';
+
+for (var i in osoba.automobili) {
+    s += "<h1>" + osoba.automobili[i].tip + "</h1>";
+    for (var j in osoba.automobili[i].modeli) {
+        s += "<p>" + osoba.automobili[i].modeli[j] + "</p>";
+    }
+}
+
+document.getElementById("1").innerHTML = s;
+
+</script>
+
+</body>
+
+</html>

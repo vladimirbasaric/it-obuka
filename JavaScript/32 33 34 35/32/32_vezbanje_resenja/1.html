@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> DOM vežba</title>
+    <meta charset='utf-8'>
+</head>
+
+<body>
+    <ul id='js-frameworks'>
+        <li> Angular </li>
+        <li> React </li>
+        <li> Vue </li>
+    </ul>
+</body>
+
+<script type='text/javascript'>
+
+    /* Dohvataju se svi elementi DOM drveta koji imaju ime li. 
+    Posto ovih elemenata ima vise, sigurni smo da je rezultat niz. 
+    Alternativa koriscenju funkcije querySelectorAll je funkcija getElementsByTagName.
+    */
+    var liItems = document.querySelectorAll('li');
+
+    /* Prolazi se kroz niz. */
+    for (var i = 0; i < liItems.length; i++) {
+
+        /* Element niza su pojedinacne stavke liste. */
+        var currentLiItem = liItems[i];
+
+        /* Pomocu textContent svojstva se dohvata tekstualni sadrzaj stavke liste, a pomocu JavaScript funkcije 
+        trim() koja se koristi u radu sa stringovima se uklanjaju vodece i krajnje beline. */
+        var currentTextContent = currentLiItem.textContent.trim();
+
+        /* Ovako dibijeni string se ispisuje pomocu console.log() funkcije. */
+        console.log(currentTextContent);
+    }
+
+</script>
+
+</html>

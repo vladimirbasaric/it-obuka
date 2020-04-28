@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <style>
+        .flex-container {
+            background-color: royalblue;
+            /* dimenzije su podesene, tako da se u levoj polovini nalazi cetvrti, a u desnoj prva tri elementa */
+            height: 300px;
+            width: 600px;
+            display: flex;
+            /* da bi se postigao zeljeni efekat, dovoljno je ovako podesiti flex-flow. drugi nacin bi bio koristeci
+            order elemenata, ali je ovaj elegantniji */
+
+            flex-flow: column-reverse wrap-reverse;
+        }
+
+        .flex-container>div {
+            background-color: seashell;
+            color: royalblue;
+            width: 300px;
+            text-align: center;
+            line-height: 100px;
+            font-size: 30px;
+        }
+    </style>
+</head>
+
+<!-- zbog kontrasta je postavljena i boja pozadine -->
+
+<body style="background-color: royalblue">
+
+    <!-- obojeni su razlicitim bojama da bi se izdvojili, jer u ovom primeru nisu dozvoljene margine -->
+    <div class="flex-container">
+        <div style="background-color:azure">1</div>
+        <div style="background-color:bisque">2</div>
+        <div style="background-color: gainsboro">3</div>
+        <!-- velicina ove treba da se poveca tako da zauzima pola omotaca -->
+        <div style="line-height: 300px">4</div>
+    </div>
+
+</body>
+
+</html>

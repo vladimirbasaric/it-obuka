@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Centriranje slike</title>
+    <style>
+        img {
+            width: 50%;
+            height: 500px;
+        }
+
+
+        /* 
+            prvi pokusaj horizontalnog poravnanja slike:
+            postavljamo margine nad elementom img sa identifikatoriom slika
+        */
+        #slika {
+            margin: auto;
+        }
+
+        /*
+            drugi pokusaj horizontalnog poravnanja slike:
+            postavljamo sliku unutar div-a, a onda sadrzaj div-a centriramo
+        */
+        div {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <!--
+        Videli smo slika ima osobine i linijskih i blokovskih elemenata. Kada je horizontalno poravnanje u pitanju, slike se ponasaju kao linijski elementi.
+
+        Pokusavamo da centriramo sliku na uobicajeni nacin - postavljanjem margina na auto. To nece imati efekta na sliku, posto margine ne uticu na linijske elemente.
+    -->
+    <img id="slika" src="./slike/smallbird.jpg" alt="Native american hummingbird"> 
+
+    <!--
+        Zbog toga mozemo smestiti sliku u neku celinu, a zatim sadrzaj te celine centrirati pomocu svojstva text-align.
+    -->
+    <div>
+        <img src="./slike/smallbird.jpg" alt="Native american hummingbird">
+    </div>
+     
+
+    
+</body>
+</html>

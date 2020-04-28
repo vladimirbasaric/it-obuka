@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JS JQuery 04 - Form validation</title>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
+    <!-- Bootstrap 4 -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
+
+    <script src="04.validate.js">
+
+    </script>
+
+    <style>
+        .error {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class='container'>
+        <h1>JS JQuery 04 - Form validation</h1>
+
+        <form>
+            <!-- Username -->
+            <div class="form-group">
+                <label for="username">Username (at least 4 characters)</label>
+                <input type="text" class="form-control" id="username" placeholder="Your username">
+                <p id='errorUsername' class='error'>Korisnicko ime mora imati barem 4 karaktera!</p>
+            </div>
+
+            <!-- User email -->
+            <div class="form-group">
+                <label for="userEmail">Email address</label>
+                <input type="email" class="form-control" id="userEmail" aria-describedby="emailHelp"
+                    placeholder="Enter email">
+                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone
+                    else.</small>
+                <p id='errorEmail' class='error'>Molimo unesite validnu email adresu!</p>
+            </div>
+
+            <!-- User password -->
+            <div class="form-group">
+                <label for="userPassword">Password (at least 8 characters and at least 1 number)</label>
+                <input type="password" class="form-control" id="userPassword" placeholder="Password">
+                <p id='errorPassword' class='error'>Lozinka mora imati barem 8 karaktera i barem 1 broj.</p>
+
+                <label for="repeatedPassword">Repeat your password</label>
+                <input type="password" class="form-control" id="repeatedPassword" placeholder="Repeat your password">
+                <p id='errorRepeatedPassword' class='error'>Lozinke se ne poklapaju!</p>
+            </div>
+
+            <!-- Newsletter -->
+            <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="subscribe">
+                <label class="form-check-label" for="exampleCheck1">Subscribe to our newsletter!</label>
+            </div>
+
+            <br>
+
+            <!-- Postavljamo type na button umesto na submit kako ne bi pregledac pokusavao da posalje formular (podrazumevano ponasanje). -->
+            <button id='formSubmit' type="button" class="btn btn-primary">Submit</button>
+        </form>
+
+        <p id='formContent'>
+        </p>
+    </div>
+</body>
+
+</html>

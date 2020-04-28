@@ -1,0 +1,114 @@
+/*
+    Uvodjenje novog fonta za stranicu.
+    Potrebno je navesti vrednosti za src i font-family koji 
+    redom oznacavaju putanju do datoteke sa definisanim 
+    izgledom fonta i naziv fonta koji ce se koristiti u 
+    dokumentu.
+*/
+@font-face {
+    src: url('Royal.ttf');
+    font-family: 'Royal';
+}
+
+div {
+    font-size: 25px;
+}
+
+p {
+    background-color: rgba(137, 43, 226, 0.5);
+}
+
+/*
+    Pseudo-klasa :hover definise kako ce element izgledati 
+    kada se kursorom predje preko njega
+*/
+p:hover {
+    background-color: rgba(137, 43, 226, 0.8);
+}
+
+/*
+    Pseudo-klasa :active definise kako ce element izgledati 
+    dok je aktivan (kada kliknemo na njega).
+*/
+p:active {
+    /*
+        Ukoliko velicinu slova navedemo u procentima, ona 
+        se racuna u odnosu na velicinu slova roditeljskog 
+        elementa.
+    */
+    font-size: 110%;
+}
+
+/*
+    Pseudo-klasa :lang(value) odnosi se na elemente kojima 
+    je postavljen atribut lang na vrednost value.
+*/
+p:lang(sr) {
+    padding: 20px;
+    text-align: justify;
+}
+
+
+/*
+    Pseudo-klasa :first-child definise kako ce izgledati 
+    element koji je prvo dete roditeljskom elementu.
+*/
+p:first-child {
+    border: 5px solid purple;
+}
+
+/*
+    Pseudo-klasa :last-child definise kako ce izgledati 
+    element koji je poslednje dete roditeljskom elementu.
+*/
+p:last-child {
+    border: 5px ridge yellow;
+}
+
+/*
+    Pseudo-klasa :nth-child(n) moze se primeniti na bilo 
+    koji element na stranici, a navedena pravila odnose se 
+    na svaki element odabran selektorom koji je n-to dete 
+    roditeljskog elementa.
+*/
+p:nth-child(2) {
+    border: 5px groove silver;
+}
+
+/*
+    Mozemo praviti kombinacije pseudoklasa.
+    Npr. ovde definisemo izgled pasusa na srpskom jeziku u 
+    elementu kada se predje misem preko njega.
+*/
+p:lang(sr):hover {
+    font-style: italic;
+    color: white;
+}
+
+/*
+    Pseudo-element ::first-line definise kako ce izgledati 
+    prva linija teksta nekog elementa.
+*/
+p::first-line {
+    font-style: italic;
+}
+
+/*
+    Pseudo-element ::first-letter definise kako ce 
+    izgledati prvo slovo nekog elementa.
+*/
+p::first-letter {
+    font-family: 'Royal';
+    font-size: 150px;
+    font-weight: normal;
+}
+
+/*
+    Mozemo praviti i kombinacije sa drugim selektorima.
+    Ovde definisemo kako ce izgledati prva linija u svim 
+    pasusima koji se nalaze odmah nakon nekog pasusa. 
+*/
+p + p::first-line {
+    font-size: 35px;
+    font-weight: bolder;
+}

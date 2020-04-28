@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../bootstrap.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <title>Vezba 02</title>
+
+    <style>
+        img {
+            width: 100%;
+            height: 100%;
+        }
+
+        h1 + a {
+            background-color: rgba(165, 42, 42, 0.7);
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="container-fluid text-white bg-danger py-5">
+        
+        <h1 class="display-1 text-center mb-3"> Dobrodošli </h1>
+
+        <div id="demo" class="carousel slide" data-ride="carousel">
+            <ul class="carousel-indicators">
+                <li data-target="#demo" data-slide-to="0" class="active"></li>
+                <li data-target="#demo" data-slide-to="1"></li>
+                <li data-target="#demo" data-slide-to="2"></li>
+            </ul>
+            
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="slike/pocetna/forest.jpg" alt="Šuma">
+                    <div class="carousel-caption">
+                        <h1>Šuma</h1>
+                        <a href="sume.html" > Pogledaj više </a>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="slike/pocetna/mountain.jpg" alt="Planina">
+                    <div class="carousel-caption">
+                        <h1>Planina</h1>
+                        <a href="planine.html" > Pogledaj više </a>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="slike/pocetna/meadow.jpg" alt="Planina">
+                    <div class="carousel-caption">
+                        <h1>Livada</h1>
+                        <a href="livade.html" > Pogledaj više </a>
+                    </div>
+                </div>
+            </div>
+            
+            <a class="carousel-control-prev" href="#demo" data-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </a>
+            
+            <a class="carousel-control-next" href="#demo" data-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </a>
+        </div>
+    </div>
+    
+</body>
+</html>

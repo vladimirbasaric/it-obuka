@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title> Apsolutno pozicioniranje bez pretka </title>
+
+    <style>
+        div {
+            height: 200px;
+            width: 500px;
+        }
+
+        #prvi {
+            background-color: lightblue;
+        }
+
+        /*
+            Ukoliko ne postoji predak koji je pozicioniran, element ce biti pozicioniran u odnosu na pogled.
+
+            Primetimo da se tok stranice menja tako da ne 
+            ostaje praznina u delu gde bi se u normalnom 
+            toku nasao element da ga nismo pomerili vec 
+            sledeci element zauzima njegovo mesto.
+        */
+        #drugi {
+            position: absolute;
+            top: 100px;
+            right: 150px;
+            background-color: crimson;
+        }
+
+        #treci {
+            background-color: lightgreen;
+        }
+        
+    </style>
+</head>
+<body>
+    <div id="prvi">
+
+    </div>
+
+    <div id="drugi">
+
+    </div>
+
+    <div id="treci">
+
+    </div>
+</body>
+</html>

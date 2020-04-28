@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // Napisati funkciju​ obrni_niz(a) ​koja obrće niz​ a​. Zatim treba pozvati funkciju i ispisati izmenjen niz.
+        // Primer: za zadati niz [1,42,42,15,10,42,0,2] ​treba ispisati​ [2,0,42,10,15,42,42,1]​. 
+        // Primer: za zadati niz​ [1,15,10,0,2] ​treba ispisati ​[2,0,10,15,1]​
+
+
+        var niz = [1, 15, 20, -189, 2];
+        console.log(niz);
+
+        obrni_niz(niz);
+
+        console.log(niz);
+
+
+        function obrni_niz(a) {
+            var i = 0;
+            var j = a.length - 1;
+
+            while (i < j) {
+                var pomocna = a[i];
+                a[i] = a[j];
+                a[j] = pomocna;
+
+                i++;
+                j--;
+            }
+        }
+    </script>
+</body>
+
+</html>

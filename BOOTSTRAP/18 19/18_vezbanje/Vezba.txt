@@ -1,0 +1,14 @@
+VEZBA
+
+Kreirati stranicu vezba1.html koja se sastoji od Navigation bara, na kome se nalaze logo kompanije (slika logo.png), kao i linkovi na Home, Main i Alerts delove stranice.
+
+Kod Home dela treba napraviti carousel sa 4 slike (green1.jpg, green2.jpg, green3.jpg, green4.jpg), gde su slike sirine 80% pozadine, a strelice imaju zelenu pozadinu. Na rezolucijama manjim od sm, slike treba da budu prikazane jedna ispod druge (tada treba da se iskljuci carousel).
+
+Kod Main dela se nalaze dva pasusa, koja imaju svoj naslov, prikazana kao jedan pored drugog. Na rezolucijama manjim od sm, oni treba da se nalaze jedan ispod drugog.
+
+Kod Alerts dela se nalazi dropdown lista. Klikom na svaki element liste se moze prikazati jedna vrsta alerta (success, info, warning ili danger). Ponovnim klikom, odgovarajuci alert se brise. Alert se moze obrisati i klikom na x sa desne strane.
+
+U folderu vezba_slike se nalaze neki screenshotovi kako da stranica treba da izgleda na vecim i manjim rezolucijama. Za carousel su prikazani primeri nekih slika, a za alerte, takodje su neki prikazani, a neki nisu. 
+
+Dodatni info za display (za prikaz i sklanjanje carousela):
+https://getbootstrap.com/docs/4.0/utilities/display/

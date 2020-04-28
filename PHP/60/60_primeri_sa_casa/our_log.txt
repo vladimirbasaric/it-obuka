@@ -1,0 +1,2 @@
+[26-Jun-2019 11:50:42 Europe/Berlin] Test log message.
+[26-Jun-2019 11:50:42 Europe/Berlin] Division by zero at line 37 in file /Applications/XAMPP/xamppfiles/htdocs/MATF_obuka/60/greske_upis_u_log_datoteku.php

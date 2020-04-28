@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<style>
+
+.flex-container {
+    background-color: royalblue;
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+.flex-container > div {
+    background-color: seashell;
+    color: royalblue;
+    width: 100px;
+    margin: 10px;
+    text-align: center;
+    line-height: 75px;
+    font-size: 30px;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- menjati velicinu brauzera i videti kako se elementi menjaju -->
+
+<div class="flex-container">
+    <!-- promenili smo odred prva tri elementa. kako je odred po defaultu jednak 0, cetvrti ima manji order, pa su ova tri otisla na kraj -->
+    <div style="order: 3">1</div>
+    <!-- uvecavace se duplo brze od ostalih -->
+    <div style="order: 1; flex-grow: 2;">2</div>
+    <!-- nece se uopste skupljati -->
+    <div style="order: 2; flex-shrink: 0;">3</div>  
+    <!-- pocetna sirina -->
+    <div style="flex-basis: 200px">4</div>
+</div>
+
+</body>
+</html>

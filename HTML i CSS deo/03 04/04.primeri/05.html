@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Radijalni gradijenti</title>
+        
+        <style type='text/css'>
+            div {
+                height: 300px;
+                width: 50%;
+                margin-bottom: 10px;
+            }
+
+            div#radijalni-ravnomerni{
+                /*
+                    radijalni gradijent krece iz sredine od prve boje i siri se ka ivicama elementa i postepeno prelazi u sledecu boju u obliku elipse (podrazumevana vrednost)
+                    ili kruga
+                */
+                background-image: radial-gradient(rgb(255, 166, 0), rgb(41, 139, 250) );
+            }
+
+            div#radijalni-neravnomerni{
+                /*
+                    ukoliko uz naziv boje dodamo neku 
+                    vrednost (u bilo kojoj mernoj jedinici)
+                    mozemo da "fiksiramo" deo pozadine 
+                    gde nece biti gradijenta nego cista boja
+                */
+                background-image: radial-gradient(rgb(255, 166, 0) 50%, 
+                    rgb(41, 139, 250));
+            }
+
+            div#radijalni-pomeren{
+                /*
+                    pre liste boja mozemo da navedemo neka fina podesavanja kako bismo kontrolisali izgled gradijenta (navodimo ih u naredomo redosledu, i ne moramo navoditi vrednost za svaku):
+                        - oblik: ellipse (podrazumevana vrednost) ili circle
+                        - granica prostiranja: farthest-side, farthest-corner(podrazumevana vrednost), closest-side, closest-corner
+                        - centar elipse/kruga: dve vrednosti u nekoj od mernih jedinica zapisane nakon reci "at" (podrazumevano je at 50% 50%)
+                */
+                background-image: radial-gradient(ellipse farthest-corner at 50% 70%, rgb(255, 166, 0), rgb(41, 139, 250) );
+            }
+
+            div#radijalni-krug{
+                /*
+                    krug sa centrom pomerenim u levo na 30% od ukupne sirine elementa
+                */
+                background-image: radial-gradient(circle at 30% 50%, 
+                    rgb(255, 166, 0), rgb(41, 139, 250));
+            }
+
+            div#radijalni-size1{
+                /*
+                 *  closest-corner smanjice povrsinu po kojoj se elipsa/krug prostire - ide do najblizeg coska u odnosu na centar elipse/kruga
+                 */
+                background-image: radial-gradient(closest-corner at 200px 100px, 
+                    rgb(255, 166, 0) 0%, rgb(255, 166, 0) 50%, 
+                    rgb(41, 139, 250) 50%, rgb(41, 139, 250) 100%);
+            }
+            div#radijalni-size2{
+                /*
+                    farthest-side podesava da se elipsa/krug prostire do najdalje stranice elementa u odnosu na centar elipse/kruga
+                */
+                background-image: radial-gradient(farthest-side at left top, 
+                    rgb(255, 166, 0) 0%, rgb(255, 166, 0) 50%, 
+                    rgb(41, 139, 250) 50%, rgb(41, 139, 250) 100%);
+            }
+
+            div#ponavljajuci{
+                /*
+                    mozemo koristiti ponavljajuci gradijent kako bismo dobili koncentricne elipse/krugove 
+                */
+                background-image: repeating-radial-gradient(at 30% 40%, rgb(121, 184, 255), rgb(99, 172, 255) 5px, 
+                rgb(41, 139, 250) 12px);
+            }
+
+        </style>
+    </head>
+    
+    <body>
+        <div id='radijalni-ravnomerni'>
+        </div>
+        <div id='radijalni-neravnomerni'>
+        </div>
+        <div id='radijalni-pomeren'>
+        </div>
+        <div id='radijalni-krug'>
+        </div>
+        <div id='radijalni-size1'>
+        </div>
+        <div id='radijalni-size2'>
+        </div>
+        <div id='ponavljajuci'>
+        </div>
+    </body>
+</html>

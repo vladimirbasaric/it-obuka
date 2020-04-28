@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> DOM vežba</title>
+    <meta charset='utf-8'>
+</head>
+
+<body>
+    <!-- Element u okviru kojeg ce biti kreirana neuredjena lista. -->
+    <div id='ul-wrapper'></div>
+</body>
+
+<script type='text/javascript'>
+    /* U JavaScript jeziku se za kreiranje elemenata moze koristiti createElement funkcija. 
+    Ona ocekuje ime elementa koji se kreira. Kreirani elementi se povezuju sa drugim elementima na
+    osnovu relacije koje vazi izmedju njih npr. dete element ili roditelj element. */
+
+    /* Prvo kreiramo ul element. */
+    var ulElement = document.createElement('ul');
+    /* Zatim mu pridruzujemo atribut id sa vrednoscu 'jd-frameworks' */
+    ulElement.setAttribute('id', 'js-frameworks');
+
+    /* Kreiramo li element koji sadrzi tekst 'Angular'. */
+    var angularItemElement = document.createElement('li');
+    angularItemElement.textContent = 'Angular';
+
+    /* Kreiramo li element koji sadrzi tekst 'React'. */    
+    var reactItemElement = document.createElement('li');
+    reactItemElement.textContent = 'React';
+
+    /* Kreiramo li element koji sadrzi tekst 'Vue'. */
+    var vueItemElement = document.createElement('li');
+    vueItemElement.textContent = 'Vue';
+
+    /* Dodajemo sve kreirane li elemente ul elementu. Za dodavanje koristimo funkciju appendChild koja
+    dodaje dete element na kraj roditeljskog elementa. */
+    ulElement.appendChild(angularItemElement);
+    ulElement.appendChild(reactItemElement);
+    ulElement.appendChild(vueItemElement);
+
+    /* Dodajemo kreirani ul element postojecem div elementu. */
+    var ulWrapper = document.querySelector('#ul-wrapper');
+    ulWrapper.appendChild(ulElement);
+   
+
+</script>
+
+</html>

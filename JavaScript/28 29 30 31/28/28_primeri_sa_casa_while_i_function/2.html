@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // Napisati program koji određuje najveću cifru u zapisu zadatog broja x​.
+        // Primer: za zadati broj​ 65234 ​treba ispisati​ 6​.
+        // Primer: za zadati broj​ -2314​ treba ispisati ​4​.
+        var x = -2743;
+        var max = -1;
+
+        x = Math.abs(x);
+
+        while (x != 0) {
+            var cifra = x % 10;
+
+            if (max < cifra) {
+                max = cifra;
+            }
+
+            x = Math.floor(x / 10);
+        }
+
+
+        console.log(max);
+    </script>
+</body>
+
+</html>

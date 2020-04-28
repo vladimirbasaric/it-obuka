@@ -1,0 +1,17 @@
+Dvanaesti blok 
+
+Teme:
+
+- Svojstva: 
+podsecanje (font-family, font-size, font-style, font-weight, text-align)
+	letter-spacing, 
+	word-spacing, 
+	text-indent, 
+	text-shadow,
+	text-transform
+
+- Opacity atribut (primena na div, img)
+
+- Audio i video elementi html-a
+	
+

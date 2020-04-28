@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> DOM vežba</title>
+    <meta charset='utf-8'>
+</head>
+
+<body>
+    <ul id='js-frameworks'>
+        <li> Angular </li>
+        <li> React </li>
+        <li> Vue </li>
+    </ul>
+</body>
+
+<script type='text/javascript'>
+
+    /* Dohvataju se svi elementi DOM drveta koji imaju ime li. 
+    Posto ovih elemenata ima vise, sigurni smo da je rezultat niz. 
+    Alternativa koriscenju funkcije querySelectorAll je funkcija getElementsByTagName.
+    */
+    var liItems = document.querySelectorAll('li');
+
+    /* Prolazi se kroz niz. */
+    for (var i = 0; i < liItems.length; i++) {
+
+        /* Ocitava se tekuci element niza. */
+        var currentLiItem = liItems[i];
+
+        /* Ocitava se tekstualni sadrzaj tekuceg elementa niza. */
+        var currentLiContent = currentLiItem.textContent.trim();
+
+        /* Ukoliko je duzina sadrzaja tekuceg elementa veca od 3, ispisuje se. */
+        if (currentLiContent.length > 3) {
+            console.log(currentLiContent);
+        }
+    }
+
+</script>
+
+</html>

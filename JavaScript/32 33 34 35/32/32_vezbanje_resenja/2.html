@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> DOM vežba</title>
+    <meta charset='utf-8'>
+</head>
+
+<body>
+    <ul id='js-frameworks'>
+        <li> Angular </li>
+        <li> React </li>
+        <li> Vue </li>
+    </ul>
+</body>
+
+<script type='text/javascript'>
+
+    /* Dohvataju se svi elementi DOM drveta koji imaju ime li. 
+    Posto ovih elemenata ima vise, sigurni smo da je rezultat niz. 
+    Alternativa koriscenju funkcije querySelectorAll je funkcija getElementsByTagName.
+    */
+    var liItems = document.querySelectorAll('li');
+
+    /* Izracunava se indeks poslednje li stavke u nizu stavki. */
+    var indexOfLastItem = liItems.length - 1;
+
+    /* Pristupa se poslednjoj li stavci u nizu. */
+    var lastItem = liItems[indexOfLastItem];
+
+    /* Pomocu textContent svojstva ocitava se tekstualni sadrzaj stavke, 
+    a pomocu JavaScript funkcije trim() za rad sa stringovima, uklanjaju se vodece i krajnje beline. 
+    Ovako dobijeni string se ispisuje pomocu console.log() funkcije. */
+    console.log(lastItem.textContent.trim());
+
+</script>
+
+</html>

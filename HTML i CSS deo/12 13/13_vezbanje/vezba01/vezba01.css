@@ -1,0 +1,79 @@
+#omotac {
+    width: 70%;
+    position: absolute;
+    top: 0px;
+    left: 15%;
+}
+
+h1 {
+    position: relative;
+    top: 100px;
+    font-size: 100px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+nav {
+    position: absolute;
+    top: 0;
+    width: 40%;
+    height: 700px;
+    background-color: rgba(127, 255, 212, 0.6);
+}
+
+h3 {
+    text-align: center;
+}
+
+nav ul {
+    list-style-type: none;
+}
+
+nav li {
+    padding: 10px;
+    text-transform: capitalize;
+}
+
+nav li:hover {
+    background-color: rgba(127, 255, 212, 0.7);
+}
+
+li > a {
+    color: deeppink;
+    font-size: 20px;
+}
+
+a { 
+    text-decoration: none;
+}
+
+main {
+    position: absolute;
+    top: 0;
+    left: 40%;
+    width: 60%;
+    height: 700px;
+    color: wheat;
+    background-color: rgba(220, 20, 60, 0.6);
+}
+
+main ul {
+    margin-top: 80px;
+}
+
+main li {
+    margin: 10px 20px 10px 0px;
+    font-size: 20px;
+    background-color: rgba(220, 20, 60, 0.7);
+}
+
+div + a {
+    position: fixed;
+    bottom: 0px;
+    left: 15%;
+    display: block;
+    width: 70%;
+    color: black;
+    background-color: rgb(255, 255, 100);
+    text-align: center;
+}

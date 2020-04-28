@@ -1,0 +1,7 @@
+Napraviti HTML stranicu tako da izgleda kao na slici vezba01.png.
+
+Za pozadinu stranice korišcena je slika leaf.png. 
+Za pozadinu elementa korišcene su boje rgb(0, 150, 0) i white, 
+a za boju teksta rgb(0, 44, 0).
+
+Tekst možete preuzeti sa https://www.lipsum.com/ .

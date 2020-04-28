@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Figure</title>
+    <style>
+        img {
+            width: 90%;
+            height: auto;
+        }
+
+        figure {
+            width: 50%;
+            margin: auto;
+            text-align: center;
+            border: 2px inset violet;
+        }
+
+        figcaption {
+            font-style: italic;
+            font-family: Cambria, Cochin, serif;
+        }
+    </style>
+</head>
+<body>
+    <!--
+        Blokovski element <figure> služi za anotaciju drugih
+        elemenata, pre svega slika, ilustracija, kodova. 
+        
+        U njemu možemo staviti bilo koji element koji predstavlja nekakav sadržaj, 
+        a njegov značaj se odgleda u podelementu figcaption , čija je uloga anotacija sadržaja. 
+
+        Sliku mozemo smestiti u ovaj element, a zatim njega centrirati pomocu margina. 
+        Dodatno, ako je slika nesto manje sirine od samog elementa <figure> mozemo je dodatno centrirati pomocu text-align 
+        sa ostalim sadrzajem ovog elementa.
+    -->
+
+        <figure>
+            <img src="./slike/hummingbird.jpg" alt="Ptica">
+            <figcaption>
+                Колибрији имају врло високу фреквенцију замаха крилима, чак до 80 замаха у секунди. 
+            </figcaption> 
+        </figure>
+
+</body>
+</html>

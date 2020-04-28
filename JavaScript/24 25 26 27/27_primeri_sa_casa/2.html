@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Switch</title>
+</head>
+
+<body>
+	<script>
+		//Za zadati broj ispisati odgovarajući dan u nedelji. 
+		//Primer: ako se zada broj​ 5​ treba ispisati ‚‚​petak​’’​.
+		var dan = 3;
+
+		/*
+			Switch je jos jedna naredba grananja. Sluzi 
+			iskljucivo za poredjenje vrednosti neke 
+			promenljive po jednakosti.
+
+			Sintaksa je sledeca. Nakon kljucne reci switch 
+			u zagradama navodimo promenljivu ciju vrednost 
+			proveravamo. Unutar viticastih zagrada navodimo 
+			tzv. slucajeve pomocu kljucne reci case i 
+			vrednosti pored. Zatim se navodi znak : i slede 
+			naredbe koje ce biti izvrsene u slucaju da 
+			promenljiva ima navedenu vrednost.
+
+			Jednom kada se pronadje poklapanje i udje se u 
+			neki od slucajeva (case-ova), izvrsavace se sve 
+			naredbe ispod dok se ne naidje na kraj switch-a 
+			ili do naredbe za prekid (break).
+
+			Na kraju switch-a obicno se navodi i default. 
+			To je slucaj koji obuhvata sve vrednosti koje 
+			nisu obradjene u nekom od prethodnih slucajeva. 
+
+			Takodje, jednom kada se pronadje poklapanje, 
+			bilo sa nekim od case-ova ili sa default, 
+			ostale slucajevi ispod se ne proveravaju. Zbog 
+			toga je bitno da se default nadje na samom 
+			kraju i da za sve vrednosti koje proveravamo 
+			bude jedan case.
+		*/
+		switch (dan) {
+			/* 
+				Vrednost promenljive dan poredi se sa 1. 
+				Ukoliko vazi jednakost, ulazi se u taj 
+				slucaj i izvrsavaju naredbe do nailaska na 
+				prekid ili kraj switch-a.
+
+				Ukoliko ne bismo naveli break na kraju 
+				case-a, izvrsila bi se prva sledeca 
+				instrukcija u narednom case-u sve dok se ne 
+				dodje do prekida ili kraja switch-a.
+			*/
+			case 1:
+				console.log("Ponedeljak");
+				break;
+			case 2:
+				console.log("Utorak");
+				break;
+			case 3:
+				console.log("Sreda");
+				break;
+			case 4:
+				console.log("Cetvrtak");
+				break;
+			case 5:
+				console.log("Petak");
+				break;
+			case 6:
+				console.log("Subota");
+				break;
+			case 7:
+				console.log("Nedelja");
+				break;
+			default:
+				console.log("Greska!");
+				break;
+		}
+	</script>
+</body>
+
+</html>

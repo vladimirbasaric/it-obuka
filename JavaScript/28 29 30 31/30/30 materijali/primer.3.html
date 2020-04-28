@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript Functions</h2>
+
+<p>U ovom primeru se prikazuje koriscenje IIFE funkcije.</p>
+
+<p id="demo"></p>
+<p id="demoI"></p>
+
+
+<script>
+
+var doubleMe = function(i){
+    return 2*i;
+};
+
+f = 1; /*Ovo moramo da vodimo racuna kada se koriste anonimne funkcije, sada f nije vise funkcija i poziv f() izaziva gresku. */
+document.getElementById("demo").innerHTML = "2*10="+doubleMe(10);
+
+/* Mozemo opet pozvati doubleMe */
+
+/* Nekada nam samo jednom treba funkcija nema potrebe da pisemo ceo izraz za funkciju. Mozemo koristi IIFE funkciju - koja se odmah, tacno jednom izvrsava. */
+
+document.getElementById("demoI").innerHTML = "2*10="+(function(i){
+                                                return 2*i;
+                                             })(10);
+
+/*
+ Drugacije sintaksa */
+ document.getElementById("demoI").innerHTML = "2*10="+(function(i){
+    return 2*i;
+ }(10));
+
+ /*Ako se ne vraca vrednost */
+ !function(){/* Code here*/}();
+ /*Ili da pocinje sa + znakom*/
+ +function(){/* Code here*/}();
+</script>
+
+</body>
+</html>

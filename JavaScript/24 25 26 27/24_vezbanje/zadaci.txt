@@ -1,0 +1,8 @@
+Napisati naredne programe:
+
+1. Za zadatu cenu i popust, odrediti finalnu cenu proizvoda.
+2. Za zadati dvocifreni broj odrediti cifru jedinica.
+3. Za zadati iznos u dinarima, ispisati vrednost u evrima.
+4. Za zadati trocifren broj, odrediti da li je cifra desetica parna.
+5. Za zadata dva dvocifrena broja, odrediti zbir njihovih cifara u zapisu brojeva.
+6. Odrediti ostatak pri deljenju trocifrenog broja zbirom njegovih cifara.

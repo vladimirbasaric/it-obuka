@@ -1,0 +1,58 @@
+/*
+    Selektor: [atribut]
+    Obuhvata sve elemente sa postavljenim atributom koji je 
+    naveden u zagradama.
+*/
+[title] {
+    color: forestgreen;
+}
+
+/*
+    Selektor: naziv[atribut]
+    Obuhvata elemente sa zadatim nazivom kojima je 
+    postavljen zadati atribut.
+*/
+p[title] {
+    text-indent: 15px;
+    letter-spacing: 3px;
+    word-spacing: 5px;
+    font-size: 25px;
+}
+
+/*
+    Selektor: [atribut=vrednost]
+    Obuhvata sve elemente sa postavljenim atributom na 
+    zadatu vrednost. Ako vrednost sadrzi vise od jedne reci 
+    potrebno je staviti celu vrednost pod navodnike.
+*/
+a[title='Prvi primer'] {
+    text-decoration: none;
+}
+
+[target=_self] {
+    font-style: italic;
+}
+
+[target=_blank] {
+    font-weight: bolder;
+}
+
+/*
+    Selektore sa atributima mozemo koristiti u 
+    kombinacijama sa drugim selektorima, kao u primeru 
+    2.html
+*/
+p a[title] {
+    /*
+        Pomocu text-decoration mozemo da kontrolisemo i 
+        stil i boju linije.
+    */
+    text-decoration: line-through wavy magenta;
+}
+
+a.ulepsan[title] {
+    font-size: 30px;
+    font-style: italic;
+    font-family: Cambria, Cochin, serif;
+    text-shadow: 2px 2px magenta;
+}

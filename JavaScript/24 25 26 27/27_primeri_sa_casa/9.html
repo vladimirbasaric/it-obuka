@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>For petlja</title>
+</head>
+<body>
+	<script>
+		var a = [3, 6, 88, 2, 11, 92, 81];
+		/*
+			Slicno kao kod zbira, mozemo koristiti posebnu 
+			promenljivu da pamtimo koliko smo pronasli 
+			elemenata koji zadovoljavaju neki uslov.
+		*/
+		var broj_parnih = 0;
+		
+		for (var i=0; i<a.length; i++) {
+			if(a[i] % 2 == 0) {
+				/*
+					Svaki put kada pronadjemo element cija 
+					je vrednost paran broj uvecavamo brojac 
+					za jedan.
+				*/
+				broj_parnih++;
+			}
+		}
+
+		console.log(broj_parnih);
+		
+	</script>
+</body>
+</html>

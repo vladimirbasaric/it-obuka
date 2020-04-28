@@ -1,0 +1,13 @@
+1. Napraviti stranicu na kojoj je ispisan tekst "IT OBUKA", a element koji ga
+sadrži ureden je na razlicite nacine, u zavisnosti od velicine ekrana i to:
+• za uredaje do 400px postaviti crvenu boju slova
+• za uredaje do 700px postaviti narandžastu boju slova
+• za uredaje do 1000px promeniti pozadinu elementa na sivu
+• za vece uredaje postaviti velicinu fonta na 30px
+
+
+2. Napraviti stranicu na kojoj se nalazi pravougaonik širine 200px i visine 400px i u kome je ispisan tekst "IT OBUKA" i koji je ureden na razlicite nacine, u zavisnosti od velicine ekrana i to:
+• za uredaje do 600px postaviti ivicu pravougaonika da je 5px zelene boje i istackana, da boje slova bude plava i tekst poravnat centralno.
+• za uredaje do 800px postaviti ivicu pravougaonika da je 15px svetloljubicaste boje i dupla; boja pozadine tamno ljubicasta, da boje slova bude bela.
+• za uredaje do 1000px promeniti boju pozadine na crvenu i promeniti font u font po želji.
+• za vece uredaje postaviti boju pozadine svetlo zelenu, postaviti ivicu pravougaonika da je 5px zelene boje i istackana, da boje slova bude plava velicinu fonta na 20px.

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> DOM vežba</title>
+    <meta charset='utf-8'>
+    <style type='text/css'>
+        .decoration {
+            background-color: pink;
+            color: #ffffff;
+            padding: 5px;
+            width: 200px;
+        }
+    </style>
+</head>
+
+<body>
+    <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+        magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+        pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
+        laborum.
+    </p>
+</body>
+
+<script type='text/javascript'>
+
+    /* Dohvata se pasus iz DOM drveta. */
+    var pElement = document.querySelector('p');
+
+    /* I nacin: pridruzivanje ocekivanog stila pomocu style svojstva */
+    // pElement.style.backgroundColor = 'pink';
+    // pElement.style.color = '#ffffff';
+    // pElement.style.padding = '5px';
+    // pElement.style.width = '200px';
+
+    /* II nacin: pridruzivanje ocekivanog stila pomocu klase */
+    pElement.className = 'decoration';
+
+</script>
+
+</html>

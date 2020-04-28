@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Registration</h1>
+        <form id='theForm' method="POST" action="04_bezbednost.php">
+            <div class="form-group">
+                <label for="inputUsername">id for post</label>
+                <input name='id' type="text" class="form-control" id="id" placeholder="Enter id (0 or greater)" value='1'>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+
+        <p>Šta se lepo desi kada korisnik umesto broja 1 unese <code>1 or 1=1;</code>?</p>
+
+        <h3>Trazeni post</h3>
+        <div class='divPosts'>
+            <ul id='posts'>
+            </ul>
+        </div>
+    </div>
+
+</body>
+
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
+
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+
+<script>
+    function bindData(data, element)
+    {
+        for (let d of data) {
+            console.log(d.content);
+            element.append(createCard(d.title, d.date, d.content));
+        }
+    }
+
+    function createCard(title, date, content)
+    {
+        let theCard = `
+        <div class="card">
+            <div class="card-header">
+                ${date}
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">${title}</h5>
+                <p class="card-text">${content}</p>
+            </div>
+        </div>`;
+        return theCard;
+    }
+
+    $(document).ready(() => {
+        $("#theForm").submit(function (e) {
+            e.preventDefault();
+
+
+            let id = $('#id').val().trim();
+            let data = {'id': id};
+
+            console.log(data);
+
+            let form = $(this);
+            let url = form.attr('action');
+
+            $.ajax({
+                type: "GET",
+                url: url,
+                data: form.serialize(),
+                success: function (data) {
+                    let ulElement = $('#posts');
+                    console.log(data);
+                    console.log(data.content);
+                    bindData(data.content, ulElement);
+                }
+            });
+        });
+    });
+</script>
+
+</html>

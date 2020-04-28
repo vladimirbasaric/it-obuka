@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset='UTF-8'> 
+	<title> Vezba 04 </title>
+	<link rel="stylesheet" type="text/css" href="bootstrap.css"> 
+</head>
+	
+<body>
+	<form class="container">
+		<fieldset class='form-group'>		
+			<legend> Površina trougla </legend>
+			<div class='form-group'>				
+				<label for="a"> a: </label> 
+				<input name="a" id="a" type="text" class="form-control"> 
+			</div>
+
+			<div class='form-group'>				
+				<label for="b"> b: </label> 
+				<input name="b" id="b" type="text" class="form-control">
+			</div>
+
+			<div class='form-group'>				
+				<label for="c"> c: </label> 
+				<input name="c" id="c" type="text" class="form-control">
+			</div>
+
+			<div class='form-group'>				
+				<label for="P"> P: </label>
+				<input name="P" id="povrsina" for="a b c" class="form-control " readonly> </input>
+			</div>
+
+			<div class='form-group'>				
+				<input type="button" value="Izračunaj površinu" id="izracunaj" class="btn btn-primary">
+			</div>
+		</fieldset>
+	</form>		
+
+	<script type="text/javascript">
+
+		function proveri(a,b,c){		
+			if(isNaN(a) || isNaN(b) || isNaN(c)){
+				window.alert("Niste uneli brojcane vrednosti!");
+				return false;
+			}
+								
+			if(a<=0 || b<=0|| c<=0){
+				window.alert("Duzina stranice mora biti pozitivan broj!");
+				return false;
+			}
+						
+			if(a>=b+c || b>=a+c || c>=a+b){
+				window.alert("Za unete vrednosti ne vazi nejednakost trougla!");
+				return false;
+			}
+
+			return true;
+		}
+		
+		document.querySelector("#izracunaj").onclick=function(){
+			var a=parseFloat(document.querySelector("#a").value);
+			var b=parseFloat(document.querySelector("#b").value);
+			var c=parseFloat(document.querySelector("#c").value);
+					
+			if(proveri(a,b,c)){
+				var s=(a+b+c)/2;
+				var p=Math.sqrt(s*(s-a)*(s-b)*(s-c));
+				document.querySelector("#povrsina").value= p ;
+			}
+			else {
+				document.querySelector("#povrsina").value="";
+			}		
+		}
+			
+	</script>
+
+</body>
+</html>

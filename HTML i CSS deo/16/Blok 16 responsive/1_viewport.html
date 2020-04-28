@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>:: prikaz ::</title>
+    <meta charset="UTF-8" />
+    <!-- Kada god pravimo responsive dizajn moramo navesti informacije o prostoru u okviru kojeg pregledač
+    prikazuje sadržaj — pogled (engl. viewport). 
+	Kroz meta element možemo navesti informacije o pogledu i tako kontrolisati način prikaza sadržaja. 
+	- širina prikaza bude jednaka širini uređaja postavljanjem vrednosti width na device-width
+    - veličina prikaza nije skalirana (uvećana ili umanjena), što se često dešava na mobilnim telefonima 
+    i tabletima, 
+	postavljanjem vrednosti initial-scale na 1.0
+	- korisnik može da skalira (uvećava ili umanjuje) prikaz do neke granice (na primer, ne manje od 0.7) postavljanjem 
+	vrednosti user-scalable na yes i vrednosti minimum-scale na 0.7 .
+	-->
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=0.7"
+    />
+    <style type="text/css">
+      #wrapper {
+        color: rgb(255, 255, 255);
+        background-color: #cf66ff;
+      }
+
+      header {
+        text-align: center;
+      }
+
+      img {
+        max-width: 100%;
+        border: 1px solid lightblue;
+      }
+
+      h2 {
+        padding-top: 30px;
+      }
+
+      #content {
+        margin: 30px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="wrapper">
+      <header>
+        <h2>Cascading style sheets</h2>
+        <br />
+        <!-- Možemo kontrolisati i prikaz slike u zavisnosti od veličine uređaja. Postavljanjem
+		css svojstva max-width na 100% postižemo da se slika smanjuje ukoliko mora tako
+		da cela bude prikazana na ekranu. Ukoliko je ekran dovoljno veliki da se cela slika
+		prikaže na njemu, slika će biti originalne veličine. -->
+        <img src="css3.png" alt="CSS" />
+      </header>
+      <div id="content">
+        <br />
+        CSS sintaksa se sastoji od opisa izgleda elemenata u dokumentu. Opis
+        može da definiše izgled više elemenata, i više opisa može da definiše
+        jedan element. Na taj način se opisi slažu jedan preko drugog da bi
+        definisali konačni izgled određenog elementa (otuda naziv Cascading
+        (engl. cascade - crep) da bi se dočaralo slaganje jednog stila preko
+        drugog u definisanju konačnog izgleda elementa).
+        <br />
+        Svaki opis se sastoji od tri elementa:
+        <ul>
+          <li>definicija ciljnih elemenata</li>
+          <li>svojstva</li>
+          <li>vrednosti</li>
+        </ul>
+        Nakon što definišemo ciljne elemente, tj. elemente na koje će se
+        trenutni opis odnositi, nizom parova svojstvo-vrednost definišemo izgled
+        svakog ciljnog elementa.
+      </div>
+    </div>
+  </body>
+</html>

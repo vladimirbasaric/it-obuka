@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> DOM vežba</title>
+    <meta charset='utf-8'>
+</head>
+
+<body>
+    <!-- Link na stranici koji vodi do Google pretrazivaca. -->
+    <a id='test-link' href='http://www.google.com' target='_blank'> Google </a>
+</body>
+
+<script type='text/javascript'>
+
+    /* Dohvata se a element iz DOM drveta. Prilikom dohvatanja se koristi identifikator elementa. 
+    Alternativa koriscenju funkcije querySelector je funkcija getElementById. */
+    var aElement = document.querySelector('#test-link');
+
+    /* Postavlja se vrednost href atributa na trazenu vrednost. */
+    aElement.setAttribute('href', 'https://developer.mozilla.org/en-US/');
+
+    /* Postavlja se propratni tekstualni sadrzaj linka. */
+    aElement.textContent = 'MDN documentation';
+
+</script>
+
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>For petlja</title>
+</head>
+<body>
+	<script>
+		var i;
+		
+		/*
+			Petlje nam sluze za ponavljanje istih 
+			instrukcija odredjen broj puta. Ponavljaju se 
+			instrukcije zadate unutar bloka petlje (unutar 
+			viticastih zagrada). Jedno izvrsavanje bloka 
+			nazivamo iteracija petlje, a broj iteracija 
+			odredjen je uslovima koje postavimo u petlji.
+
+			Naredba for je jedna od petlji. Njena sintaksa 
+			je sledeca:
+			for(naredba1; naredba2; naredba3) {
+				... instrukcije...
+			}
+		
+			Svaka od tri naredbe unutar zagrada ima svoju ulogu i vreme kada ce biti izvrsena.
+
+			Prva naredba odnosi se na inicijalizaciju 
+			promenljivih koje koristimo za kontrolu 
+			izvrsavanja petlje - tzv. brojaci petlje. 
+			Ova naredba se izvrsava tacno jednom na samom 
+			pocetku petlje tj. pre prve iteracije. 
+
+			Druga naredba predstavlja uslov petlje. Uslov 
+			koji postavimo odredjuje koliko ce iteracija 
+			biti izvrseno. Provera uslova vrsi se pre 
+			pocetka svake iteracije. Ako je uslov ispunjen 
+			instrukcije se izvrsavaju, u suprotom se 
+			prekida petlja, a izvrsavanje programa 
+			nastavlja ispod petlje.
+
+			Treca naredba sluzi za promenu vrednosti 
+			brojaca petlje. Obicno je to neka 
+			inkrementacija ili dekrementacija, a mogu biti 
+			i drugacije izmene vrednosti. Ova naredba 
+			izvrsava se na kraju svake iteracije.
+		*/
+		for (i=1; i<=5; i++) 
+			console.log("Zdravo svima!");
+	</script>
+</body>
+</html>

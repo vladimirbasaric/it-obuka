@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title> Apsolutno pozicioniranje </title>
+
+    <style>
+        #prvi, #treci {
+            height: 200px;
+            width: 500px;
+        }
+
+        #prvi {
+            background-color: lightblue;
+            position: relative;
+        }
+
+        /*
+            Apsolutno pozicioniranje racuna poziciju 
+            elementa u odnosu na poziciju prvog 
+            pozicioniranog pretka. Smatramo da je element 
+            pozicioniran ukoliko mu je svojstvo position 
+            postavljeno na vrednost koja nije static. 
+
+            Ukoliko takav predak ne postoji, element ce 
+            biti pozicioniran u odnosu na pogled. Pogled je 
+            deo pregledaca u kom je prikazana nasa stranica.
+
+            Pomocu svojstava top, left, right, i bottom 
+            kontrolisemo koliko ce biti udaljen od 
+            odgovarajucih ivica pretka koji je pozicioniran 
+            ili od pogleda.
+        */
+        #drugi {
+            position: absolute;
+            bottom: 0px;
+            right: 0px;
+            background-color: crimson;
+            height: 100px;
+            width: 250px;
+        }
+
+        #treci {
+            background-color: lightgreen;
+        }
+        
+    </style>
+</head>
+<body>
+    <div id="prvi">
+
+        <div id="drugi">
+    
+        </div>
+
+    </div>
+    
+    <div id="treci">
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>For petlja</title>
+</head>
+<body>
+	<script>
+		var x = 17;
+		/*
+			Da bismo racunali zbir koristimo promenljivu u 
+			kojoj pamtimo trenutni zbir dok ne pronadjemo 
+			sve brojeve ciji zbir racunamo.
+
+			Bitno je da promenljiva bude inicijalizovana 
+			pre koriscenja, inace ce imati vrednost 
+			undefined i necemo moci da je koristimo za 
+			sabiranje.
+		*/
+		var zbir = 0;
+		
+		for (var i=1; i<=x; i++) {
+			/*
+				Broj je neparan ako pri deljenju sa 2 daje 
+				ostatak 1.
+			*/
+			if(i%2 == 1) {
+				/*
+					Na trenutni zbir dodajemo vrednost 
+					broja koji smo pronasli u ovoj 
+					iteraciji.
+				*/
+				zbir += i;
+			}
+		}
+		
+		console.log("Zbir brojeva od 1 do " + x + " je: " + zbir) ;
+	</script>
+</body>
+</html>

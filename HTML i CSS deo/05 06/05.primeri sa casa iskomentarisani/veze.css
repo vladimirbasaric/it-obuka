@@ -1,0 +1,63 @@
+a {
+    font-size: 18px;
+}
+
+/*
+    Za svaku vezu definisana su 4 stanja:
+        - neposecena (link)
+        - posecena (visited)
+        - kursor misa je preko veze (hover)
+        - aktivna (active)
+
+    U zavisnosti od stanja u kom se veza nalazi mozemo definisati razlicita pravila prikazivanja veze. 
+    To postizemo koriscenjem razlicitih pseudoklasa. Nazivi pseudoklasa navedeni su u zagradama, 
+    a da bismo definisali pravila prikazivanja npr. neposecene veze koristimo a:link. 
+    Selektor "a" dohvata sve veze, a pomocu pseudo-klase ":link" naglasavamo da se pravila 
+    odnose samo na posecene veze.
+*/
+
+a:link{
+    color: blue;
+    /* svojstvo kontrolise da li ce tekst biti podvucen, precrtan, nadvucen ili bez linije */
+    text-decoration: none;
+}
+      
+/*
+    pomocu !important mozemo da damo najveci prioritet bas tom pravilu 
+    ukoliko se desi da se na vise mesta za isti element menja isto svojstvo
+*/
+a:visited{
+    color: mediumseagreen !important;
+    text-decoration: none;
+}
+                
+a:hover{
+    color: darkmagenta;
+    background-color: silver;
+    text-decoration: underline;
+}
+    
+a:active{
+    color: yellow;
+    background-color: silver;
+    font-size: 17px;
+}
+
+a.spoljasnja:link{
+    color: rgb(255, 0, 180);
+}
+            
+a.spoljasnja:visited{
+    color: rgb(255, 0, 180);
+}
+            
+a.spoljasnja:hover{
+    color: rgb(0, 225, 255);
+    /* svojstvo cursor omogucava da odaberemo izgled kursora*/
+    cursor: help;
+}
+            
+a.spoljasnja:active{
+    color: black;
+    text-decoration: overline;
+}

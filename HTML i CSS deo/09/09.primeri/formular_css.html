@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Stilizovanje formulara</title>
+    <meta charset="UTF-8">
+   
+    <style type="text/css">
+
+        fieldset legend{
+            font-family: fantasy;
+            font: bolder;
+            font-size: 35px;
+            color: blue;
+        }
+
+        input{
+            padding: 2px;
+            margin: 5px;
+        }
+       /* selektor atributa input[atribut=vrednost atributa] 
+          naredna svojstva bice primenjena na sve input elemente cija je vrednost atributa type jednaka text */
+       
+       input[type="text"] {
+            width: 100px;
+            display: block;
+            margin: 10px;
+            background-color: yellow;
+        }
+
+        input[type="reset"] {
+            background-color: rgb(238, 88, 88);
+        }
+
+        input[type="submit"] {
+            background-color: rgb(20, 160, 90);
+        }
+
+        /* pseudo-klasa focus - selektuje se element forme koji je u fokusu
+            primenljivo je na elemente koji dozvoljavaju unos podataka sa tastature 
+            ili drugaciji korisnicki unos */
+        input:focus { 
+            background-color: rgb(159, 219, 216);
+        }
+
+        /* mozemo kombinovati selektor atributa i pseudo-klasu 
+            naredno ce biti primenjeno samo na tekstualna polja koja su u fokusu */
+        input[type="text"]:focus {
+            width: 200px;
+        }
+
+        /* pseudo-klasa checked - za sve cekirane elemente forme
+            primenjuje se na input elemente checkbox, radio */
+        input:checked {
+            height: 30px;
+            width: 30px;
+        }
+
+        /*  pseudo-klase enabled/disabled */
+        input:disabled {
+            background: red;
+        }
+
+        /*  pseudo-klase valid/invalid 
+            selektuje one elemente forme cija je vrednost ispravna/neispravna u skladu sa podesavanjima
+            radi sa elementima koji imaju min/max atribut, poljima za email adrese i slicno */
+        input[type="number"]:valid {
+            background: rgb(191, 212, 157);
+        }
+
+        input[type="number"]:invalid {
+            background: rgb(172, 68, 68);
+        }
+
+        /* pseudo-klasa koja selektuje elemente forme kod kojih je postavljen atribut readonly
+            odnosno, kod kojih ne moze da se menja vrednost */
+        input:read-only{
+            background-color: aqua;
+
+        }
+
+         /* pseudo-klasa koja selektuje elemente forme kod kojih nije postavljen niti atribut readonly
+            niti atribut disabled */
+        input:read-write{
+            background-color: rgb(172, 185, 160);
+
+        }
+
+         /* pseudo-klasa koja selektuje elemente forme koji su obavezni, tj. imaju postavljen atribut required */
+        input:required{
+            outline-style: dotted;
+            border: 2px solid rgb(49, 49, 196);
+
+        }
+
+         /* pseudo-klasa koja selektuje elemente forme koji nisu obavezni, tj. nemaju postavljen atribut required */
+        input:optional{
+            border: 2px solid rgb(98, 98, 172);
+
+        }
+
+        /* pseudo-klasa koja selektuje elemente forme sa vrednostima koje su unutar zadatog opsega
+            moze se primeniti samo za input elemente sa atributima min/max */
+        input:in-range{
+            border: 2px solid green;
+
+        }
+
+        /* pseudo-klasa koja selektuje elemente forme sa vrednostima koje su izvan zadatog opsega
+            moze se primeniti samo za input elemente sa atributima min/max */
+        input:out-of-range{
+            border: 2px solid red;
+
+        }
+    </style>
+</head>
+
+<body>
+    <form>
+        <fieldset>
+            <legend> Licni podaci </legend>
+
+                <label for="ime_prezime"> Ime i prezime*: </label>
+                <input id="ime_prezime" type="text" placeholder="Pera Peric" maxlength="30" name="ime_prezime" required>
+          
+                <label for="datum_rodjenja"> Datum rodjenja: </label>
+                <input id="datum_rodjenja" type="date" name="datum_rodjenja">
+    
+                <br>
+          
+                <label for="email" > Email*: </label>
+                <input id="email" name="email" type="email" required>
+         
+                <label for="password"> Sifra*: </label>
+                <input id="password" name="sifra" required type="password"  >
+           
+        </fieldset>
+
+        <fieldset   >
+            <legend> Obrazovanje </legend>
+                    
+                    <label for="fakultet"   > Oblast: </label>
+                    <select name="fakultet" id="fakultet"  >
+                        <option value=""> drustvene nauke </option>
+                        <option value=""> prirodne nauke </option>
+                        <option value=""> umetnost </option>
+                    </select>
+            
+                    <br>
+
+                    <label for="univerzitet"   > Univerzitet: </label>
+                    <input list="svi_univerziteti" id="univerzitet" name="univerzitet" type="text"  >
+                    <datalist id="svi_univerziteti">
+                        <option value="UBG"> Univerzitet u Beogradu </option>
+                        <option value="UNS"> Univerzitet u Novom Sadu </option>
+                        <option value="UNI"> Univerzitet u Nišu </option>
+                        <option value="UKG"> Univerzitet u Kragujevcu </option>
+                    </datalist>
+             
+           
+        </fieldset>
+
+		<fieldset   >
+        <legend> Interesovanje </legend>
+           
+                Lista interesovanja:
+
+                    <input name="veb" id="veb" type="checkbox" >
+                    <label for="veb"   >veb programiranje</label>
+               
+                    <input name="html" id="html" type="checkbox" >
+                    <label for="html"   >HTML</label>
+               
+                    <input name="css" id="css" type="checkbox" >
+                    <label for="css"   >CSS</label>
+              
+                    <input name="JavaScript" id="JavaScript" type="checkbox" >
+                    <label for="JavaScript"   >JavaScript</label>
+              
+
+        </fieldset>
+
+        <fieldset   >
+            <legend> Kurs koji zelim da pohadjam </legend>
+    
+                  <input type="radio" name="kurs" value="java"> Java
+                  <input type="radio" name="kurs" value="python"> Python
+                  <input type="radio" name="kurs" value="c++"> C++
+                  <input type="radio" name="kurs" value="javascript"> JavaScript
+        </fieldset>
+		
+		<fieldset   >
+        <legend> Dodatne informacije </legend>
+          
+			    <label for="ocena">Broj casova nedeljno koji mi odgovara od 3 do 12</label>
+                <input type="number" min="3" max="12" id="ocena">
+                <br>
+
+				<label for="napomena"> Napomena: </label>
+				<br>
+				<textarea cols="80" rows="5" name="napomena" id="napomena" placeholder="Unesite napomenu..." readonly ></textarea>
+		
+		 </fieldset>
+
+         <input value="obrisi podatke" type="reset">
+         <input value="posalji podatke" type="submit">
+     
+    </form>
+
+</body>
+
+</html>

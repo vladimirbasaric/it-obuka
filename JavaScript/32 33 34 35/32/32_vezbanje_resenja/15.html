@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> DOM vežba</title>
+    <meta charset='utf-8'>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body class='container'>
+    <div class='form-group'>
+        <label for='test-input'> Tekst: </label>
+        <input type='text' class='form-control' id='test-input'>
+        <span class='form-text' id='error-message'></span>
+    </div>
+</body>
+
+<script type='text/javascript'>
+
+    /* Iz DOM drveta se dohvataju tekstualno polje za unos i polje za gresku. 
+    Prilikom dohvatanja se koriste identifikatori elemenata. */
+    var testInput = document.querySelector('#test-input');
+    var errorElement = document.querySelector('#error-message');
+
+    /* Definisemo onkeydown svojstvo na nivou tekstualnog elementa. Ovim svojstvom se prati 
+    svako otpustanje tastera tastature tj. proces unosa teksta korisnika. 
+    Vrednost svojstva je funkcija i ona ce se izvrsiti svaki put kada korisnik unese neki karakter. */
+    testInput.onkeydown = function () {
+        /* Cita se tekst koji je korisnik uneo u tekstualno polje.  */
+        var text = this.value;
+
+        /* Proverava se duzina unetog teksta */
+        if (text.length < 10) {
+            /* Ako je tekst prekratak, upisuje se odgovarajuca poruka u polje za gresku. */
+            errorElement.textContent = 'Input is too short!';
+        } else {
+            /* U suprotnom je unos korektan pa se brise eventualno prethodno postavljana poruka o gresci. */
+            errorElement.textContent = '';
+        }
+    };
+</script>
+
+</html>

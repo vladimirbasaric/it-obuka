@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JS JQuery 01</title>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.js"
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+
+
+
+    <script>
+        // Jedan veoma važan aspekt jQuery biblioteke jeste upravljanje DOM stablom. 
+        // Metodi koji nam ovo omogućavaju su:
+        //      text() i text(text) — dohvata ili postavlja tekstualan sadržaj selektovanog
+        // elementa
+        //      html() i html(htmlString) — dohvata ili postavlja HTML sadržaj selektovanog
+        // elementa
+        //      val() i val(value) — dohvata ili postavlja vrednost elementa formulara
+        //      attr(atributeName) i attr(attributeName, value) — dohvata ili postavlja
+        // vrednost atributa attributeName
+
+        $(document).ready(function () {
+            $("#btn1").click(function () {
+                $("#test1").text("Hello world!"); // postavlja text
+            });
+            $("#btn2").click(function () {
+                $("#test2").html("<b>Hello world!</b>"); // postavlja HTML
+            });
+            $("#btn3").click(function () {
+                $("#test3").val("New value"); // postavlja vrednost polja formulara
+            });
+        });
+    </script>
+</head>
+
+<body>
+
+    <p id="test1">First paragraph</p>
+    <p id="test2">Second paragraph.</p>
+
+    <p>Input field: <input type="text" id="test3" value="Value of the field"></p>
+
+    <button id="btn1">Set Text</button>
+    <button id="btn2">Set HTML</button>
+    <button id="btn3">Set Value</button>
+
+</body>
+
+</html>

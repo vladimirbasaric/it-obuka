@@ -1,0 +1,39 @@
+h1 {
+    /* Boja teksta koju zelimo za sve h1 
+    elemente u okviru stranice */
+    color: magenta;
+}
+
+h2 {
+    color: aquamarine;
+    /* Boja pozadine za sve h2 elemente */
+    background-color: darkslategray;
+    text-decoration: underline;
+}
+
+p {
+    color: red;
+    /* Postavljamo font po izboru.
+    U intro.html smo naveli link element koji
+    ucitava Montserrat font koji smo pronasli
+    na sajtu Google Fonts. */
+    font-family: 'Montserrat';
+}
+
+.citat {
+    font-style: italic;
+    color: blue;
+    font-size: 30px;
+}
+
+#jedinstveniPasus {
+    color: chocolate;
+    background-color: darkslategray;
+    font-weight: bold;
+}
+
+body {
+    /* Kako da stavimo tamnu pozadinu na sajt? */
+    
+    /* background-color: #212121; */
+}

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+
+<div class="container">
+    <h1>Dropdown lista</h1>
+    <!-- dropdown lista se kreira pomocu dropdown klase -->
+	<div class="dropdown">
+        <!--
+        - umesto btn-primary moze se koristiti neki drugi tip dugmeta
+        - za button je potrebno dodati klasu dropdown-toggle i postaviti data-toggle="dropdown"
+        -->
+		<button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+			Dropdown dugme
+        </button>
+        <!-- ovde se kreira dropdown menu -->
+		<div class="dropdown-menu">
+            <!-- ovako se moze nasloviti grupa linkova -->
+            <div class="dropdown-header">Prva grupa</div>
+            <!-- svaki element se dodaje pomocu dropdown-item -->
+			<a class="dropdown-item" href="#">Link 1</a>
+			<a class="dropdown-item" href="#">Link 2</a>
+            <a class="dropdown-item" href="#">Link 3</a>
+            <!-- horizontalna linija kojom se mogu razdvojiti elementi -->
+            <div class="dropdown-divider"></div>
+			<div class="dropdown-header">Druga grupa</div>
+            <a class="dropdown-item" href="#">Link 4</a>
+            <a class="dropdown-item" href="#">Link 5</a>
+		</div>
+	</div>
+</div>
+
+</body>
+
+</html>

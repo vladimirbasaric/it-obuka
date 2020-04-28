@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+
+<!-- height je stavljeno zbog scroll bara, da bi se video efekat fiksnog navbara -->
+<body style="height:1500px">
+
+<!-- 
+- navbar klasa se koristi za navigation bar 
+- bg-dark se odnosi na boju navbara (moze biti i bg-primary, bg-success, bg-info, bg-warning, bg-danger, bg-secondary ili bg-light)
+- navbar-dark oznacava da ce tekst biti beo, za crn tekst se koristi navbar-light
+- navbar-expand-md oznacava da ce navbar biti kolapsirajuci na srednjim (md) ekranima (md se moze promeniti i u sm, xl ili lg)
+- fixed-top znaci da je navbar fiksiran na vrhu
+-->
+<nav class="navbar bg-dark navbar-expand-md navbar-dark fixed-top">
+    <!-- logo kompanije cesto stoji na pocetku (ovde cesto stoji i slika umesto teksta) -->
+    <a class="navbar-brand" href="#">Logo kompanije</a>
+
+    <!-- za male ekrane se automatski kreira kolapsirajuci navbar -->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapseid">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- ovo treba dodati oko navbar-nav dela da bi navbar bio kolapsirajuci. id treba da se poklapa sa id kod data-target -->
+    <div class="collapse navbar-collapse" id="collapseid">
+
+        <!-- u sklopu ove liste se dodaju linkovi navbara -->
+        <ul class="navbar-nav">
+            <!-- ovako se dodaje svaki link zasebno (kao clan liste) -->
+            <li class="nav-item">
+                <a class="nav-link" href="#">Link 1</a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="#">Link 2</a>
+            </li>
+
+            <!-- ovako se dodaje dropdown lista -->
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">Linkovi</a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#">Link 3</a>
+                    <a class="dropdown-item" href="#">Link 4</a>
+                    <a class="dropdown-item" href="#">Link 5</a>
+                </div>
+            </li>
+        </ul>
+    
+    </div>
+</nav>
+
+<div class="container-fluid" style="margin-top:100px">
+	<h1>Ovo je naslov</h1>
+	<p>Ovo je neki tekst. Ovo je neki tekst. Ovo je neki tekst. Ovo je neki tekst. Ovo je neki tekst. Ovo je neki tekst. Ovo je neki tekst. Ovo je neki tekst. Ovo je neki tekst. Ovo je neki tekst. Ovo je neki tekst. Ovo je neki tekst. Ovo je neki tekst.</p>
+</div>
+
+</body>
+
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // Napisati funkciju ​obrni_broj(x) ​koja vraća obrnut broj​ x​.
+        // Zatim treba pozvati funkciju i ispisati dobijenu vrednost.
+        // Primer: ako je zadat broj ​1234 t​reba ispisati​ 4321​.
+        // Primer: ako je zadat broj​ -983 ​treba ispisati​ -389​.
+
+        var x = 9431583;
+        var obrnuto = obrni_cifre(x);
+        console.log(obrnuto);
+
+        function obrni_cifre(broj) {
+            var obrnut_broj = 0;
+            var aps_broj = abs(broj);
+
+            while (aps_broj != 0) {
+                var c = aps_broj % 10;
+                obrnut_broj = obrnut_broj * 10 + c;
+                aps_broj = Math.floor(aps_broj / 10);
+            }
+
+            if (broj < 0) {
+                return -obrnut_broj;
+            } else {
+                return obrnut_broj;
+            }
+
+
+        }
+
+        function abs(x) {
+            return x < 0 ? -x : x;
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <style>
+            /* ovaj deo se odnosi na sve pasuse - svi imaju plavi border i plavi tekst */
+            p {
+                border: 1px solid blue;
+                color: blue;
+            }
+
+            /* ovaj deo se odnosi na prvi, drugi, treci i peti pasus, iako su dodatno drugi i peti nevidljivi */
+            .ib {
+                display: inline-block;
+                width: 250px;
+                height: 250px;
+            }   
+
+            /* opcija koja omogucava pasusima da budu nevidljivi, ali da postoji za njih mesta */ 
+            .nevidljiv {
+                visibility: hidden;
+            }
+
+            /* sesti i sedmi pasus zauzimaju tacno onoliko mesta koliko zauzima i tekst (ovi pasusi se ponasaju poput spana) */
+            .i {
+                display: inline;
+            }
+        </style>
+    </head>
+    <body>
+        <p class="ib">Prvi pasus</p>
+        <!-- jedan element moze pripadati i vise klasa -->
+        <p class="ib nevidljiv">Drugi pasus</p>
+        <p class="ib">Treci pasus</p>
+        <p>Cetvrti pasus</p>
+        <p class="ib nevidljiv">Peti pasus</p>
+        <p class="i">Sesti pasus</p>
+        <p class="i">Sedmi pasus</p>
+    </body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Citanje postova</title>
+
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1> Navigation </h1>
+        <ul>
+            <li><a href="/~termninja/54_rest/post_create.html">Create post</a></li>
+            <li><a href="/~termninja/54_rest/post_read.html">Read posts</a></li>
+        </ul>
+        <h1>Postovi</h1>
+        <div id='the-posts'>
+            <!-- Sadrzaj ce ovde dinamicki biti dodat -->
+        </div>
+    </div>
+
+</body>
+
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
+
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+
+<script>
+    function createCard(title, content, date)
+    {
+        let theCard = `
+        <div class="card">
+            <div class="card-header">
+                ${date}
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">${title}</h5>
+                <p class="card-text">${content}</p>
+            </div>
+        </div>`;
+        return theCard;
+    }
+
+    $(document).ready(() => {
+        const thePosts = $('#the-posts');
+        const serverUrl = '/~termninja/54_rest/posts';
+
+        console.log("Uskoro ce biti poslat GET zahtev");
+        $.ajax({
+            type: 'GET',
+            url: serverUrl,
+            success: function(serverResponse) {
+                console.log("Davaj davaj!");
+                for (let post of serverResponse) {
+                    let cardContent = createCard(post['title'], post['content'], post['timestamp'])
+                    thePosts.append(cardContent);
+                    thePosts.append('<hr>')
+                }
+                console.log(serverResponse);
+            },
+            error: function(e) {
+                console.log("Oh greska...");
+                console.log(e);
+            }
+        });
+    });
+</script>
+
+</html>

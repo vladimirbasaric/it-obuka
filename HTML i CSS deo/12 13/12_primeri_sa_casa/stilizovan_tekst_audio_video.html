@@ -1,0 +1,155 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Proleće</title>
+
+    <style>
+        body{
+            background-color: rgb(212, 233, 226);
+        }
+        h1{
+            font-family: Arial;
+            font-size: 50px;
+            font-style: italic;
+            font-weight: 700;
+            text-align: center;
+            color: rgb(211, 72, 118);
+        }
+        #div1{
+            /* rastojanje izmedju slova teksta elementa
+            moze se prosiriti ili suziti podrazumevano rastojanje */
+           letter-spacing: 2px;
+
+           /* uvlacenje/nazubljivanje prve linije teksta */
+           text-indent: 20px;
+
+           /* svojstvo kojim se kontrolise transparentnost elementa
+            zajedno sa njegovim sadrzajem
+            vrednost je realan broj iz segmenta [0,1] */
+           opacity: 0.7;
+
+            /* za IE8 i ranije verzije se koristi svojstvo filter
+            vrednost za opacity se postavlja na broj iz segmenta [0,100] */
+           filter: alpha(opacity=70); 
+           background-color: rgb(146, 241, 229);
+            
+        }
+
+        #div2{
+            letter-spacing: -1px;
+            text-align: center;
+            font-size: 25px;
+
+            /* ukoliko ne zelimo da se opacity primeni na ostale elemente
+            vec samo na boju pozadine, koristimo RGBA format boje
+            kojem se kao poslednji argument zadaje vrednost za opacity */
+            background-color: rgba(223, 173, 216, 0.8);
+        }
+
+        #div3{
+            /* rastojanje izmedju reci teksta elementa
+           moze se prosiriti ili suziti podrazumevano rastojanje */
+           word-spacing: 10px;
+        }
+
+        #div4{
+            /* dodavanje senke tekstu, svojstvo ima 4 vrednosti od kojih
+            je obavezno zadati prve dve, ostale su opcione
+            vrednosti:
+                1. horizontalna pozicija (pomeraj) senke u odnosu na tekst
+                2. vertikalna pozicija (pomeraj) senke u odnosu na tekst
+                3. zamucenje (blur) senke
+                4. boja senke
+            */
+            text-shadow: 2px 1px rgb(46, 150, 150) ;
+            font-size: 20px;
+            text-align: center;
+            /* ukoliko zelite da: 
+                - sva slova teksta budu velika (uppercase)
+                - sva slova teksta budu mala (lowercase) 
+                - pocetno slovo svake reci teksta bude veliko (capitalize) */
+            text-transform: capitalize; 
+        }
+
+        /* kontrola transparentnosti slike, menja se prelaskom misa preko iste */
+        img{
+            opacity: 0.2;
+        }
+
+        img:hover{
+            opacity: 1;
+        }
+
+        
+       
+    </style>
+
+</head>
+<body>
+    <h1>Proleće</h1>
+    <div id="div1">
+        Proleće je jedno od godišnjih doba, koje na severnoj Zemljinoj polulopti traje deo marta, ceo april, maj i deo juna,
+        a na južnoj Zemljinoj polulopti deo septembra, ceo oktobar, novembar i deo decembra. Na dan početka proleća, takozvanu prolećnu ravnodnevnicu, 
+        koja obično pada 20. marta, obdanica i noć traju po 12 sati.
+
+    </div>
+    <br> <br>
+    <div id="div2">
+        Na narednoj slici možete videti procvetalo prolećno drvo iz roda jabuka. 
+        <br>
+        <img src="prolece.jpg" alt="">
+
+    </div>
+    <br> <br>
+    <div id="div3">
+        U proleće možemo čuti divne zvuke ptica. 
+
+        <!-- audio element sluzi za reprodukciju audio fajlova
+            - controls atribut dodaje kontrole play, pause, volume
+            - source elementom mozemo dodati vise audio fajlova i u tom
+            slucaju bice reprodukovan prvi koji je podrzan od strane pregledaca
+            - moguci formati: 
+                mp3 
+                wav (IE ga ne podrzava)
+                ogg (IE i Safari ga ne podrzavaju) -->
+        <audio controls>
+            <source src="ptice.mp3" type="audio/mpeg">
+            <!-- ukoliko ne moze da se reprodukuje fajl 
+            prikazuje se tekst koji navedete u okviru elementa 
+            ili kod nekih pretrazivaca zatamljen element za audio 
+            --> 
+            Audio fajl nije mogao da se reprodukuje.
+        </audio>
+    </div>
+   
+    <br> <br>
+    <div id="div4">
+        Ako vas zanima da pogledate koje ste vrste ptica čuli, pustite sledeći video.
+        <br>
+        <!-- video element sluzi za reprodukciju video fajlova
+            - controls atribut dodaje kontrole play, pause, volume
+            - source elementom mozemo dodati vise video fajlova i u tom
+            slucaju bice reprodukovan prvi koji je podrzan od strane pregledaca
+            - moguci formati: 
+                mp4 
+                webm (IE i Safari ga ne podrzavaju)
+                ogg (IE i Safari ga ne podrzavaju) 
+
+            Preporucuje se da sami definisemo velicinu, u suprotnom
+            pregledac je prilagodjava ostalom sadrzaju. 
+        -->
+        <video controls width="600" height="400">
+            <source src="ptice.mp4" type="video/mp4">
+            <!-- ukoliko ne moze da se reprodukuje fajl 
+            prikazuje se tekst koji navedete u okviru elementa 
+            ili kod nekih pretrazivaca zatamljen element za video
+            --> 
+            Video nije mogao da se reprodukuje.
+        </video>
+    </div>
+    </body>
+</html>

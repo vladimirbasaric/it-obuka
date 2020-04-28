@@ -1,0 +1,80 @@
+#omotac {
+    margin: 0 auto;
+    max-width: 1200px;
+    padding: 0 20px 20px 20px;
+    box-sizing: border-box;
+}
+
+header {
+    background-color: rgb(80, 80, 80);
+    height: 60px;
+    text-align: center;
+    color: white;
+    font-size: 40px;
+}
+
+nav {
+    position: sticky;
+    top: 0;
+    background-color: rgb(110, 181, 252);
+    height: auto;
+    color: white;
+    text-align: center;
+    z-index: 4;
+}
+
+.navigacija {
+    display: inline-block;
+    width: 100px;
+    margin: 15px;
+    border-left: 1px solid white;
+    border-right: 1px solid white;
+}
+
+a {
+    color: inherit;
+    font-size: 25px;
+    text-decoration: none;
+}
+
+a:hover {
+    background-color: rgb(100, 153, 206);
+}
+
+main {
+    background-color: rgb(220, 220, 220);
+    height: 900px;
+    overflow: hidden;
+}
+
+#prvi, #drugi, #treci {
+    width: 30%;
+    height: 500px;
+    position: relative;
+}
+
+#prvi {
+    background-color: rgb(255, 255, 80);
+    left: 2%;
+}
+
+#drugi {
+    background-color: rgb(110, 255, 110);
+    top: -500px;
+    left: 35%;
+}
+
+#treci {
+    background-color: rgb(255, 130, 250);
+    top: -1000px;
+    left: 68%;
+}
+
+footer {
+    position: fixed;
+    bottom: 0px;
+    width: 250px;
+    text-align: center;
+    font-size: 20px;
+    background-color: rgb(220, 220, 220);
+} 

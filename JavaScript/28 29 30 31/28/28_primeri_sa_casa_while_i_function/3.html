@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // Napisati program koji pronalazi i ispisuje prvi negativan broj u zadatom nizu.
+        // Primer: za zadati niz​ [15,2,-8,3,-11,5]​ treba ispisati​- 8​.
+        // Primer: za zadati niz​ [15,2,8,3,11,5] ​treba ispisati ​Nema negativnih brojeva​.
+        var niz = [1, 5, 8, 23, 51, 11, 70];
+        var i = 0;
+        var pronadjen = false;
+
+        while (i < niz.length) {
+            if (niz[i] < 0) {
+                console.log(niz[i]);
+                pronadjen = true;
+                break;
+            }
+
+            i++;
+        }
+
+        if (!pronadjen) {
+            console.log("Nema negativnih elemenata.");
+        }
+    </script>
+</body>
+
+</html>

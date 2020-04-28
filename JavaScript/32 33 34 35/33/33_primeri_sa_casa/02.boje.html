@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>DOM</title>
+	<style>
+		* {
+			text-align: center;
+			margin:auto;
+			margin-top: 10px;
+			width: 300px;
+		}
+
+		#dugmeBoja {
+			font-size: 30px;
+			color: red;
+			border: 2px solid red;
+			box-sizing: border-box;
+		}
+
+		#dugmeBoja:hover {
+			cursor: pointer;
+		}
+
+		#kvadrat {
+			background-color: red;
+			height: 300px;
+		}
+	</style>
+</head>
+<body>
+	<div id="dugmeBoja"> Promeni boju </div>
+	<div id="kvadrat"></div>
+
+	<script type="text/javascript">
+		var dugme = document.getElementById("dugmeBoja");
+		var kvadrat = document.getElementById("kvadrat");
+
+		dugme.onclick = function() {
+			var boje = ["red", "blue", "green", "yellow", "purple", "orange"];
+
+			var odabrano = Math.floor(Math.random()*boje.length);
+
+			dugme.style.color = boje[odabrano];
+			dugme.style.borderColor = boje[odabrano];
+			kvadrat.style.backgroundColor = boje[odabrano];
+
+		}
+
+
+	</script>
+</body>
+</html>

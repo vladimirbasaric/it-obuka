@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1> Navigation </h1>
+        <ul>
+            <li><a href="/~termninja/54_rest/post_create.html">Create post</a></li>
+            <li><a href="/~termninja/54_rest/post_read.html">Read posts</a></li>
+        </ul>
+        <h1>Create post</h1>
+        <form>
+            <div class="form-group">
+                <label for="postTitle">Title</label>
+                <input name='title' type="text" class="form-control" id="postTitle">
+            </div>
+            <div class="form-group">
+                <label for="postContent">Content</label>
+                <textarea class='form-control' name='postContent' id='postContent' rows="4" cols="50">
+                </textarea>
+            </div>
+            <button id='buttonSubmit' type="button" class="btn btn-primary">Submit</button>
+        </form>
+
+    </div>
+
+</body>
+
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
+
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+
+<script>
+    function createCard(title, date, content) {
+        let theCard = `
+        <div class="card">
+            <div class="card-header">
+                ${date}
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">${title}</h5>
+                <p class="card-text">${content}</p>
+            </div>
+        </div>`;
+        return theCard;
+    }
+
+    $(document).ready(() => {
+        // Reference na input elemente iz kojih cemo citati podatke
+        let title = $('#postTitle');
+        let content = $('#postContent');
+
+        // Server url - Konfigurisite ga u skladu sa vasim racunarem
+        let serverUrl = '/~termninja/54_rest/posts'
+
+        // Reakcija na klik dugmeta
+        $('#buttonSubmit').click(() => {
+
+            // Pravimo podatke koji ce biti poslati serveru
+            let data = {
+                'title': title.val().trim(),
+                'content': content.val().trim(),
+            }
+            console.log(data);
+
+            // Vrsimo POST zahtev na server.
+            // Vazno je podatke pretvoriti u JSON string!
+            $.ajax({
+                type: 'POST',
+                url: serverUrl,
+                data: JSON.stringify(data),
+                contentType: "application/json; charset=utf-8",
+                success: function(serverResponse) {
+                    console.log("Odgovor servera");
+                    console.log(serverResponse);
+                    if (serverResponse['success']) {
+                        alert("Uspesno dodat post!");
+                    } else {
+                        alert("Neuspesno dodat post!");
+                    }
+                    console.log("Davaj davaj!");
+                },
+                error: function(e) {
+                    alert("Doslo je do nepredvidjene greske!");
+                    console.log("Oh greska...");
+                    console.log(e);
+                }
+            });
+        });
+    });
+</script>
+
+</html>

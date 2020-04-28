@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+</head>
+
+<body>
+
+<input type="text" id="a"><br>
+<input type="text" id="b"><br>
+<a href="#" id="dugme">Izracunaj zbir</a><br>
+<input type="text" id="zbir">
+
+<script>
+$("#dugme").click(function() {
+    $.get('rezultat.php', {
+        a: $('#a').val(),
+        b: $('#b').val()
+    })
+    .done(function(zbir) {
+        $('#zbir').val(zbir);
+    });
+});
+</script>
+
+</body>
+
+</html>

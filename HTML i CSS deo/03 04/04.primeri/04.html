@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Linearni gradijenti</title>
+        
+        <style type='text/css'>
+            div {
+                height: 200px;
+                width: 1000px; 
+                margin-bottom: 50px;
+            }
+            div#dve {  
+                /*
+                 *  kako bismo napravili gradijent navodimo 
+                    pravac u kom se prostire i listu boja (koja sadrzi bar dve boje)
+                 *  pravac zadajemo u stepenima (npr. 45deg 
+                    za ugao od 45 stepeni) ili pomocu 
+                    predefinisanih vrednosti uz kljucnu rec "to"
+                 *  predefinisane vrednosti koje su na 
+                    raspolaganju: top, bottom, left, right 
+                 *  moguce je kombinovati vrednosti (npr. 
+                    top left cime naglasavamo da zelimo da 
+                    se gradijent krece ka gornjem levom uglu)
+                 */         
+                background-image: linear-gradient(to bottom, #4FB2B2, #8AFFFF);
+            }
+
+            div#tri {
+                background-image: linear-gradient(to top left, #4FB2B2, #FFA3E7, #8AFFFF);
+            }
+
+            div#fiksirane_boje {
+                /*
+                 *  ukoliko uz naziv boje dodamo neku 
+                    vrednost (u bilo kojoj mernoj jedinici)
+                    mozemo da "fiksiramo" deo pozadine 
+                    gde nece biti gradijenta nego cista boja
+                */
+                background-image: linear-gradient(45deg, #4FB2B2 0%, #4FB2B2 25%, #FFA3E7 25%, #FFA3E7 50%, #8AFFFF 50%, #8AFFFF 100%);
+            }
+
+            div#ponavljajuci {
+                /*
+                    mozemo koristiti ponavljajuci gradijent 
+                    da bismo dobili iste gradijente ponovljene onoliko puta koliko je potrebno da se prekrije cela pozadina elementa
+                */
+                background-image: repeating-linear-gradient(180deg, #4FB2B2 0%, #4FB2B2 1%, #8AFFFF 1%, #8AFFFF 2%);
+            }
+        </style>
+    </head>
+    
+    <body>
+        <div id='dve'>
+        </div>
+        
+        <div id='tri'>
+        </div>
+        
+        <div id='fiksirane_boje'>
+        </div>
+        
+        <div id='ponavljajuci'>
+        </div>
+    </body>
+</html>

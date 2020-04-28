@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> DOM vežba</title>
+    <meta charset='utf-8'>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body class='container'>
+    <div class='input-group'>
+        <label for='test-input' class='input-group-text'> Tekst: </label>
+        <input type='text' id='test-input' class='form-control'>
+    </div>
+</body>
+
+<script type='text/javascript'>
+
+    /* Iz DOM drveta se dohvata tekstualno polje za unos. 
+    Prilikom dohvatanja se koristi identifikator elementa. */
+    var testInput = document.querySelector('#test-input');
+
+
+    /* Pomocu onblur svojstva se definise sta ce se desiti kada element kojem je pridruzen izgubi fokus. 
+    U nasem slucaju fokus ce se izgubiti kada korisnik napusti polje za unos teksta. 
+    Vrednost onblur svojstva je funkcija. */
+    testInput.onblur = function () {
+        /* Kada element izgubi fokus, cita se tekst koji je korisnik uneo u tekstualno polje. 
+        Za citanje unetog teksta koristi se svojstvo value. */
+        var text = this.value;
+
+        /* Ukoliko je duzina unetog teksta manja od 10, ispisuje se odgovarajuca porukica. */
+        if (text.length < 10) {
+            window.alert('Input is too short!');
+        }
+    };
+</script>
+
+</html>

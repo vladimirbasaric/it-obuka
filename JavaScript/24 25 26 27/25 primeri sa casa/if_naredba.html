@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>If naredba</title>
+</head>
+<body>
+
+<h1>If naredba</h1>
+
+<h3>Operatori poredjenja</h3>
+<p id="1"></p>
+<p id="2"></p>
+<p id="3"></p>
+<p id="4"></p>
+<p id="5"></p>
+<p id="6"></p>
+
+<h3>Logicki operatori</h3>
+<p id="7"></p>
+<p id="8"></p>
+<p id="9"></p>
+<p id="10"></p>
+
+<h3>Oblici if naredbe</h3>
+<p id="11"></p>
+<p id="12"></p>
+<p id="13"></p>
+<p id="14"></p>
+<p id="15"></p>
+<p id="16"></p>
+
+<script>
+
+var a = 5;
+var b = 4;
+
+// operatori poredjenja
+document.getElementById("1").innerHTML = a < 5; // da li je manje?
+document.getElementById("2").innerHTML = a > b; // da li je vece?
+document.getElementById("3").innerHTML = b == 5; // da li je jednako?
+document.getElementById("4").innerHTML = a <= 5; // da li je manje ili jednako?
+document.getElementById("5").innerHTML = b >= 5; // da li je vece ili jednako?
+document.getElementById("6").innerHTML = a != b; // da li je razlicito?
+
+// logicki operatori
+document.getElementById("7").innerHTML = a > b && a < b; // i (and) se pise kao &&
+document.getElementById("8").innerHTML = a > b || a < b; // ili (or) se pise kao ||
+document.getElementById("9").innerHTML = !(a > b); // ne (not) se pise kao !
+// prioritet ima !, pa &&, pa ||
+var izraz = a < 3 || b > 3 && !(a > 5);
+document.getElementById("10").innerHTML = izraz;
+
+/* 
+sintaksa za if:
+if (uslov) {
+    // neke naredbe
+}
+*/
+
+if (a < 10) {
+    document.getElementById("11").innerHTML = 'a je manje od 10';
+}
+
+/*
+sintaksa za if-else:
+if (uslov) {
+    // neke naredbe
+} else {
+    // neke naredbe
+}
+*/
+
+if (a == b) {
+    document.getElementById("12").innerHTML = 'a i b su isti';
+} else {
+    document.getElementById("12").innerHTML = 'a i b su razliciti';
+}
+
+/*
+mozemo imati vise uslova u sklopu ifa:
+if (uslov1) {
+    // neke naredbe
+} else if (uslov2) {
+    // neke naredbe
+}
+} else if (uslov3) {
+    // neke naredbe
+// poslednji else moze i sa if ako ima uslov, a moze i bez
+} else {
+    // neke naredbe
+}
+*/
+
+if (a > 5) {
+    document.getElementById("13").innerHTML = 'a je vece od 5';
+} else if (a < 5) {
+    document.getElementById("13").innerHTML = 'a je manje od 5';
+} else {
+    document.getElementById("13").innerHTML = 'a je jednako 5';
+}
+
+</script>
+
+</body>
+</html>

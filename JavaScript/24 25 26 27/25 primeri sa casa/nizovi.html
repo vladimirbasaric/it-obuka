@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Nizovi</title>
+    </head>
+<body>
+
+<h1>Nizovi u Javascriptu</h1>
+
+<p id="1"></p>
+<p id="2"></p>
+<p id="3"></p>
+<p id="4"></p>
+<p id="5"></p>
+<p id="6"></p>
+<p id="7"></p>
+<p id="8"></p>
+<p id="9"></p>
+<p id="10"></p>
+<p id="11"></p>
+<p id="12"></p>
+
+<script>
+
+// nizovi kompaktnije zapisuju navodjenje vise promenljivih
+var vocka1 = "jabuka";
+var vocka2 = "kruska";
+var vocka3 = "sljiva";
+// ovako izgleda zapis nekog niza (moze biti proizvoljne duzine)
+// ovde su u nizu stringovi, a moze biti bilo sta
+var voce = ["jabuka", "kruska", "sljiva"];
+document.getElementById("1").innerHTML = vocka1 + "," + vocka2 + "," + vocka3;
+document.getElementById("2").innerHTML = voce;
+
+// elementima niza se pristupa preko niz[0], niz[1], ...
+document.getElementById("3").innerHTML = voce[0] + " " + voce[2];
+
+// elementi mogu imati indekse od 0 do brojelemenata-1
+// ovo ce ispisati undefined:
+document.getElementById("4").innerHTML = voce[3];
+
+// duzina niza
+duzina = voce.length
+document.getElementById("5").innerHTML = duzina;
+// poslednjem elementu se moze pristupiti sa indeksom duzina-1
+document.getElementById("6").innerHTML = voce[duzina-1];
+
+// push metod dodaje element na kraj niza
+voce.push("dunja")
+document.getElementById("7").innerHTML = voce;
+
+// pop metod brise element sa kraja niza
+voce.pop()
+document.getElementById("8").innerHTML = voce;
+
+// vrednosti elemenata niza se jednostavno mogu promeniti
+// potrebno je samo preko indeksa pristupiti clanu niza
+voce[0] = "grozdje"
+voce[2] = "dinja"
+document.getElementById("9").innerHTML = voce;
+
+// dvostruki niz je zapravo niz u nizu
+// primetimo da elementi i jednosturkog i dvostrukog niza mogu biti bilo sta
+// gotovo sve sto se radi s jednostrukim moze i sa dvostrukim nizom
+var godine = [["Ana", 35], 
+              ["Mirko", 29], 
+              ["Jovana", 43]];
+document.getElementById("10").innerHTML = godine[1][0];
+godine[0][1] = 36
+document.getElementById("11").innerHTML = godine;
+godine.push(["Petar", 18])
+document.getElementById("12").innerHTML = godine;
+
+
+</script>
+
+</body>
+</html>

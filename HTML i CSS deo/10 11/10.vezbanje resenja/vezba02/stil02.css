@@ -1,0 +1,32 @@
+#omotac {
+    width: 900px;
+    height: 500px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    border: 2px solid rgb(255, 100, 100);
+}
+
+#prvi, #drugi, #treci, #cetvrti, #peti {
+    width: 300px;
+    height: 200px;
+}
+
+#prvi {
+    background-color: rgb(255, 195, 80);
+}
+
+#drugi {
+    background-color: rgb(110, 110, 255);
+}
+
+#treci {
+    background-color: rgb(255, 130, 250);
+}
+
+#cetvrti {
+    background-color: rgb(110, 255, 110);
+}
+
+#peti {
+    background-color: rgb(255, 255, 80);
+}

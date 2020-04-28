@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Vezba03</title>
+	<link rel="stylesheet" type="text/css" href="bootstrap.css">
+	
+	<style>
+		* {
+			font-size: 20px;
+			padding: 5px;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<fieldset class="form-group">	
+			<legend> Igra vešala </legend>
+			<div class="form-group">
+				<label> Trenutna reč: </label> 
+				<span id="trenutna_rec"></span>
+				<br>
+				<label> Broj neuspešnih pokušaja:</label> 
+				<span id="broj_promasaja">0</span>
+			</div>
+
+			<div class="form-group">                  
+				<label> Korišćena slova: </label>
+				<input id="koriscena_slova" readonly="readonly" type="text"> 
+			</div>
+
+			<div class="form-group">                  
+				<label for="slovo"> Tekuće slovo*: </label>
+				<input id="slovo" type="text" maxlength="1">
+			</div>
+
+			<div class="form-group">                  
+				<input id="zameni" value="Zameni pojavljivanja" type="button" class="btn btn-primary"> 
+			</div>
+	   </fieldset>
+	</div>
+
+	<script type="text/javascript" src="vezba03.js"></script>
+</body>
+</html>

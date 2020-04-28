@@ -1,0 +1,10 @@
+Digitron
+
+Kreirati formu koja se sastoji od dva tekstualna polja, koji predstavljaju prvi i drugi broj,
+ i radio grupe koja se odnosi na aritmeticke operacije (sabiranje, oduzimanje, mnozenje i deljenje).
+  Izborom odgovarajuceg radio dugmeta se izvrsava operacija, sto se ispisuje u posebnom PHP fajlu.
+
+Proveriti i ispravnost podataka:
+
+Kod deljenja voditi racuna da li je doslo do deljenja nulom. Za oba broja,
+ proveriti da li ima vrednosti koje nedostaju. Proveriti i da li je izabrano neko radio dugme.

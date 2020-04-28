@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript Functions</h2>
+
+<p>U ovom primeru se prikazuje koriscenje IIFE funkcije.</p>
+
+<p id="demo"></p>
+
+<script>
+/* Nekada nam samo jednom treba funkcija nema potrebe da pisemo ceo izraz za funkciju. Mozemo koristi IIFE funkciju - koja se odmah, tacno jednom izvrsava. */
+
+document.getElementById("demo").innerHTML = "Veci od naredna dva broja (35, 5435) je broj "+(function(a, b){
+   if(a>b)
+      return a;
+   else
+      return b;
+})(35, 5435);
+</script>
+
+</body>
+</html>

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> DOM demo </title>
+
+    <style>
+        .info {
+            color: cadetblue;
+            background-color: orange;
+        }
+    </style>
+</head>
+
+<body>
+    <p id='dom' class='test'> DOM - Document Object Model </p>
+    <p class='cssom'> CSSOM - CSS Object Model </p>
+    <p> Rendering tree </p>
+
+    <!-- 
+        Pod komentarom je jedan od nacina pracenja dogadjaja nad elementom.  
+        Konkretno, u pitanju je reagovanje na klik pozivom funkcije sayHello. 
+        Svaki put kada korisnik klikne na dugme izvrsice se sayHello funkcija.
+    -->
+
+    <!--<input  type='button' 
+                value ='test button' id='test_button'
+                onclick="sayHello()">-->
+
+    <input type='button' value='test button' id='test_button'>
+
+
+</body>
+
+<script type='text/javascript'>
+
+    /* document objekat predstavlja DOM reprezentaciju veb strane koja je prikazana u pregledacu. */
+
+    /* O nacinu dohvatanja elementata iz DOM drveta. */
+
+    /* Funkciju getElementById mozemo koristiti ukoliko znamo identifikator elementa kojeg zelimo
+    da dohvatimo. textContent svojstvo se koristi za citanje tekstualnog sadrzaja elementa. */
+    // var element = document.getElementById('dom');
+    // console.log(element.textContent);
+
+    /* Funkciju getElementsByClassName mozemo koristiti ukoliko znamo ime klase elementa (jednog ili vise)
+    kojeg zelimo da dohvatimo. Rezultat je uvek niz pa pojedinacnim dohvacenim elementima pristupamo koriscenjem 
+    [] zagradica i odgovarajuceg indeksa. */
+    // var elements = document.getElementsByClassName('cssom');
+    // console.log(elements[0]);
+
+    /* Funkciju getElementsByTagName mozemo koristiti ukoliko znamo ime elementa (jednog ili vise)
+    kojeg zelimo da dohvatimo. Rezultat je uvek niz pa pojedinacnim dohvacenim elementima pristupamo koriscenjem 
+    [] zagradica i odgovarajuceg indeksa. */
+    // var elements = document.getElementsByTagName('p');
+    // for(var i =0; i< elements.length; i++){
+    //     var currentP = elements[i];
+    //     console.log(currentP.textContent);
+    // }
+
+    /* Funkcije querySelector i querySelectorAll omogucavaju koriscenje selektora nalik CSS selektorima za dohvatanje
+    elemenata iz DOM drveta. Funkcija querySelector dohvata samo prvi element prepoznat zadatim selektorom, dok funkcija querySelectorAll
+    dohvata sve prepoznate elemente i kao rezultat uvek vraca niz. */
+    // document.querySelector('#dom')
+    // document.querySelectorAll('.cssom')
+    // document.querySelectorAll("a[href$='pdf']");
+
+
+    /* textContent svojstvo sluzi za citanje (ili menjanje) tekstualnog sadrzaja elementa. Ukoliko element sadrzi 
+    druge elemente koji, takodje, imaju tekstualni sadrzaj, textContent ce procitati sveukupan tekstualni sadrzaj. */
+
+    // var text = document.querySelector('div').textContent;
+    // var inner = document.querySelector('div').innerHTML;
+    // console.log(text, inner);
+
+    /* Osim textContent svojstva, za manipulaciju tekstualnim sadrzajem ili HTML sadrzajem elementa, 
+    koristi se i innerHTML svojstvo. */
+
+    // document.querySelector('div').innerHTML="<span> test </span>";
+
+    /* Za citanje korisnickog unosa u tekstualna polja koristi se posebno svojstvo sa imenom value. O 
+    njemu ce biti nesto vise reci u narednom bloku. */
+
+
+    /* Za promenu CSS svojstava elementa mogu se koristi ili style atribut ili klase. */
+
+    /* style svojstvo elementa se koristi za manipulaciju style atributom. Koriscena CSS svojstva se 
+    u JavaScript-u zapisuju u kamiljoj notaciji npr. font-size je fontSize, a background-color backgroundColor. */
+    // var p = document.querySelector('#dom');
+    // p.style.color = 'orange';
+    // p.style.fontSize = '20px'; 
+
+    /* Rad sa klasama moguc je kroz className svojstvo elemenata. Prilikom pridruzivanja klasa 
+    treba voditi racuna da se neke od vec postojecih klasa nezeljeno ne izgube. */
+    // var p = document.querySelector('#dom');
+    // var oldClass = p.className;
+    // var newClass = oldClass + ' info';
+    // p.className = newClass;
+
+
+    /* Funkcija koja ispisuje poruku u alert prozorcicu. window objekat se koristi za poziv alert() funkcije 
+    predstavlja prozor pregledaca. Osim funkcija kao sto su alert(), confirm() ili prompt() koje generisu prozorcice
+    za interakciju sa korisnikom, ovaj objekat nudi i mogucnost rada sa svojstvima kao sto su history u kojem se 
+    cuva istoriju rada pregledaca, screen koje sadrzi informacije o ekranu na kojem se sadrzaj prikazuje, location za 
+    kontrolu navigacija i mnogim drugim. */
+    function sayHello() {
+        window.alert('Hello!');
+    }
+
+    /* Ovo je jos jedan nacin pracenja dogadjaja nad elementima. 
+    Element se prvo dohvati iz DOM drveta, a potom se nad njim definise reakcija na zeljeni dogadjaj. 
+    Nad dugmetom se prati klik korisnika - kada korisnik klikne na dugme poziva se funkcija sayHello. */
+    // var button = document.querySelector('#test_button');
+    // button.onclick = sayHello;
+
+    /* Ovaj poziv odgovara prethodnom opisu uz izmenu koriscenje anonimne funkcije za definisanje zeljene radnje. */
+    // button.onclick = function(){
+    //     window.alert('Hello!');
+    // };
+
+    /*  Ovaj poziv menja prethodnu reakciju na klik korisnika - kada korisnik klikne na dugme poziva se funkcija koja 
+    ocitava vrednost atributa id i potom ga prikazuje u alert prozorcicu. Funkcija koja se koristi za citanje 
+    vrednosti atributa je getAttribute(), dok se funkcija setAttribute() koristi za postavljanje vrednosti atributa. 
+    U funkciji se koristi i referenca this sa znacenjem objekta koji poziva funkciju (button objekat). */
+
+    // button.onclick = function(){
+    //     var id = this.getAttribute('id');
+    //     window.alert(id);
+    // };
+
+    /* Jos jedan nacin pridruzivanja dogadjaja elementu je pomocu addEventListener funkcije. Ona omogucava 
+    definisanje vise od jedne reakcije na istu aktivnost korisnika i bolju kontrolu nad propagiranjem dogadjaja kroz 
+    DOM drvo. Njen prvi parametar je ime dogadjaja koji se prati, a drugi funkcija koju treba izvrsiti kada se dogadjaj desi. */
+    var button = document.querySelector('#test_button');
+    button.addEventListener('click', sayHello);
+    button.addEventListener('click', function () {
+        window.alert('Hello from addEventListener');
+    });
+
+    /* U primerima je pracena reakcija na klik korisnika kroz onclick svojstvo. Mogu se pratiti i mnoga druga svojstva 
+    tipa onmouseenter, onmouseleave, onfocus, onblur, onselect, onload, onkeyup, onkeydown, .. Neka od njih se mogu 
+    definisati samo nad specificnim elementima. */
+
+</script>
+
+</html>

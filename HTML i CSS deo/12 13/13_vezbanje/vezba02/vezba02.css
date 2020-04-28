@@ -1,0 +1,59 @@
+table {
+    width: 60%;
+    margin: auto;
+    text-align: center;
+    caption-side: bottom;
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    border-collapse: collapse;
+    box-shadow: 3px 3px rgba(220, 20, 60, 0.5);
+}
+
+th, caption {
+    font-style: italic;
+    font-size: 30px;
+    text-shadow: 2px 1px grey;
+}
+
+span {
+    text-transform: uppercase;
+}
+
+caption > span {
+    text-decoration: underline;
+}
+
+th, td {
+    border: 1px solid crimson;
+}
+
+td {
+    width: 25%;
+}
+
+td:last-child {
+    width: 50%;
+    text-align: justify;
+    padding: 5px;
+}
+
+td[rowspan] {
+    font-weight: bolder;
+}
+
+tr:last-child span {
+    color: teal;
+}
+
+td[rowspan] ~ td > span {
+    color: white;
+    background-color: teal;
+}
+
+a {
+    text-decoration: none;
+    font-size: 20px;
+}
+
+tr:nth-child(even), a {
+    color: crimson;
+}

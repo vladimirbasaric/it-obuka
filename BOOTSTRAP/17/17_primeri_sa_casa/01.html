@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Mrezni sistem bootstrap-a</title>
+    <link rel="stylesheet" type="text/css" href="./resursi/bootstrap.css">
+    <style>
+        .row div {
+            height: 200px;
+        }
+
+        .row div:nth-child(1) {
+            background-color: aqua;
+        }
+        
+        .row div:nth-child(2) {
+            background-color: crimson;
+        }
+        
+        .row div:nth-child(3) {
+            background-color: forestgreen;
+        }
+    </style>
+</head>
+<body>
+    <!--
+        Klasa container koristi se kao omotac, a 
+        podesavanja odredjuju koje ce sirine biti u 
+        zavisnosti od sirine viewport-a.
+        Ova klasa ima fiksne dimenzije izrazene u px.
+    -->
+    <div class="container">
+        <!--
+            Bootstrap koristi mrezni sistem za 
+            rasporedjivanje elemenata na stranici.
+            Mreza je podeljena na redove i kolone.
+            Redovi su oznaceni klasom row, a kolone
+            klasama col. U zavisnosti od broja kolona u 
+            jednom redu, menja se sirina elemenata sa ovom 
+            klasom. 
+
+            Bitno je da se element sa klasom col nalazi
+            u elementu sa klasom row, kao direktan potomak
+            tj. dete. Takodje, element sa klasom row treba 
+            da se nalazi unutar elementa sa klasom 
+            container.
+        -->
+        <div class="row">
+            <div class="col"></div>
+            <div class="col"></div>
+            <div class="col"></div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col"></div>
+            <div class="col"></div>
+            <div class="col"></div>
+        </div>
+    </div>
+</body>
+</html>

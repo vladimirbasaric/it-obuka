@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JS JQuery 01</title>
+
+    <!--
+    Kako bi mogli da koristimo biblioteku JQuery, koristicemo linkove za CDN preuzete na adresi:
+    https://code.jquery.com/
+    -->
+
+
+<script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+    crossorigin="anonymous"></script>
+
+<script>
+// Za sakrivanje i prikazivanje elementa, moǧu se koristiti metodi
+//  	$(selector).hide(speed, callback);
+//      $(selector).show(speed, callback);
+// gde je speed brzina sakrivanja/prikazivanja elementa, koja može da uzima neku
+// od predefnisanih vrednosti "slow" i "fast" ili broj milisekundi. Opcioni parametar
+// callback je po-potrebi-pozivna funkcija koja se poziva nakon izvršenja metoda.
+// Ova dva metoda je moguće kombinovati metodom
+//      $(selector).toggle(speed, callback);
+// koji uzima iste parametre kao i prethodni metodi. Ukoliko je element bio vidljiv,
+// nakon izvršenja ovog metoda, element će biti sakriven. Ukoliko je element bio
+// sakriven, nakon izvršenja ovog metoda, element će biti vidljiv.
+
+// Za pravljenje prelaza tokom sakrivanja i prikazivanja elementa, mogu se koristiti
+// metodi
+//      $(selector).fadeIn(speed, callback);
+//      $(selector).fadeOut(speed, callback);
+//      $(selector).fadeToggle(speed, callback);
+//      $(selector).fadeTo(speed, opacity, callback);
+// koji imaju iste parametre kao i prethodni metodi, sa izuzetkom poslednjeg koji
+// ima obavezan parametar opacity koji uzima vrednost u pokretnom zarezu između
+// 0 i 1. Njegov smisao je da odredi do kog nivoa se vrši prelaz.
+
+    $(document).ready(function () {
+        $("#btnHide").click(function () {
+            $("p").hide();
+        });
+        $("#btnShow").click(function () {
+            $("p").show("slow", function(){
+                $("#empty").text("Now we see this div");
+            });
+        });
+        $("#btnToogle").click(function () {
+            $("p").toggle("fast", function(){
+                $("#empty").text("You clicked on Toogle button");
+            });
+        });
+        $("#btnFadeIn").click(function () {
+            $("p").fadeIn();
+        });
+        $("#btnFadeOut").click(function () {
+            $("p").fadeOut();
+        });
+        $("#btnSlideDown").click(function () {
+            $("p").slideDown(1000);
+        });
+    });
+</script>
+</head>
+
+<body>
+
+    <button id="btnHide">Hide</button>
+    <button id="btnShow">Show</button>
+    <button id="btnToogle">Toogle</button>
+    <button id="btnFadeIn">FadeIn</button>
+    <button id="btnFadeOut">FadeOut</button>
+    <button id="btnSlideDown">SlideDown</button>
+
+
+    <p>This is a paragraph.</p>
+
+    <div id="empty"></div>
+
+</body>
+
+</html> 

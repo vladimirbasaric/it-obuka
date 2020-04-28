@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            border: 1px solid black;
+            background: yellow;
+            animation-name: animacija;
+            animation-duration: 4s;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+
+        }
+
+        @keyframes animacija {
+            0% {
+                background-color: yellow;
+            }
+
+            100% {
+                background-color: teal;
+                border-radius: 50%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <p>
+        Napraviti animaciju koja zuti div pretvara u krug boje "teal" i traje 4 sekunde.
+    </p>
+    <p>
+        Postaviti da se animacija beskonacno izvrsava i da animacija
+        ima i animaciju i unazad (iz kruga u kvadrat).
+    </p>
+    <div></div>
+</body>
+
+</html>

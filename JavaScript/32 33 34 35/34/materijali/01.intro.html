@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JS JQuery 01</title>
+
+    <!--
+    Kako bi mogli da koristimo biblioteku JQuery, potrebno je da je ucitamo.
+    Za to postoji vise nacina, a dva najcesca su:
+    - Preuzimanje jquery-A.B.C.js skripte (A.B.C je verzija) koja se potom moze povezati
+    koristeci
+    <script src='jquery-A.B.C.js'></script>.
+    - Koriscenja CDN-a koji preko Veba preuzima skriptu.
+
+    Postoje minifikovane verzije biblioteke koje zauzimaju manje prostora i preporuceno
+    je koristiti njih kako si se ubrzalo ucitavanje veb strane.
+
+    Mi cemo koristiti primer sa CDN-om. Linkove za CDN mozete pronaci na adresi:
+    https://code.jquery.com/
+    -->
+
+    <!-- Minifikovana verzija -->
+    <!-- <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script> -->
+    <script src="https://code.jquery.com/jquery-3.4.1.js"
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+
+    <!-- Nasa skripta -->
+    <script>
+    // Osnovna sintaksa biblioteke JQuery:
+    // $(selektor).metod(argumenti);
+    // selektor - Prihvata string inspirisan CSS selektorima ili referencu na postojeci objekat DOM stabla
+    // metod - neki od JQuery metoda koje se nudi nad objektom
+    // argumenti - argumenti funkcije koja se poziva.
+
+    // Pre nego sto zapocnemo izvrsavanje skripte, korisno je sacekati da se ceo dokument ucita.
+    // To nam obezbedjuje .ready() metoda. Primetite da njen oblik odgovara gore navedenoj sintaksi.
+    // Odnosno, onda kada je dokument SPREMAN, izvrsice se funkcija koja je prosledjena.
+    $(document).ready(() => {
+        // Zelimo da pristupimo <p id='citat'> elementu.
+        // U CSS-u bi njemu pristupili pomocu #citat (koristeci ID). JQuery nudi ovu mogucnost.
+        let pElement = $("#citat");
+
+        // Zelimo da promenimo vrednost elementu na nas tekst.
+        pElement.text("Tvrd je orah vocka cudnovata!");
+        
+        // Zelimo da promenimo ponovo tekst naseg p elementa, ali posle 5 sekundi
+        // Prisetimo se funkcije setTimeout
+        setTimeout(() => {
+            pElement.text("Ne slomi ga, ali zube polomi!");
+        }, 5000);
+
+        // -----------------------------------------------------------------------------------------
+        // VAZNO: Na liniji 45 smo SACUVALI rezultat funkcije $("#citat") u promenljivoj pElement.
+        // pElement je REFERENCA na DOM objekat koji predstavlja nas p element.
+        // Mogli smo direktno bez promenljive da uradimo istu stvar:
+        // $("#citat").text("Tvrd je orah vocka cudnovata!");
+        // setTimeout(() => {
+        //     $("#citat").text("Ne slomi ga, ali zube polomi!");
+        // }, 5000);
+        // -----------------------------------------------------------------------------------------
+        // Ali ovo je LOSIJE iz razloga sto 2 puta zovemo funkciju $("#citat"). Zasto je to lose?
+        // Da bi mi dobili njen rezultat, potrebno je pretraziti DOM stablo (sto moze da potraje),
+        // tako da je uvek korisno sacuvati referencu na objekat i iskoristiti nju umesto da ponovo
+        // pozivamo funkciju $(...) na isti nacin za isti rezultat.
+
+    });
+
+    // ili umesto arrow funkcije:
+    $(document).ready(function() {
+        // ...
+    });
+    </script>
+</head>
+
+<body>
+    <p id='citat'>Ovaj tekst necemo videti :)</p>
+</body>
+
+</html>

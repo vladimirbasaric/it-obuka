@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Primer 02 - Postavljanje delova animacije</title>
+    <style>
+        #animationDiv {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            animation-name: animationExample;
+            animation-duration: 4s;
+        }
+
+        @keyframes animationExample {
+            0% {
+                background-color: red;
+            }
+            25% {
+                background-color: yellow;
+            }
+            50% {
+                background-color: blue;
+            }
+            100% {
+                background-color: green;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Primer 02 - Postavljanje delova animacije</h1>
+    <div id='animationDiv'></div>
+</body>
+</html>

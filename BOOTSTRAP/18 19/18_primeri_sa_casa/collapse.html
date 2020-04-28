@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Collapse</h1>
+
+        <p>
+            <!-- 
+        - klasa collapse se odnosi na nestajuci element 
+        - potrebno je dodati data-toggle="collapse"
+        - id za href i odgovarajuceg diva treba da imaju isti naziv
+        - element na pocetku nije prikazan
+        -->
+            <a href="#collapse1" class="btn btn-primary" data-toggle="collapse">Prikazi prvi sadrzaj</a>
+            <div id="collapse1" class="collapse">
+                Sadrzaj ovog pasusa ce biti prikazan klikom na dugme <strong>Prikazi prvi sadrzaj</strong>. Ponovnim
+                klikom na dugme, sadrzaj ce biti obrisan.
+            </div>
+        </p>
+
+        <p>
+            <a href="#collapse2" class="btn btn-primary" data-toggle="collapse">Skloni drugi sadrzaj</a>
+            <!-- klasa show oznacava da ce element na pocetku biti prikazan -->
+            <div id="collapse2" class="collapse show">
+                Sadrzaj ovog pasusa ce biti sklonjen klikom na dugme <strong>Skloni drugi sadrzaj</strong>. Ponovnim
+                klikom na dugme, sadrzaj ce biti prikazan.
+            </div>
+        </p>
+    </div>
+
+</body>
+
+</html>

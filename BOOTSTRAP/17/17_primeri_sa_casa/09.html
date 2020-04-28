@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Stilizovanje slika sa Bootstrap-om</title>
+    <link rel="stylesheet" type="text/css" href="./resursi/bootstrap.css">
+</head>
+<body>
+    <!--
+        Klasa rounded zaobljava sve coskove elementa za 
+        0.25rem tj. 4px.
+
+        Ukoliko zelimo samo neke coskove koristimo klasu 
+        rounded-*. Znak * menjamo nekom od vrednosti top, 
+        bottom, left ili right u zavisnosti od toga koje
+        coskove zelimo zaobljene.
+
+        Klasa float-*-* omogucava postavlja vrednost za 
+        svojstvo float. Prva * zamenjuje se velicinom 
+        uredjaja, a druga * zamenjuje se vrednostima za 
+        svojstvo float (left, right, none). Ukoliko zelimo
+        da element uvek pluta (za bilo koju velicinu 
+        uredjaja) koristimo float-*, a * menjamo 
+        vrednostima za svojstvo float.
+
+        Klasa img-fluid omoguciva da se slika smanjuje sa 
+        velicinom uredjaja tj. postavlja max-width na 100% 
+        cime dobijamo prilagodljivu sliku.
+    -->
+    <img src="./resursi/Tower.jpg" alt="Tower Bridge in London" class="rounded float-lg-right float-md-none img-fluid">
+
+    <!--
+        Klasa rounded-circle zaobljava sve coskove elementa 
+        za 50%.
+    -->
+    <img src="./resursi/SzeechenyiChain.jpg" alt="Szeechenyi Chain Bridge in Budapest" class="rounded-circle">
+
+    <!--
+        Klasa img-thumbnail dodaje blago zaobljen okvir 
+        slici. Takodje je postavljeno svojstvo max-width na 
+        100% tako da se slika prilagodjava velicini 
+        uredjaja.
+
+        Kombinacija klasa mx-auto i d-block centriraju 
+        element. Prva klasa postavlja margine na auto, 
+        a druga dodaje svojstvo display postavljeno block.
+    -->
+    <img src="./resursi/Rialto.jpg" alt="Rialto Bridge Venice" class="img-thumbnail mx-auto d-block">
+
+
+    <!--
+        Mozemo napraviti i kombinaciju zaobljene slike i 
+        okvira. Klasa rounded-pill je jos jedna od klasa 
+        koja zaobljava coskove, u ovom slucaju za 50rem tj.
+        800px.
+    -->
+    <img src="./resursi/JuscelinoKubitschek.jpg" alt="Juscelino Kubitschek Bridge in Brasilia" class="rounded-pill img-thumbnail float-left">
+
+</body>
+</html>

@@ -1,0 +1,15 @@
+24. blok, plan: 
+	Uvod u programiranje - program, programski jezik
+						 - kompajliranje i interpretiranje
+						 - debagovanje (sintaksne greške, logičke greške)
+						 - testiranje 
+	Uvod u JavaScript, JS BOM i JS DOM.
+	Okruzenje za rad: 
+		-	Web Console
+		-   izvrsavanje iz VSCode-a (CodeRunner ekstenzija) 
+		
+	Promenljive i tipovi podataka (number, boolean, string, undefined, null) 
+	typeof operator
+	console.log() funkcija
+	Operatori: arnost, prioritet, asocijativnost 
+	Aritmeticki operatori: +, -, *, /, %, ++, --

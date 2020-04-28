@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> DOM vežba</title>
+    <meta charset='utf-8'>
+    <style type='text/css'>
+        #square {
+            height: 200px;
+            width: 200px;
+            box-sizing: border-box;
+            background-color: cadetblue;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- 
+        Kvadrat zute boje dimenzija 200x200 piksela. 
+        HTML jezik nudi konacan skup atributa koji se mogu pridruzivati elementima sa vrlo specificnim znacenjem
+        i namenom. Na primer, href atribut u <a> elementu oznacava do koje adrese vodi link, style atribut na 
+        nivou svih elemenata definise stil prikaza, i slicno. Atributi koji pocinju prefiksom data- su atributi
+        opste namene i mogu se koristiti da se na nivou elementa sacuva neka vrednost potrebna za rad skriptova. 
+        U nasem slucaju zelimo da pratimo da li element ima okvir ili ne kroz atribut data-has-border. Nastavak 
+        has-border smo sami uveli, a dogovor ce biti da ako ovaj atribut ima vrednost 'no' to znaci da element nema
+        okvir, a ako ima vrednost 'yes' da element ima okvir. 
+        Vise o atributu data-* mozete procitati ovde: http://html5doctor.com/html5-custom-data-attributes/ 
+    -->
+    <div id='square' data-has-border='no'></div>
+</body>
+
+<script type='text/javascript'>
+
+    /* Iz DOM drveta se dohvata element koji predstavlja kvadrat. 
+        Prilikom dohvatanja se koristi identifikator elementa. 
+        Alternativa koriscenju funkcije querySelector je funkcija getElementById. */
+    var square = document.querySelector('#square');
+
+    /* Pomocu onclick svojstva se definise sta se dogadja sa kvadratom kada se klikne na njega. 
+    Svojstvo onclick ocekuje funkciju kao vrednost. */
+    square.onclick = function () {
+        /* Ocitava se vrednost data-has-border atributa. */
+        var hasBorder = this.getAttribute('data-has-border');
+
+        /* Ukoliko je vrednost atributo 'no', elementu se pridruzuje okvir, 
+        a vrednost atributa data-has-border se menja na 'yes'. */
+        if (hasBorder == 'no') {
+            this.style.border = '10px solid red';
+            this.setAttribute('data-has-border', 'yes');
+        }
+        else {
+            /* U suprotnom, elementu se uklanja okvir, a vrednost atributa data-has-border se postavlja na 'no' */
+            this.style.border = '';
+            this.setAttribute('data-has-border', 'no');
+        }
+    };
+
+    /* 
+        Vrednost atributa data-has-border se umesto square.getAttribute('data-has-border') moze citati i sa square.dataset.hasBorder.  
+        Pridruzivanje vrednosti atributu data-has-border se umesto square.setAttribute('data-has-border', 'yes')
+        moze zapisati i sa square.dataset.hasBorder = 'yes'.
+    */
+</script>
+
+</html>

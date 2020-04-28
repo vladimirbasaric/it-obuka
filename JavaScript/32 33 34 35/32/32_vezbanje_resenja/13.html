@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> DOM vežba</title>
+    <meta charset='utf-8'>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body class='container'>
+    <div class='text-center'>
+        <!-- Kreiramo dugme. -->
+        <input type='button' class='button btn-primary' id='button' value='click'>
+    </div>
+</body>
+
+<script type='text/javascript'>
+
+    /* numberOfClicks je promenljiva u kojoj cemo cuvati broj klikova na dugme. Inicijalizujemo je brojem 0 i 
+    postavljamo da bude globalna promenljiva. */
+    var numberOfClicks = 0;
+
+
+    /* Iz DOM drveta dohvatamo dugme. */
+    var button = document.querySelector('#button');
+
+    /* Definisemo onclick svojstvo na nivou dugmeta. Vrednost ovog svojstva je funkcija koja ce se izvrsiti kada
+    se klikne da dugme. */
+    button.onclick = function () {
+        /* Prvo uvecavamo broj klikova. */
+        numberOfClicks++;
+
+        /* Zatim ispisujemo trenutnu vrednost broja klikova u alert prozorcicu. */
+        window.alert('Total number of clicks: ' + numberOfClicks);
+    };
+</script>
+
+</html>

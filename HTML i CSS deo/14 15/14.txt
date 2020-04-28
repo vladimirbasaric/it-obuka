@@ -1,0 +1,9 @@
+Materijali sa bloka 14 sa fokusom na CSS animacije.
+
+- 14_primeri_sa_casa: Materijali prikazani na casu.
+- 14_vezbanje: Nekolik primera za vezbanje. U materijalima su datoteke koje je potrebno doraditi.
+- 14_dodatni_primeri:
+Nekoliko prakticnih primera koji demonstriraju pravljanje animacija za 'loading'. Pokusajte da ih napravite sami. Za primer 1 treba koristiti transform: scaleY(x). Za drugi primer su potrebni perspective(brojPiksela), rotateX(ugao), rotateY(ugao). Za primer 3 je potrebno koristiti scale(x).
+
+Dodatno vezbanje:
+- Rekonstruisati animacije sa sledeceg linka: http://tobiasahlin.com/spinkit/

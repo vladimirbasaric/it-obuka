@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Visina i širina slike</title>
+    <style>
+        img {
+            width: 50%;
+            height: 500px;
+        }
+    </style>
+</head>
+<body>
+    <!--
+        Putanja koju navodimo kao vrednost src atributa moze biti slika iz naseg racunara, a moze biti i nesto sa Veba.
+
+        Vec smo videli da se slika prikazuje u originalnim dimenzijama. Medjutim, ako je slika mnogo velika mozemo joj 
+        podesiti dimenzije tako da odgovaraju nasim potrebama bez da je fizicki menjamo.
+
+        Postoje atributi elementa <img> kojima mozemo kontrolisati dimenzije slike: width i height. Oba atributa mogu imati vrednosti izrazene u pikselima.
+
+        Ipak, ovi atributi se mogu zameniti CSS svojstvima width i height koje bismo postavili za odgovarajucu sliku. 
+        Znamo da width i height nemaju uticaja na linijske elemente, ali <img> nije klasican linijski element 
+        tj. ima i neke osobine blokovskih elemenata (vise detalja o tome na narednom bloku casova).
+
+        Ukoliko postavimo visinu i sirinu slike kojoj su atributi width i height vec podeseni na neke vrednosti, 
+        te vrednosti atributa nece imati efekat tj. CSS svojstva u ovom slucaju imaju prednost.
+    -->
+    <img src="https://dumielauxepices.net/sites/default/files/drawn-hummingbird-native-american-544396-4008490.jpg" alt="Native american hummingbird" width="500" height="400"> 
+</body>
+</html>

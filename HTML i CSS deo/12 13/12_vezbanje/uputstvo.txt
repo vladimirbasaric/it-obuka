@@ -1,0 +1,31 @@
+Uputstvo za uredjivanje licne prezentacije
+
+1. odeljak:
+	- promeniti velicinu slova na 25px
+	- iskositi i podebljati tekst
+	- centrirati tekst
+	- dodati boju pozadine po zelji, ali joj postaviti transparentnost na 0.7
+	- podesiti da transparentnost ne bude primenjena na tekst
+	
+2. odeljak:
+	- postaviti ivicu tabele debljine 2 px i plave boje
+	- prvu vrstu, sa danima u nedelji, postaviti kao zaglavlje tabele
+	- drugacijom bojom oznaciti pozadinu polja zaglavlja i ostalih polja u tabeli
+	- vikend obaveze podebljati
+
+3. odeljak:
+	- postaviti rastojanje izmedju reci na 10px
+	- postaviti svojsto za text kojim svaka rec teksta pocinje velikim slovom
+	- za dodatu sliku postaviti transparentnost na 0.5 kada se prelazi misem preko slike
+
+4. odeljak:
+	- za nenumerisanu listu izmeniti obelezje stavki na kvadrat
+	- svaki paran element liste obojiti u zeleno, a neparan u plavo
+
+5. odeljak:
+	- dodati senku po zelji nad tekstom koji predstavlja opis knjige
+
+6. odeljak:
+	- centrirati fajl i promeniti boju pozadine
+	- postaviti rastojanje izmedju karaktera na 2px
+	- postaviti desno poravnanje

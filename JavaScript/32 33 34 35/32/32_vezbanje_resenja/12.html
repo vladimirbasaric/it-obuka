@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> DOM vežba</title>
+    <meta charset="utf-8">
+
+    <style type='text/css'>
+        table {
+            width: 500px;
+        }
+        td {
+            color: white;
+            height: 30px;
+            vertical-align: center;
+        }
+        tr:nth-child(even) {
+            background-color: purple;
+        }
+        tr:nth-child(odd) {
+            background-color: gray;
+        }
+    </style>
+</head>
+
+<body>
+</body>
+
+<script type="text/javascript">
+
+    /* Kreira se table element. */
+    var tableElement = document.createElement('table');
+
+    /* tableContent niz sadrzi tekst koji treba upisati u odgovarajuce celije tabele. 
+    Elementi niza su objekti, a na nivou svakog objekta postoje leftCell i rightCell polja sa tekstom koji
+    treba upisati u levu tj. u desnu celiju. Broj elemenata u nizu odgovara broju vrsta tabele koju treba napraviti. */
+    var tableContent = [
+        { leftCell: 'Style', rightCell: 'Description' },
+        { leftCell: 'width', rightCell: 'Width of element.' },
+        { leftCell: 'background-color', rightCell: 'Background color of element.' },
+        { leftCell: 'color', rightCell: 'Color of text in element' }
+    ];
+
+    /* Prolazi se kroz elemente niza. */
+    for (var i = 0; i < tableContent.length; i++) {
+
+        /* Za svaki element niza se kreira posebna vrsta tabele. */
+        var rowElement = document.createElement('tr');
+
+        /* Takodje, kreiraju se i dve celije tabele koje sadrza odgovarajuci tekst. */
+        var leftCellElement = document.createElement('td');
+        leftCellElement.textContent = tableContent[i].leftCell;
+
+        var rightCellElement = document.createElement('td');
+        rightCellElement.textContent = tableContent[i].rightCell;
+
+        /* Kreirane celije tabele se dodaju tekucem redu tabele. */
+        rowElement.appendChild(leftCellElement);
+        rowElement.appendChild(rightCellElement);
+
+        /* Tekuci red tabele se dodaje polaznoj tabeli i to na kraj. */
+        tableElement.appendChild(rowElement);
+    }
+
+    /* Kreirana tabela se dodaje body elementu. */
+    document.body.appendChild(tableElement);
+
+</script>
+
+</html>

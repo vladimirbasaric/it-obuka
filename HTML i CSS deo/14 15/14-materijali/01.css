@@ -1,0 +1,16 @@
+/* Konstruisemo animaciju sa nazivom 'primerAnimacije'. */
+@keyframes primerAnimacije {
+    from { background-color: red; }
+    to { background-color: yellow; }
+}
+
+#animatedDiv {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+
+    /* Primenjujemo animaciju na selektovani element */
+    animation-name: primerAnimacije;
+    /* Postavljamo duzinu trajanja animacije. */
+    animation-duration: 4s;
+}

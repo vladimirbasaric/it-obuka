@@ -1,0 +1,74 @@
+body {
+    /* leva i desna margina postavljene na auto omogucavaju centriranje - 
+        preduslov je promeniti sirinu tako da bude manja od 100% */
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+
+    border-left: 1px dashed Red;
+    border-right: 3px dotted Red;
+    border-bottom: 1px solid Red;
+
+    padding-left: 50px;
+    padding-right: 50px;
+
+    box-shadow: 0px 15px 10px 0px gray;
+}
+
+
+header {
+    text-align: center;
+}
+
+header h1 {
+    text-align: center;
+    font-family: cursive;
+    font-size: 50px;
+    color: MidnightBlue;
+}
+
+header h4 {
+
+    font-family: cursive;
+
+
+}
+
+.intro {
+    color: Maroon;
+}
+
+.example {
+    color: MidnightBlue;
+}
+
+.html {
+    font-size: 14px;
+    font-family: 'Arial', sans-serif;
+    letter-spacing: 2px;
+    text-indent: 20px;
+    text-align: justify;
+}
+
+#css {
+    border: 2px solid mediumseagreen;
+    border-radius: 20px 5px 20px 5px;
+    padding: 10px;
+    color: MidnightBlue;
+    font-style: italic;
+    /* TODO: eksperimentisati sa razlicitim visinama bloka */
+    height: 80px;
+    overflow: auto;
+}
+
+main div h3 {
+    font-weight: bold;
+    font-style: oblique;
+}
+
+footer {
+    text-align: center;
+    text-transform: lowercase;
+    border: 2px solid MidnightBlue;
+    margin-bottom: 20px;
+}

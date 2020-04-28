@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+
+	<div class="container">
+		<!-- 
+    - alerti se kreiraju pomocu klase alert
+	- alert-success je jedan tip alerta, a umesto njega se moze koristiti i alert-info, alert-warning,
+	 alert-danger, alert-primary, alert-secondary, alert-light ili alert-dark
+    - fade show se moze dodati, ukoliko zelimo fade efekat prilikom zatvaranja alerta
+    -->
+		<div class="alert alert-success alert-dismissible fade show">
+			<!-- ovim dugmetom, koji stoji u desnom uglu se oznacava zatvaranje alerta,
+				 najcesce se koristi znak &times; (to je x koji oznacava zatvaranje) -->
+			<button type="button" class="close" data-dismiss="alert">&times;</button>
+			<strong>Ovo je alert!</strong> Za zatvaranje, pritisnite x sa desne strane.
+		</div>
+	</div>
+
+</body>
+
+</html>

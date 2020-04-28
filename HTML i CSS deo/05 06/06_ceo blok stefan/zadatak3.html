@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <style>
+            /* radi kompaktnijeg zapisa, moze se napraviti klasa za svaku boju (ukljucujuci i nevidljive pravougaonike), kao i za svaku velicinu. drugi nacin bi bio da se pravi vise razlicitih klasa. iako se u tom slucaju dobar deo koda ponavlja, to uopste nije netacno, samo je ovaj nacin nesto bolja praksa da se pise, jer je kod razumljiviji. mada, u oba slucaja se moze postici isti efekat */
+
+            /* svi divovi su inline-block, jer se redjaju jedan nakon drugog */
+            div { display: inline-block; }
+            /* izuzetak su divovi koji se odnose na red, njih vracamo da imaju default vrednost block (njima je default vrednost promenjena, jer je div element postavljen iznad na inline-block */
+            .red {display: block; }
+            /* klase za razlicite boje koje se pojavljuju */
+            .crvena { background-color: red; }
+            .plava { background-color: blue; }
+            .zuta { background-color: yellow; }
+            .crna { background-color: black; }
+            .zelena { background-color: green; }
+            /* ukljucujuci i nevidljivu */
+            .nevidljiv { visibility: hidden; }
+
+            /* klase koje se odnose na velicine pravougaonika */
+            .veliki { width: 350px; height: 150px; }
+            .srednji { width: 200px; height: 150px; }
+            .mali { width: 100px; height: 40px; }
+        </style>
+    </head>
+    <body>
+        <!-- prvi red sadrzi veliki, nevidljivi veliki i srednji pravougaonik -->
+        <div class="red">
+            <div class="veliki zelena">
+                <!-- u prvom zelenom se nalazi pet manjih pravougaonika. svi su inline block i redjaju se u redu u okviru zelenog pravougaonika, pa kad im ukupna sirina predje sirinu zelenog pravougaonika, prelaze u novi red -->
+                <div class="mali crvena"></div>
+                <div class="mali plava"></div>
+                <div class="mali zuta"></div>
+                <div class="mali crvena"></div>
+                <div class="mali crvena"></div>
+            </div>
+            <div class="veliki nevidljiv"></div>
+            <div class="srednji crvena">
+                <!-- zbog sirine manjih plavih pravogaonika (2 puta po 100 px) i margine izmedju njih, ukupna sirina prelazi sirinu crvenog pravougaonika od 200px, pa drugi plavi prelazi u novi red -->
+                <div class="mali plava"></div>
+                <div class="mali plava"></div>
+            </div>
+        </div>
+
+        <!-- drugi red sadrzi redom nevidljivi srednji, veliki, nevidljivi srednji i srednji pravougaonik -->
+        <div class="red">
+            <div class="srednji nevidljiv"></div>
+            <div class="veliki zuta">
+                <div class="srednji zelena"></div>
+                <!-- u nekim situacijama, manji zeleni moze da ostane i u pravcu gornjeg kraja veceg zelenog pravouganika (u okviru zutog pravougaonika), ali je spao tako da im se podudaraju donje ivice. ovo se desava automatski zbog rasporedjivanja elemenata u HTML-u. u nastavku cemo raditi pozicioniranje, pa cemo znati kako i ovo da iskontrolisemo, za sada svakako moze da ostane ovako -->
+                <div class="mali zelena"></div>
+            </div>
+            <div class="srednji nevidljiv"></div>
+            <div class="srednji crna"></div>
+        </div>
+
+        <!-- treci red sadrzi jedan nevidljivi veliki i jedan veliki pravougaonik -->
+        <div class="red">
+            <div class="veliki nevidljiv"></div>
+            <div class="veliki plava"></div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Pozicija pozadine</title>
+    <style>
+        div {
+            height: 500px;
+            /*
+             *  mozemo kombinovati sliku sa bojom pozadine pri cemu slika ima prednost
+             *  boja ce biti vidljiva samo na onim delovima pozadine koje slika nije prekrila, ako takvi delovi postoje
+            */
+            background-color: cornflowerblue;
+            background-image: url('./slike/bl.jpg');
+            /*
+                no-repeat iskljucuje ponavljanje pozadine
+                i horizontalno i vertikalno
+            */
+            background-repeat: no-repeat;
+
+            /*
+             * svojstvo za kontrolisanje velicine pozadine
+             * mozemo mu dodeliti vrednosti zapisane u bilo
+               kojoj mernoj jedinici ili koriscenjem predefinisanih vrednosti
+             * ukoliko koristimo merne jedinice, mozemo     
+               navesti dve vrednosti (prva se odnosi na 
+               sirinu, a druga na visinu pozadine) ili 
+               jednu vrednost (koja se odnosi i na sirinu i na visinu)
+             * ukoliko koristimo predefinisane vrednosti 
+               na raspolaganju su nam sledece vrednosti:
+                - auto (podrazumevano): slika je neizmenjenih dimenzija u odnosu na original a prikazan je deo slike koji moze da stane u element odredjenih dimenzija (ili cela slika ako je element dovoljno veliki)
+
+                - contain: cela slika je prikazana u elementu, ali su joj dimenzije izmenjene tako da moze da popuni element po sirini ili visini (zavisi sta je manje); uz to se zadrzava odnos sirine i visine koji je postojao pre izmene dimenzija kako se slika ne bi izoblicila
+
+                - cover: ceo element je prekriven slikom ali su joj dimenzije izmenjene tako da moze da popuni element i po sirini i po visini; uz to se zadrzava odnos sirine i visine koji je postojao pre izmene dimenzija kako se slika ne bi izoblicila
+            */
+            background-size: 50% 80%;
+
+            /*
+             * svojstvo za kontrolisanje polozaja pozadine
+             * mozemo mu dodeliti vrednosti zapisane u bilo
+               kojoj mernoj jedinici ili koriscenjem predefinisanih vrednosti
+             * ukoliko koristimo merne jedinice, mozemo     
+               navesti dve vrednosti (prva se odnosi na 
+               horizontalni, a druga na vertikalni polozaj) ili 
+               jednu vrednost (koja se odnosi na horizontalni polozaj, a vertikalni je podrazumevano na sredini)
+             * ukoliko koristimo predefinisane vrednosti 
+               na raspolaganju su nam vrednosti left, center i right za horiznotalni polozaj, a top, center i bottom za vertikalni polozaj
+                - koristimo kombinaciju jedne horizontalne i vertikalne vrednosti ili, ako navedemo samo jednu vrednostu, druga je podrazumevano center
+            */
+            background-position: left bottom;
+        }
+    </style>
+</head>
+<body>
+    <div>
+
+    </div>
+</body>
+</html>

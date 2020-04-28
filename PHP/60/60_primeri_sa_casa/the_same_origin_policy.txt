@@ -1,0 +1,34 @@
+Polisa o istom poreklu (eng. The Same Origin Policy) je bezbednosna mera pregledaca kojom se ogranicavaju
+pristupi i deljenja resursa izmedju dveju razlicitih veb strana. S obzirom da JavaScript skriptovi predstavljaju 
+najveci izvor opasnosti, ova polisa se, pre svega, odnosi na njih. Sadrzaji poput CSS stilova, deljeni fontovi ili 
+slike nisu, po pravilu, problematicni. Pregledac ce dozvoliti da skriptovi jedne strane pristupaju podacima druge strane 
+samo ako su strane istog porekla. Poreklo se definise kao kombinacija protokol sheme, mreznog imena i porta adrese.
+Na primer, za adresu http://www.test.rs/ protokol je http, mrezno ime test.rs, a port 80 (posto nije eksplicitno naveden).
+
+
+
+Dalje, za adresu http://www.test.rs/l1/l2/primer2.html
+
+adresa
+http://www.test.rs/l1/l3/primer3.html 
+zadovoljava polisu o istom poreklu jer se protokol, mrezno ime i port poklapaju
+
+adresa
+https://www.test.rs/l1/l3/primer3.html 
+ne zadovoljava polisu o istom poreklu jer se protokoli razlikuju (http i https)
+
+adresa
+http://www.en.test.rs/l1/l3/primer3.html 
+ne zadovoljava polisu o istom poreklu jer se mrezna imena razlikuju (test.rs i en.test.rs)
+
+adresa
+http://www.test.rs:893/l1/l3/primer3.html 
+ne zadovoljava polisu o istom poreklu jer se portovi razlikuju (podrazumevani port 80 i navedeni port 893)
+
+Da bi se prenebregnula ovakva ogranicenja koja nisu uvek pozeljna (na primer, koriscenje javnih API-ja) 
+uveden je standard o unakrsnom deljenju resursa (eng. CORS - Cross Origin Resource Sharing).
+
+Kratki materijali za citanje:
+https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy
+https://medium.com/@itsc0rg1/web-appsec-part-1-same-origin-policy-987f4b119a18
+https://web.dev/same-origin-policy (uvodni deo i tabelica sa pristupima)

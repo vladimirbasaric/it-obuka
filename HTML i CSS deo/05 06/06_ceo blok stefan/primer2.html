@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <style>
+            /* zajednicko za sve pasuse */
+           p {
+               height: 300px;
+               border: 1px solid black;
+               display: inline-block;
+           }
+           /* prvi je nevidljiv, ali odvaja se mesta onoliko koliko on zauzima */
+           .nevidljiv {
+               visibility: hidden;
+           }
+           /* drugi pasus ima fiksnu max-width. da ima manje teksta od sirine 200 px, on bi bio uzi */
+           .drugi {
+               max-width: 200px;
+           }
+           /* prvo slovo pasusa ce biti nesto vece */
+           .drugi::first-letter {
+               font-size: 50px;
+           }
+           /* maksimalna sirina treceg je 30% sirine stranice. da ima manje teksta od 30% sirine, on bi bio uzi */
+           .treci {
+               max-width: 30%;
+           }
+           /* prva linija pasusa ce biti druge boje. ovo se odnosi na liniju onako kako je prikazana u HTML-u. menjanjem velicine stranice, razliciti delovi teksta mogu biti prva linija, i samim tim razliciti delovi teksta mogu biti obojeni u crveno */
+           .treci::first-line {
+               color: red;
+           }
+        </style>
+    </head>
+    <body>
+        <p class="nevidljiv">Ovo je prvi pasus</p>
+        <p class="drugi">Ovo je drugi pasus. Ovo je drugi pasus.</p>
+        <!-- ignorisati ako je treci pasus spusten ili malo podignut u odnosu na drugi. ovo cemo nadomestiti kad budemo radili pozicioniranje. sto je vise razlicita duzina teksta, pasus ce se vise pomerati nagore ili nadole -->
+        <p class="treci">Ovo je treci pasus. Ovo je treci pasus. Ovo je treci pasus. Ovo je treci pasus. Ovo je treci pasus. Ovo je treci pasus. Ovo je treci pasus. Ovo je treci pasus. </p>
+    </body>
+</html>

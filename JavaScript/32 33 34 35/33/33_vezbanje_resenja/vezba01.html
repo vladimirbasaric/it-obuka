@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Vezba01</title>
+</head>
+<body>
+	<p id="lorem" style="font-size: 16px">
+		Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab, quod? Molestiae, quisquam blanditiis repellendus culpa amet dolore quae. Quidem esse consequatur beatae earum vitae! Quod perspiciatis illo reprehenderit magnam eos!
+	</p>
+	<button type="button" id="plus">+</button>
+	<button type="button" id="minus">-</button>
+
+	<script type="text/javascript">
+		var paragraf = document.getElementById("lorem");
+		var velicina = parseInt(paragraf.style.fontSize);
+		var pocetnaVelicina = velicina;
+		var plus = document.getElementById("plus");
+		var minus = document.getElementById("minus");
+		var promena = 0;
+		
+		plus.onclick = function() {
+			if(promena == 5) 
+				return;
+
+			velicina *= 1.2;
+			promena++;
+			paragraf.style.fontSize = velicina + "px";
+		}
+
+		minus.onclick = function() {
+			if(promena <= 0) return;
+
+			if(velicina*0.8 >= pocetnaVelicina) {
+				velicina *= 0.8;
+				promena--;
+				paragraf.style.fontSize = velicina + "px";
+			}
+			else {
+				promena = 0;
+			}
+		}
+	</script>
+</body>
+</html>

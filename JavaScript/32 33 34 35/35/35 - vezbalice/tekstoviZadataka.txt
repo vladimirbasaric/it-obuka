@@ -1,0 +1,19 @@
+1. Napraviti animaciju tako da se pomera zeleni kvadrat dimenzija 50x50px. Na vrhu ekrana se nalaze dugmici koji redom:
+	Dugme Levo: Pomera kvadrat udesno dok ne bude odmaknut na 600px od leve ivice i smanjuje njegovu velicinu na 30x30
+	Dugme Srednje:  Cini ga prozirnim 0.8 i povecava njegovu visinu i sirinu za po 100px 
+	Dugme Desno: Vrsi niz animacija:
+		- Pomera kvadrat desno dok ne bude primaknut na 10px od desno ivice
+		- smanjuje njegovu velicinu na 20x20
+		- Ceka 3sekunde
+		- Povecava njegovu velicinu na 40x40
+		- Cini ga prozirnim 0.5
+
+2. Napraviti div, koji sadrzi paragraph i listu koja ima 10 elemenata sa tekstom po izboru. Direktnog pretka liste postaviti da ima ivicu debljine 10px crvene boje. Sve elemente liste osim treceg obojiti u plavo.
+
+3. Napisati program u programskom jeziku JavaScript koji izračunava broj dana do kraja nastave naše IT obuke od trenutka kada se veb dokument učitava. Koristiti ugrađenu klasu Date za konstruisanje današnjeg i traženog datuma. Korišćenjem jQuery biblioteke upisati rezultat u odgovarajući element na stranici i dinamički mu dodeliti odgovarajuću klasu koja će obojiti tekst u plavo ako ima barem 15 dana do kraja, odnosno u crveno, ako ima manje od 15 dana do kraja nastave. Omogućiti da ukoliko se stranica pokrene nakon traženog datuma, ispiše se tekst "Nastava za IT obuku se zavrsila..." i postaviti odgovarajuća CSS svojstva tako da se tekst prikaže podebljano i u zelenoj boji. Podrazumevati da se nasava za obuku zavrsava 30.juna 2019. godine.
+
+4. Napraviti stranicu koja ima jedan kvarat sa tekstom i koji se zove prozor. 
+Inicijalno je potrebno sakriti prozor. Pomoću biblioteke jQuery, od trenutka
+učitavanja veb dokumenta, nakon 2 sekunde je potrebno prikazati prozor efektom
+slajdera odozdo u trajanju od 1 sekunde. Takođe, omogućiti da se prozor
+sakrije efektom slajdera odozgo u trajanju od 1 sekunde klikom na "X".

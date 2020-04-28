@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Bootstrap tabele</title>
+    <link rel="stylesheet" type="text/css" href="./resursi/bootstrap.css">
+</head>
+<body>
+    <!--
+        Klasa table-dark postavlja boju pozadine na tamno 
+        sivu, a slova na belu boju. Tabelama se mogu 
+        pridruzene jos neke boje koriscenjem narednih klasa:
+            - .table-primary - plava
+            - .table-success - zelena
+            - .table-danger - crvena
+            - .table-info - svetlo plava
+            - .table-warning - narandzasta
+            - .table-active - siva
+            - .table-secondary -siva
+            - .table-light - svetlo siva
+            - .table-dark - tamno siva
+
+        Klasa table-bordered dodaje okvir celoj tabeli u 
+        stilu kao za sve celije. Suprotno tome, 
+        table-borderless ce ukloniti sve okvire koji su 
+        postavljeni.
+
+        Klasa table-hover menja pozadinu reda koji se 
+        nalazi u tbody preko koga je postavljen kursor misa.
+        Boja je malo svetlija ako je table-dark klasa  
+        dodata elementu, inace je malo tamnija.
+    -->
+    <table class="table table-dark table-bordered table-hover">
+        <thead>
+            <tr>
+                <th>Klasa</th>
+                <th>Boja</th>
+            </tr>
+        </thead>
+        <tr>
+            <td>table-primary</td>
+            <td>plava</td>
+        </tr>
+        <tr>
+            <td>table-success</td>
+            <td>zelena</td>
+        </tr>
+        <tr>
+            <td>table-warning</td>
+            <td>narandzasta</td>
+        </tr>
+        <tr>
+            <td>table-danger</td>
+            <td>crvena</td>
+        </tr>
+        <tr>
+            <td>table-info</td>
+            <td>svetlo plava</td>
+        </tr>
+        <tr>
+            <td>table-secondary</td>
+            <td rowspan="2" class="align-middle">siva</td>
+        </tr>
+        <tr>
+            <td>table-active</td>
+        </tr>
+        <tr>
+            <td>table-light</td>
+            <td>svetlo siva</td>
+        </tr>
+        <tr>
+            <td>table-dark</td>
+            <td>tamno siva</td>
+        </tr>
+    </table>
+</body>
+</html>

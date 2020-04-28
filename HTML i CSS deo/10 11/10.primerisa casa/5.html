@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title> Fiksno pozicioniranje </title>
+
+    <style>
+        div {
+            height: 500px;
+        }
+
+        #prvi {
+            background-color: lightblue;
+        }
+
+        #drugi {
+            background-color: crimson;
+        }
+
+        #treci {
+            background-color: lightgreen;
+        }
+
+        /*
+            Fiksno pozicioniranje racuna se u odnosu na pogled. Element koji je pozicioniran fiksno uvek se 
+            nalazi na istom mestu u okviru pogleda bez obzira da na skrolovanje.
+
+            Pomocu svojstava top, left, right, i bottom kontrolisemo koliko ce biti udaljen
+             od odgovarajucih ivica pogleda.
+        */
+        footer {
+            position: fixed;
+            bottom: 0;
+            right: 0;
+            width: 10%;
+            background-color: yellow;
+            font-size: 20px;
+        }
+
+        a {
+            color: white;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="prvi">
+
+    </div>
+
+    <div id="drugi">
+
+    </div>
+
+    <div id="treci">
+
+    </div>
+
+    <footer>
+        <a href="#prvi">Povratak na vrh</a>
+    </footer>
+</body>
+
+</html>

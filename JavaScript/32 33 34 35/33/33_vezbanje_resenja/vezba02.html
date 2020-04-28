@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Vezba02</title>
+	<style>
+		#captcha {
+			font-size: 20px;
+		}
+	</style>
+</head>
+<body>
+	<button type="button" onclick="captcha()">Generisi captcha</button>
+	<span id="captcha"></span>
+
+	<script type="text/javascript">
+		function captcha() {
+			var rezultat = document.getElementById("captcha");
+			var generisano = "";
+			var karakteri = new Array();
+			for(var i=0; i<26; i++) {
+				karakteri[i] = String.fromCharCode(65+i);
+				karakteri[26 + i] = String.fromCharCode(97+i);
+			}
+
+			for(var i=0; i<10; i++) {
+				karakteri[52+i] = i;
+			}
+
+			for(var i=0; i<10; i++) {
+				generisano += karakteri[Math.floor(Math.random()*karakteri.length)];
+			}
+
+			rezultat.textContent = generisano;
+		}
+	</script>
+</body>
+</html>

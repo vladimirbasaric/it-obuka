@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+
+<html>
+
+<body>
+
+<p id="1"></p>
+
+<script>
+
+var tekst = 
+`{
+    "ime": "Pera",
+    "godine": 30,
+    "grad": "Beograd"
+}`;
+var osoba = JSON.parse(tekst);
+var s = '';
+
+for (var i in osoba) {
+    s += "<p>" + i + " " + osoba[i] + "</p>";
+}
+
+document.getElementById("1").innerHTML = s;
+
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Relativno pozicioniranje</title>
+
+    <style>
+        div {
+            height: 200px;
+            width: 500px;
+        }
+
+        #prvi {
+            background-color: lightblue;
+        }
+
+        /*
+            Relativno pozicioniranje racuna poziciju 
+            elementa u odnosu na njegovu originalnu 
+            poziciju u normalnom toku stranice. 
+
+            Svojstavima top, left, right, i bottom 
+            kontrolisemo koliko ce biti udaljen od 
+            odgovarajucih ivica pozicije elementa u 
+            normalnom toku.
+        
+            Vrednosti mogu biti i pozitivne i negativne. Za 
+            vezbu eksperimentisati sa razlicitim 
+            vrednostima za ova svojstva.
+
+            Primetimo da se tok stranice ne menja tako da 
+            se prilagodi novoj poziciji elementa tj. ostaje 
+            praznina u delu gde bi se u normalnom toku 
+            nasao element da ga nismo pomerili.
+        */
+        #drugi {
+            position: relative;
+            /* 
+                - negativna vrednost za bottom pomera 
+                element na dole, dok bi pozitivna pomerila na gore
+                - za top vazi obrnuto 
+            */
+            bottom: -100px;
+            /*
+                - pozitivna vrednost za left pomera element 
+                u desno, dok bi negativna pomerila u levo
+                - za right vazi obrnuto
+            */
+            left: 100px;
+            background-color: crimson;
+        }
+
+        #treci {
+            background-color: lightgreen;
+        }
+
+    </style>
+
+</head>
+<body>
+    <div id="prvi">
+
+    </div>
+
+    <div id="drugi">
+
+    </div>
+
+    <div id="treci">
+
+    </div>
+</body>
+</html>

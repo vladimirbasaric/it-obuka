@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Rad sa formularima - vežbanje</title>
+    <meta charset="UTF-8">
+
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css">
+    
+    <style type="text/css">
+        legend {
+            color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <form method="" action="" id="f" class="container" novalidate>
+        <img style="height: 200px" src="bioskop-stolice.jpg">
+
+        <fieldset class="form-group">
+            <legend>Prijavite se</legend>
+
+            <div class="form-group">
+                <label for="username"> Korisnicko ime*: </label>
+                <input id="username" type="text" name="korisnicko_ime" required class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label for="password"> Sifra*: </label>
+                <input id="password" name="sifra" required type="password" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label for="password"> Unesite ponovo sifru*: </label>
+                <input id="password" name="sifra" required type="password" class="form-control">
+            </div>
+
+        </fieldset>
+
+
+        <div class="form-group text-center">
+            <a href="bioskop.html">
+                <input value="Prijavi me" type="button" class="btn btn-primary">
+            </a>
+
+            <!--Lazna redirekcija na registraciju-->
+            <a href="registracija.html">
+                <input value="Registruj se" type="button" class="btn btn-primary">
+            </a>
+        </div>
+    </form>
+
+    <script type="text/javascript" src="01_formulari_obrada.js"></script>
+</body>
+
+</html>

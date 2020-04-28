@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /*
+        Napisati funkciju​ zameni(x, i, c) ​koja zamenjuje​ i​-tu cifru u zapisu broja​ x ​cifrom ​c ​i vraća izmenjeni broj.
+        Zatim treba pozvati funkciju i ispisati dobijenu vrednost. Napomena: ​pozicije u broju posmatramo s desna na levo 
+        počevši od 0, tako da je cifra jedinica na poziciji ​0​, a prva cifra u zapisu na poziciji ​broj_cifara-1​.
+        Primer: ako se zada broj ​-12345​, pozicija ​2 ​i cifra ​9 ​treba ispisati -12945​. 
+        Primer: ako se zada broj​ 12345​, pozicija ​0 ​i cifra ​5​ treba ispisati ​12345​.
+        */
+
+        var broj = -123456;
+        var izmenjen_broj = zameni_itu_cifru(broj, 2, 8);
+        console.log(izmenjen_broj);
+
+        function zameni_itu_cifru(x, i, c) {
+            var stepen = Math.pow(10, i);
+            var znak = x < 0 ? -1 : 1;
+            x = x < 0 ? -x : x;
+
+            var cifra_i = Math.floor(x / stepen) % 10;
+
+            x = x - cifra_i * stepen + c * stepen;
+
+            return x * znak;
+        }
+    </script>
+</body>
+
+</html>

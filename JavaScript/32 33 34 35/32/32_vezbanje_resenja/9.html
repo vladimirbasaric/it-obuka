@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> DOM vežba</title>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <!-- Kvadrat zute boje dimenzija 200x200 piksela. -->
+    <div id='square' style='height:200px; width:200px; background-color: yellow;'></div>
+</body>
+
+<script type="text/javascript">
+
+    /* Iz DOM drveta se dohvata element koji predstavlja kvadrat. 
+    Prilikom dohvatanja se koristi identifikator elementa. 
+    Alternativa koriscenju funkcije querySelector je funkcija getElementById. */
+    var square = document.querySelector('#square');
+
+
+    /* Pomocu onmouseover svojstva se definise sta se dogadja sa kvadratom kada se mis nalazi nad njim. 
+    Svojstvo onmouseover ocekuje funkciju kao vrednost. */
+    square.onmouseover = function () {
+        /* Kada se mis nadje nad elementom, boja pozadine elementa menja na crvenu. */
+        this.style.backgroundColor = 'red';
+    };
+
+    /* Pomocu onmouseout svojstva se definise sta se dogadja sa kvadratom kada se mis vise ne nalazi nad njim. 
+    Svojstvo onmouseout ocekuje funkciju kao vrednost. */
+    square.onmouseout = function () {
+        /* Kada se mis nadje nad elementom, boja pozadine elementa menja na zutu. */
+        this.style.backgroundColor = 'yellow';
+    };
+
+    /* U obema funkcijama se kao referenca na kvadrat koristi promenljiva this. Ne bi bila greska ni da se
+    umesto this promenljive koristi square promenljiva. Prvi nacin je, ipak, ustaljeniji. */
+</script>
+
+</html>

@@ -1,0 +1,78 @@
+/*
+    Selektor: *
+    Selektor * odnosi se na sve elemente koji se nalaze na 
+    stranici. Narednim pravilom podesili smo za sve 
+    elemente familiju fontova.
+*/
+* {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/*
+    Selektor: naziv elementa
+    CSS pravila koja su navedena odnose se na sve elemente 
+    sa zadatom nazivom.
+*/
+h1 {
+    color: deeppink;
+    margin-top: 50px;
+}
+
+p {
+    font-size: 20px;
+    border: 3px dotted deepskyblue;
+}
+
+/*
+    Selektor: identifikator elementa
+    Ukoliko smo nekom elementu postavili identifikator 
+    mozemo primeniti pravila samo na njega tako sto cemo 
+    nakon znaka # navesti naziv identifikatora.
+*/
+#naslov {
+    font-weight: lighter;
+    margin-bottom: 10px;
+    border-bottom: 2px inset deeppink;
+    border-left: 2px inset deeppink;
+}
+
+/*
+    Selektor: klasa elementa
+    Ukoliko smo nekim elementima dodelili klasu mozemo 
+    primeniti pravila na sve elemente sa odredjenom klasom 
+    tako sto nakon znaka . navedemo naziv klase.
+*/
+.centriran {
+    text-align: center;
+}
+
+
+/*
+    Selektor: naziv.klasa 
+    Iako smo deifinisali klasu za neke elemente, mozda ne 
+    zelimo da se pravila primene na sve elemente sa tom 
+    klasom. Ovim selektorom postizemo stilizovanje samo 
+    elemenata ciji smo naziv naveli i koji imaju zadatu 
+    klasu.
+*/
+p.ulepsan {
+    font-style: italic;
+    font-size: 25px;
+    color: deeppink;
+    background-color: deepskyblue;
+    border: none;
+}
+
+/*
+    Selektor: lista selektora
+    Ukoliko postoji vise razlicitih elemenata na koje 
+    zelimo da primenimo ista pravila, a nije moguce 
+    obuhvatiti ih istim selektorom, mozemo poredjati 
+    razlicite selektore u listu razdvojene zarezom i na taj 
+    nacin smanjiti ponavljanje istih podesavanja.
+*/
+h1, p {
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+}

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JS JQuery 01</title>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.js"
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+
+    <style>
+        .ancestors * {
+            display: block;
+            border: 2px solid lightgrey;
+            color: lightgrey;
+            padding: 5px;
+            margin: 15px;
+        }
+    </style>
+
+    <!-- Biblioteka jQuery sadrži veliki broj metoda za prolanaženje elemenata u DOM
+stablu. Uglavnom se počinje od jednog elementa, pa se prolazi kroz ostale dok se
+ne dođe do onog koji se traži. U ovoj pretrazi, možemo prolaziti naviše (obilazeći
+pretke), naniže (obilazeci potomke) ili u istom nivou (obilazeći braću). Neki od
+metoda za prolazak kroz stablo su:
+    parent(selector) — vraća direktnog pretka selektovanog elementa. Može se
+koristiti opcioni parametar selector za filtriranje predaka.
+    parents(selector) — vraća sve pretke do korena ( html elementa). Može se
+koristiti opcioni parametar selector za filtriranje predaka.
+    parentsUntil(selector, filter) — vraća sve pretke između selektovanog elementa
+i elementa koji se zadaje kao argument selector . Može se koristiti
+opcioni parametar filter za  filtriranje predaka.
+    children(selector) — vraća svu direktnu decu selektovanog elementa. Može
+se koristiti opcioni parametar selector za filtriranje dece.
+    find(selector) — vraća sve potomke do listova,  filtrirane po argumentu selector .
+    siblings(selector) — vraća sve rođake u stablu selektovanog elementa. Može
+se koristiti opcioni parametar selector za filtriranje rođaka.
+    next(selector) — vraća sledećeg rođaka selektovanog elementa. Može se
+koristiti opcioni parametar selector za filtriranje rođaka.
+    nextAll(selector) — vraća sve sledeće rođake selektovanog elementa. Može
+se koristiti opcioni parametar selector za filtriranje rođaka.
+    nextUntil(selector, filter) — vraća sve sledeće rođake između selektovanog
+elementa i elementa koji se zadaje kao argument selector . Može se
+koristiti opcioni parametar filter za filtriranje rođaka.
+    prev() , prevAll() i prevUntil() — imaju iste uloge kao prethodne tri metode,
+samo što vraćaju prethodne rođake umesto naredne.
+S obzirom da ove metode vraćaju, na primer, niz svih očeva elemenata p (ukoliko
+je pozvan metod $("p").parent() ), potrebno je ući u dalju pretragu u ovom nizu.
+Za to nam služe metodi:
+    first() — vraća prvi element među selektovanim elementima.
+    last() — vraća poslednji element među selektovanim elementima.
+    eq(index) — vraća element koji se nalazi na poziciji u nizu čiji je indeks zadat
+kao argument metoda. Mogu se zadati negativni brojevi da bi se pretraga
+vršila od kraja niza.
+    filter(selector) — vraća sve elemente koji imaju specifikaciju koja se zadaje
+kao argument metode.
+    not() — vraća sve elemente koji nemaju specifikaciju koja se zadaje kao argument
+metode. -->
+
+
+    <script>
+        $(document).ready(function () {
+            $("span").parent().css({ "color": "red", "border": "2px solid red" });
+        });
+    </script>
+</head>
+
+<body class="ancestors">body (great-great-grandparent)
+    <div style="width:500px;">div (great-grandparent)
+        <ul>ul (grandparent)
+            <li>li (direct parent)
+                <span>span</span>
+            </li>
+        </ul>
+    </div>
+</body>
+
+</html>

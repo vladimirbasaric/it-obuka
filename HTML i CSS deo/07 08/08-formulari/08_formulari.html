@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Rad sa formularima</title>
+    <meta charset="UTF-8">
+
+    <style type="text/css">
+        .greska {
+            color: red;
+            font-size: 14px;
+            margin-top: 25px;
+            margin-bottom: 25px;
+        }
+
+        fieldset legend {
+            color: orange;
+        }
+    </style>
+</head>
+
+<body>
+    <form method="" action="" id="f" class="container" novalidate>
+        <!-- Element u okviru kojeg ce biti upisane informacije o eventualnim greskama -->
+        <div class="greska" id="greska"> </div>
+
+
+        <!-- Za grupisanje više elemenata formulara koji su međusobno povezani u jednu celinu, možemo koristiti element fieldset. Ovaj element će nacrtati pravougaonik oko elemenata koje obuhvata. Da bismo anotirali ovakvu jednu celinu, možemo koristiti element legend, čiji je tekstualni sadržaj naslov celine koja je definisana fieldset elementom. -->
+        <fieldset class="form-group">
+            <legend> Lični podaci </legend>
+
+            <div class="form-group">
+                <label for="ime_prezime"> Ime i prezime*: </label>
+                <input id="ime_prezime" type="text" placeholder="Pera Peric" maxlength="30" name="ime_prezime" required
+                    class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label for="datum_rodjenja"> Datum rodjenja: </label>
+                <input id="datum_rodjenja" type="date" name="datum_rodjenja" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label for="email"> Email: </label>
+                <input id="email" name="email" type="email" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label for="veb_adresa"> Veb adresa: </label>
+                <input id="veb_adresa" name="veb_adresa" autocomplete="off" type="url" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label for="username"> Korisnicko ime*: </label>
+                <input id="username" type="text" name="korisnicko_ime" required class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label for="password"> Sifra*: </label>
+                <input id="password" name="sifra" required type="password" class="form-control">
+            </div>
+
+        </fieldset>
+
+        <!-- Naredna grupa - opet koristimo fieldset. -->
+        <fieldset class="form-group">
+            <legend> Obrazovanje </legend>
+
+            <div class="form-group row">
+                <div class="col-md-6">
+                    <!--Element select predstavlja padajuću listu (engl. dropdown list) sa izborima.
+                        Atributom name definišemo naziv te opcije, a svaki od izbora je predstavljen 
+                        elementom option , čiji atribut value defniše jedan izbor. Elementi option se
+                        nalaze kao sadržaj elementa select. Sadržaj elementa option predstavlja tekst
+                        koji se prikazuje prilikom izbora opcije. Podrazumevano je prvi element option
+                        označen kao odabrani, ali to se može redefinisati dodeljivanjem atributa selected 
+                        izboru koji želimo da bude podrazumevano označen. Ako želimo da izvršimo grupisanje 
+                        opcija, to možemo uraditi pomoću elementa optgroup , kao u narednom primeru.-->
+
+                    <label for="fakultet" class="control-label"> Fakultet: </label>
+                    <select name="fakultet" id="fakultet" class="form-control">
+                        <option value=""> ------- </option>
+                        <optgroup label="tehnički fakulteti">
+                            <option value="matf"> MATF </option>
+                            <option value="etf"> ETF </option>
+                            <option value="fon"> FON </option>
+                        </optgroup>
+                        <optgroup label="društvene nauke">
+                            <option value="f"> Filološki fakultet </option>
+                        </optgroup>
+                        <optgroup label="umetnost">
+                            <option value="fdu" selected> FDU </option>
+                        </optgroup>
+                    </select>
+                </div>
+
+                <!-- Moguće je da za input elemente definišemo predefinisane vrednosti koje mogu biti odabrane
+                     korišćenjem elementa datalist. Korišćenjem ovog elementa u kombinaciji sa input elementom
+                    (koji u tom slučaju mora da ima atribut list čija je vrednost identifikator elementa 
+                    datalist), to input polje će dobiti opciju automatskog dopunjavanja.
+                     Navedimo da ovaj element nije dostupan u Safari pregledačima. -->
+                <div class="col-md-6">
+                    <label for="univerzitet" class="control-label"> Univerzitet: </label>
+                    <input list="svi_univerziteti" id="univerzitet" name="univerzitet" type="text" class="form-control">
+                    <datalist id="svi_univerziteti">
+                        <option value="UBG"> Univerzitet u Beogradu </option>
+                        <option value="UNS"> Univerzitet u Novom Sadu </option>
+                        <option value="UNI"> Univerzitet u Nišu </option>
+                        <option value="UKG"> Univerzitet u Kragujevcu </option>
+                    </datalist>
+                </div>
+            </div>
+
+            <!-- Za odabir tačno jednog od više ponuđenih izbora koristi se vrednost radio. 
+                Ovaj element ima smisla definisati samo u okviru elementa form. 
+                Da bi se znalo za koju opciju se vezuje koji izbor, ovim elementima je potrebno
+                 dodeliti atribut name. Primetimo da svaki element ima i atribut value kojim se definiše 
+                 izbor za opciju koja se nalazi kao vrednost atributa name. Ovaj element predstavlja 
+                 samo jedno dugme za izbor, ali ne i prateći tekst, te je potrebno dodati opis naknadno,
+                  kao u gornjem primeru. -->
+            <div class="form-group">
+                Godina studija:
+
+                <div class="form-check form-check-inline">
+                    <input name="godina" id="godina_1" value="1" type="radio" class="form-check-input">
+                    <label for="godina_1" class="form-check-label">1</label>
+                </div>
+
+                <div class="form-check form-check-inline">
+                    <input name="godina" id="godina_2" value="2" type="radio" class="form-check-input">
+                    <label for="godina_2" class="form-check-label">2</label>
+                </div>
+
+                <div class="form-check form-check-inline">
+                    <input name="godina" id="godina_3" value="3" type="radio" class="form-check-input">
+                    <label for="godina_3" class="form-check-label">3</label>
+                </div>
+
+                <div class="form-check form-check-inline">
+                    <input name="godina" id="godina_4" value="4" type="radio" class="form-check-input" checked>
+                    <label for="godina_4" class="form-check-label">4</label>
+                </div>
+            </div>
+        </fieldset>
+
+        <!-- Za odabir proizvoljnog broja od više ponuđenih izbora koristi se vrednost checkbox. Ovaj tip elementa funkcioniše na sličan način kao i prethodni tip. Razlika je u tome što ne moramo da ih vežemo za specifičnu opciju, već svaki izbor može da predstavlja svoju opciju. -->
+        <fieldset class="form-group">
+            <legend> Interesovanje </legend>
+            <div class="form-group">
+                Lista interesovanja:
+
+                <div class="form-check">
+                    <input name="veb" id="veb" type="checkbox" checked class="form-check-input">
+                    <label for="veb" class="form-check-label">veb programiranje</label>
+                </div>
+
+                <div class="form-check">
+                    <input name="html" id="html" type="checkbox" class="form-check-input">
+                    <label for="html" class="form-check-label">HTML</label>
+                </div>
+
+                <div class="form-check">
+                    <input name="css" id="css" type="checkbox" class="form-check-input">
+                    <label for="css" class="form-check-label">CSS</label>
+                </div>
+
+                <div class="form-check">
+                    <input name="JavaScript" id="JavaScript" type="checkbox" class="form-check-input">
+                    <label for="JavaScript" class="form-check-label">JavaScript</label>
+                </div>
+            </div>
+
+        </fieldset>
+
+        <fieldset class="form-group">
+            <legend> Dodatne informacije </legend>
+
+            <!-- Element textarea definiše višelinijski unos teksta. Atributima rows i cols se definiše
+                 vidljivi broj vrsta, odnosno, kolona, redom. -->
+            <div class="form-group">
+                <label for="napomena"> Napomena: </label>
+                <br>
+                <textarea cols="80" rows="5" name="napomena" id="napomena" placeholder="Unesite napomenu..."
+                    class="form-control"></textarea>
+            </div>
+
+            <!-- Skriveni element se postiže tako što se odabere type hidden za input element. 
+                On neće biti prikazan. -->
+            <div class="form-group">
+                <label> Skriveni element </label>
+                <br>
+                Ovde unesite tekst: <input type="text" name="fname"><br>
+                <input type="hidden" id="custId" name="custId" value="3487">
+            </div>
+
+            <!-- Element number definiše unos brojeva u nekom opsegu, navođenjem vrednosti za 
+                atribute min i max. -->
+            <div class="form-group">
+                <label for="ocena"> Koliko Vam se sviđaju forme? (ocenite sa brojem od 1 do 5): </label>
+                <br>
+                <input type="number" id="ocena" name="quantity" min="1" max="5">
+            </div>
+
+            <!-- Element month omogućava biranje meseca i godine. Navedimo da ovaj element nije dostupan 
+                u pregledačima Firefox, Safari i Internet Explorer 11 (i ranijim verzijama).  -->
+            <div class="form-group">
+                <label> Datum i mesec: </label>
+                <br>
+                Mesec kada očekujete da se obuka završi: <input type="month" name="endmonth">
+                <br>
+                Ili još preciznije, koji datum: <input type="date" name="endday">
+            </div>
+
+        </fieldset>
+
+        <div class="form-group text-center">
+            <input value="posalji podatke" type="submit" class="btn btn-primary">
+            <input value="obrisi podatke" type="reset" class="btn btn-danger">
+        </div>
+    </form>
+
+</body>
+
+</html>

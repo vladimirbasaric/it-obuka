@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <style>
+            /* border se vezuje za sve elemente koji se pojavljuju */
+            p, span {
+                border: 1px solid black;
+            }
+            /* cetvrti i peti pasus imaju ova svojstva, iako se cetvrti ne prikazuje */
+            .ib {
+                width: 200px;
+                height: 200px;
+                display: inline-block;
+            }
+            /* dodatno, cetvrti se ne prikazuje (nece biti ni izdvojeno mesto za njega) */
+            .nevidljiv {
+                display: none;
+            }
+            /* pasusi koji zauzimaju mesta koliko ima teksta */
+            .i {
+                display: inline;
+            }
+        </style>
+    </head>
+    <body>
+        <p>Ovo je prvi pasus</p>
+        <span>Ovo je prvi span</span>
+        <span>Ovo je drugi span</span>
+        <p class="i">Ovo je drugi pasus</p>
+        <p class="i">Ovo je treci pasus</p>
+        <p class="ib nevidljiv">Ovo je cetvrti pasus, ali se ne vidi</p>
+        <p class="ib">Ovo je peti pasus</p>
+    </body>
+</html>

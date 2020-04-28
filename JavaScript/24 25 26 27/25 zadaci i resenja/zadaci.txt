@@ -1,0 +1,25 @@
+ZADACI
+
+If naredba:
+
+1.1 Odrediti da li je broj paran ili neparan.
+1.2 Odrediti maksimum dva broja.
+1.3 Odrediti minimum tri broja.
+1.4 Da li je broj pozitivan, negativan ili jednak nuli.
+1.5 Proizvod parnih brojeva.
+
+Stringovi:
+
+2.1 Od datog niza od 4 strina, ispisati string koji se dobija njihovim nadovezivanjem.
+2.2 Proveriti da li je drugi karakter u stringu jednak slovu "a".
+2.3 Ispisati srednji karakter stringa.
+2.4 Karaktere od 10 do 15 mesta u stringu zameniti stringom "abc123".
+2.5 Za dati string od 5 slova, zameniti mesta prvom i poslednjem slovu.
+
+Nizovi:
+
+3.1 Zameniti vrednost prvom i poslednjem elementu niza.
+3.2 Zameniti srednji element niza brojem 10.
+3.3 Ispisati sve parne elemente niza (peske).
+3.4 Negativne elemente niza pomnoziti sa 2.
+3.5 Odrediti zbir svih elemenata u nizu.

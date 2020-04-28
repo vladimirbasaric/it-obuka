@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Switch</title>
+</head>
+<body>
+	<script>
+		var mesec = "februar";
+		var godina = 2000;
+		
+		switch(mesec) {
+			/*
+				Grupisemo mesece sa 30 dana.
+			*/
+			case "april": 
+			case "jun": 
+			case "septembar": 
+			case "novembar": 
+				console.log("30");
+				break; 
+			
+			case "februar":
+				/*
+					Unutar nekog case-a mozemo imati dodatna grananja ako je potrebno.
+
+					Na primer, februar ima razlicit broj dana u zavisnosti od toga da li godina prestupna ili ne.
+				*/
+				if(godina%4==0 && godina%100!=0 || godina%400==0) {
+					console.log("29");
+				}
+				else {
+					console.log("28");
+				}
+
+				break;
+			
+			/*
+				Na kraju, ako mesec nije nijedan od 
+				navedenih, znaci da ima 31 dan.
+			*/
+			default:
+				console.log("31");
+				break; 
+		}
+	</script>
+</body>
+</html>

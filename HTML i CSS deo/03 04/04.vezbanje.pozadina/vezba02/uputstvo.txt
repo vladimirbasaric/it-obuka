@@ -1,0 +1,13 @@
+Napraviti HTML stranicu tako da izgleda kao na slici vezba02.png.
+
+Za pozadinu stranice korišcena je boja skyblue.
+Stranica se sastoji iz tri dela - naslovnog, glavnog i podnožja.
+
+Za naslovni deo korišcen je gradijent od boje orange do boje yellow. 
+
+Za pozadinu glavnog dela korišcena je slika birds.png.
+
+
+Za pozadinu podnožja korišcen je gradijent od boje greenyellow do boje skyblue, 
+kao i slika grass.png.
+

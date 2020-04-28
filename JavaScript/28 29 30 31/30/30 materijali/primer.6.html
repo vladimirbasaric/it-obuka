@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript Functions</h2>
+
+<p>U ovom primeru se prikazuje koriscenje Callback funkcije.</p>
+
+<p id="demo"></p>
+<p id="demoC"></p>
+<p id="demoC2"></p>
+<p id="demoC3"></p>
+
+<script>
+/* Primer bez callback funkcije */
+
+let calculate = function(num1, num2, calcType){
+   if(calcType === "add"){
+      return num1 + num2;
+   }else if(calcType == "multiply"){
+      return num1 * num2;
+   }
+};
+
+document.getElementById("demo").innerHTML = "calculate(2, 3, 'add') = "+ calculate(2, 3, 'add');
+
+/* II nacin: koriscenjem callback */
+let add = function(a, b){
+   return a+b;
+};
+
+let multiply = function(a,b){
+   return a*b;
+};
+
+let min = function(a,b){
+   if (a<b)
+      return a;
+   else
+      return b;
+};
+
+let max = function(a,b){
+   if (a>b)
+      return a;
+   else
+      return b;
+};
+
+let calculateC = function(num1, num2, callback){
+   return callback(num1, num2);
+};
+
+document.getElementById("demoC").innerHTML = "calculateC(2, 3, add) = "+ calculateC(2, 3, add);
+document.getElementById("demoC2").innerHTML = "calculateC(2, 3, multiply) = "+ calculateC(2, 3, multiply);
+document.getElementById("demoC3").innerHTML = "calculateC i anonimna funkcija daju rezultat: "+ calculateC(2, 3, function(a,b){
+   return a-b;
+});
+
+/* Sigurnija opcija:
+let calculateC = function(num1, num2, callback){
+   if(typeof callback === "funcion"){
+      return callback(num1, num2);
+   }
+};
+
+*/
+
+</script>
+
+</body>
+</html>

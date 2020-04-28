@@ -1,0 +1,37 @@
+#omotac {
+    position: relative;
+}
+
+#prvi {
+    position: relative;
+    bottom: -100px;
+    left: 100px;
+    z-index: -5;
+}
+
+#drugi {
+    position: absolute;
+    top: 50px;
+    left: 300px;
+    z-index: 2;
+}
+
+#treci {
+    position: absolute;
+    bottom: 120px;
+    right: 150px;
+    z-index: -1;
+}
+
+#cetvrti {
+    position: relative;
+    left: 120px;
+    z-index: 3;
+}
+
+#peti {
+    position: absolute;
+    right: 400px;
+    top: 150px;
+    z-index: -2;
+}

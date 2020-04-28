@@ -1,0 +1,5 @@
+CREATE TABLE Zaposleni (
+    id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    naziv VARCHAR(50) NOT NULL,
+    trajanje_meseci INT UNSIGNED NOT NULL
+);

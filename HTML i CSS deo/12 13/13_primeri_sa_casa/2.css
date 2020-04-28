@@ -1,0 +1,65 @@
+.ulepsan {
+    background-color: aquamarine;
+}
+
+/*
+    Selektor: selektor1 selektor2
+    Mozemo stilizovati sve elemente obuhvacene drugim 
+    selektorom koji su potomci elemenata obuhvacenim prvim 
+    selektorom.
+*/
+div p {
+    border-bottom: 2px ridge darkorchid; 
+    padding: 50px;
+}
+
+
+/*
+    Selektor: selektor1 > selektor2
+    Mozemo stilizovati sve elemente obuhvacene drugim 
+    selektorom ciji je roditelj element obuhvacen prvim 
+    selektorom.
+*/
+div > p {
+    font-size: 25px;
+}
+
+/*
+    Selektor: selektor1 + selektor2
+    Mozemo stilizovati sve elemente obuhvacene drugim 
+    selektorom koji se nalaze odmah posle elemenata 
+    obuhvacenim prvim selektorom.
+*/
+div + p {
+    background-image: linear-gradient(to bottom left, black, violet);
+    color: white;
+    box-shadow: 2px -2px rgb(60, 60, 60);
+}
+
+            
+/*
+    Selektor: selektor1 ~ selektor2
+    Mozemo stilizovati sve elemente obuhvacene drugim 
+    selektorom koji se nalaze nakon elementa obuhvacenim 
+    prvim selektorom.
+*/
+div ~ p {
+    font-style: italic;
+}
+
+/*
+    Selektor moze biti bilo sta sto smo do sad videli.
+    Ovim selektorom dohvatamo sve paragrafe koji su potomci 
+    elemenata sa klasom ulepsan.
+*/
+.ulepsan p {
+    color: violet;
+}
+
+/*
+    Ovim selektorom dohvatamo sve paragrafe ciji roditelj 
+    je div element kom prethodi paragraf.
+*/
+p ~ div > p {
+    font-weight: bolder;
+}

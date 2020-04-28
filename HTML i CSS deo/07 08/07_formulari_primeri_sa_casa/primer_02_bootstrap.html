@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+	<head>
+        <meta charset="utf-8" />
+		<title>Formulari - osnove</title>
+
+        <!--
+            Bootstrap je jedna prijatna biblioteka koja prosiruje funkcionalnosti CSS-a.
+            Necemo je jos uvek raditi detaljno, u ovom primeru je koriscenja da prikaze
+            kako jednostavno mozemo da lepo stilizujemo formular koristeci boostrap.
+            Primetite da smo na elemente dodali klasu 'form-control', a biblioteka
+            bootstrap se sama bavi daljim stilizovanjem.
+
+            Ukoliko nekoliko html elemenata cine jednu celinu (na primer labela i tekstualno polje)
+            ima smisla da ih postavimo u okviru zajednicke grupe koja se u bootstrapu naziva 'form-group',
+            odnosno postoji klasa 'form-group'. Na ovaj nacin nismo mi duzni da pravimo razmake izmedju
+            kontrola unutar html-a (br element) vec ostavljam CSS-u da se time bavi. Ovo je mnogo
+            bolja situacija jer html ne treba da se bavi vizuelnim dozivljajem stranice.
+        -->
+        <link rel="stylesheet" type="text/css" href="bootstrap.min.css">
+	</head>
+	<body>
+        <!--
+        - method za sada ne koristimo jer zahteva poznavanje serverskog programiranja
+        - action za sada ne koristimo jer zahteva poznavanje serverskog programiranja
+        - klasa 'container' dolazi iz bootstrap-a i pomaze pri pravljenju rasporedjivanja html elemenata
+        -->
+        <form method="" action="" class="container" novalidate>
+            <h2>Primer formulara koji koristi biblioteku Bootstrap</h2>
+            <div class='form-group'>
+                <!--Labela - dodatno opisuje element koji sledi-->
+                <label for="ime_prezime"> Ime i prezime*: </label>
+                <!--Polje za unos tekstualnih informacija-->
+                <input id="ime_prezime" type="text" placeholder="Pera Peric" maxlength="30" name="ime_prezime" required class="form-control">
+            </div>
+
+
+            <div class='form-group'>
+                <!--Polje za unos datuma-->
+                <label for="datum_rodjenja"> Datum rodjenja: </label>
+                <input id="datum_rodjenja" type="date" name="datum_rodjenja" class="form-control">
+            </div>
+
+            <div class='form-group'>
+                <!--Polje za unos email adrese-->
+                <label for="email"> Email: </label>
+                <input id="email" name="email" type="email" class="form-control">
+            </div>
+
+            <div class='form-group'>
+                <!--Polje za unos url-a-->
+                <label for="veb_adresa"> Veb adresa: </label>
+                <input id="veb_adresa" name="veb_adresa" autocomplete="off" type="url" class="form-control">
+            </div>
+
+            <div class='form-group'>
+                <!--Polje za unos lozinke. Primetite da se unos ne vidi-->
+                <label for="password"> Sifra*: </label>
+                <input id="password" name="sifra" required type="password" class="form-control">
+            </div>
+
+            <div class='form-group'>
+                <!--Polje za unos lozinke. Primetite da se unos ne vidi-->
+                <label for="citat"> Vas omiljeni citat: </label>
+                <textarea class='form-control' name='citat' rows="4" cols="50"></textarea>
+            </div>
+
+            <div class='form-group'>
+                <!--Dugme kojim se mogu obrisati trenutno uneti podaci-->
+                <input value="reset" type="reset" class="btn btn-primary">
+
+                <!--Dugme koje se koristi da se podaci posalju na obradu-->
+                <input value="posalji podatke" type="submit" class="btn btn-primary">
+            </div>
+        </form>
+	</body>
+</html>

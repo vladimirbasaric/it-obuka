@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title> Kontrola preklapanja </title>
+
+    <style>
+        div {
+            height: 200px;
+            width: 500px;
+        }
+
+        /*
+            Ukoliko prilikom pozicionirnaja razlicitih 
+            elemenata dodje do njihvog preklapanja mozemo 
+            da uticemo na to kako ce se preklapati tj. koji 
+            ce biti ispred drugog. 
+
+            Kontrolu preklapanja omogucava nam svojstvo 
+            z-index, a dozvoljene su i pozitivne i 
+            negativne vrednosti. Ukoliko svojstvo nije 
+            navedeno, element koji je poslednji 
+            pozicioniran naci ce se ispred svih ostalih sa 
+            kojima se preklapa. 
+
+            Element sa najvecim z-indeksom naci ce se 
+            ispred svih elemenata koji se sa njim 
+            preklapaju.
+
+            Napomena: ni ovo svojstvo ne utice na staticki 
+            pozicionirane elemente!
+        */
+        #prvi {
+            position: relative;
+            z-index: 1;
+            background-color: lightblue;
+        }
+
+        #drugi {
+            position: absolute;
+            top: 100px;
+            left: 150px;
+            z-index: 3;
+            background-color: crimson;
+        }
+
+        #treci {
+            position: relative;
+            bottom: 50px;
+            z-index: 2;
+            background-color: lightgreen;
+        }
+        
+    </style>
+</head>
+<body>
+    <div id="prvi">
+
+    </div>
+
+    <div id="drugi">
+
+    </div>
+
+    <div id="treci">
+
+    </div>
+</body>
+</html>

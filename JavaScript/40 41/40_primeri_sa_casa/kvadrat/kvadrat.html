@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Kvadrat</title>
+    <style>
+        form{
+            border: 2px solid orange;
+            padding: 20px;
+            width: 200px;
+            margin: 20px;
+        }
+        form legend{
+            color: orange;
+        }
+        input{
+            margin: 5px;
+        }
+        input[type="button"]{
+            margin-top: 20px;
+            background-color: orange;
+        }
+        input[type="button"]:hover{
+            cursor: pointer;
+        }
+    
+    </style>
+
+</head>
+<body>
+    <form>
+        <fieldset>
+            <legend>Podaci o kvadratu</legend>
+            <div>
+                <label for="duzina">Dužina stranice:</label> 
+                <input type="number" name="" id="duzina">
+            </div>
+
+            <div>
+                <label for="boja1">Prva boja:</label> 
+                <input type="text" name="" id="boja1">
+            </div>
+
+            <div>
+                <label for="boja2">Druga boja:</label> 
+                <input type="text" name="" id="boja2">
+            </div>
+
+        </fieldset>
+
+        <fieldset>
+            <legend>Podela kvadrata</legend>
+            <input type="radio" name="p" id="h"> <label for="h">Horizontalno</label>
+            <br>
+            <input type="radio" name="p" id="v"> <label for="v">Vertikalno</label>
+        </fieldset>
+
+        <input type="button" value="Prikaži kvadrat" id = "dugme">
+
+    </form>
+
+    <div id="odeljak">
+        <div id = "gornji"></div><div id = "donji"></div>   
+    </div>
+</body>
+
+<script type="text/javascript" src="jquery-3.3.1.min.js"></script>
+
+<script>
+    $(document).ready( function(){
+
+      $("#dugme").click( function(){
+
+          // ocitavamo unet broj za duzinu 
+          var d = $("#duzina").val();
+          // provera opsega
+          if(d>300 ||d<50){
+                window.alert("Dužina stranice kvadrata mora biti broj iz opsega [50,300]");
+                return false;
+          }
+
+          // ocitavamo unete boje
+          var prvaBoja = $("#boja1").val();
+          var drugaBoja = $("#boja2").val();
+
+          // niska sa validnim heksadekadnim ciframa
+          var heksa = "0123456789abcdef";
+          
+          // provera duzine 
+          if(prvaBoja.length!=7 || drugaBoja.length!=7){
+                window.alert("Kod boje mora biti dužine 7");
+                return false;
+          }
+          // provera da kod boje pocinje tarabicom
+          if(prvaBoja.charAt(0)!='#' || drugaBoja.charAt(0)!='#'){
+                window.alert("Kod boje mora da počinje znakom #");
+                return false;
+          }
+          // provera da je kod zapisan u heksadekadnom sistemu
+          for (var i=1; i<7; i++) {
+            var b1 = prvaBoja.charAt(i);
+            var b2 = drugaBoja.charAt(i);
+            // ukoliko tekuci karakter iz niske koda boje 
+            // ne pripada nisci validnih heksadekadnih cifara
+            // -> kod boje nije ispravno zadat
+		    if(heksa.indexOf(b1) == -1 || heksa.indexOf(b2) == -1) {
+                window.alert("Kod boje mora biti zapisan heksadekadnim ciframa: " + heksa);
+                return false;
+            }
+          }
+          if($("#h").is(':checked')){
+              // odabrano je horizontalno bojenje kvadrata
+               $("#gornji").css(
+                   {
+                       'width': d,
+                       'height': d/2,
+                       'background-color': prvaBoja,
+                       'top':50,
+                       'left':400,
+                       'position':'fixed'
+                   }
+               ); 
+               $("#donji").css(
+                   {
+                       'width': d,
+                       'height': d/2,
+                       'background-color': drugaBoja,
+                       'top': 50+d/2,
+                       'left': 400,
+                       'position':'fixed'
+                    
+                   }
+               ); 
+             
+          }
+          else if ($("#v").is(':checked')){
+            // odabrano je vertikalno bojenje kvadrata
+            $("#gornji").css(
+                   {
+                       'width': d/2,
+                       'height': d,
+                       'background-color': prvaBoja,
+                       'top': 50,
+                       'left': 400,
+                       'position':'fixed'
+                   }
+               ); 
+           
+            $("#donji").css(
+                   {
+                       'width': d/2,
+                       'height': d,
+                       'background-color': drugaBoja,
+                       'top': 50,
+                       'left': 400+d/2,
+                       'position':'fixed'
+                   }
+               ); 
+
+          }
+          else{
+                window.alert("Niste odabrali način bojenja kvadrata");
+                return false;
+          }
+
+
+           
+      });
+    });
+
+</script>
+
+</html>

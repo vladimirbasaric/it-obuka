@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // Napisati funkciju ​abs(x)​ koja vraća apsolutnu vrednost broja​ x​. 
+        // Zatim treba pozvati funkciju i ispisati dobijenu vrednost. 
+        // Primer: ako se zada broj​ 4​ treba ispisati ​4​. 
+        // Primer:ako se zada broj​ -42 ​treba ispisati​ 42​.
+
+
+        function apsolutna_vrednost(x) {
+            var aps;
+
+            if (x < 0) {
+                aps = -x;
+            } else {
+                aps = x;
+            }
+
+            x = 1;
+
+            return aps;
+        }
+
+
+        var broj = 9963;
+        var aps_broj = apsolutna_vrednost(broj);
+        console.log(aps_broj);
+        console.log(broj);
+
+
+        //Moje resenje koje je proradilo
+        // function apsolutna(x) {
+        //     if (x < 0) {
+        //         x = -x;
+        //     } else {
+        //         x = x;
+        //     }
+        //     return x;
+        // }
+
+        // console.log(apsolutna(-5));
+
+
+        // resenje iz sledeceg primera u 6.html
+        // function abs(x) {
+        //     return x < 0 ? -x : x;
+        // }
+    </script>
+</body>
+
+</html>

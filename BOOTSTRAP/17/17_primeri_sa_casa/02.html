@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Prilagodljiv dizaj sa bibliotekom Bootstrap</title>
+    <link rel="stylesheet" type="text/css" href="./resursi/bootstrap.css">
+    
+    <style>
+        .row div {
+            height: 300px;
+            border-bottom: 1px solid white;
+        }
+
+        div:nth-child(even) {
+            background-color: violet;
+        }
+
+        div:nth-child(odd) {
+            background-color: cornflowerblue;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <!--
+            Ukoliko zelimo kolone koje menjaju u raspored u
+            zavisnosti od sirine viewport-a koristimo klase 
+            oblika col-*-*. Prva * oznacava velicinu
+            uredjaja i moze imati neku od vrednosti:
+                - xs - uredjaji manji od 576px (pogledati napomenu!!)
+                - sm - uredjaji veci od 576px
+                - md - uredjaji veci od 768px
+                - lg - uredjaji veci od 992px
+                - xl - uredjaji veci od 1200px
+
+            Druga * oznacava broj kolona koje ce 
+            zauzeti element i moze imati vrednost
+            1 do 12. U jednom redu moze se naci
+            najvise 12 kolona.
+
+            VAZNA NAPOMENA!!! Za xs uredjaje zapravo ne 
+            navodimo vrednost vec koristimo klasu col-* 
+            koja zahteva da navedemo samo broj kolona. 
+            Dakle, klase col-xs-* nisu definisane.
+        -->
+        <div class="row">
+            <div class="col-sm-12 col-md-6 col-lg-4 col-xl-2">
+
+            </div>
+            <div class="col-sm-12 col-md-6 col-lg-4 col-xl-2">
+
+            </div>
+            <div class="col-sm-12 col-md-6 col-lg-4 col-xl-2">
+
+            </div>
+            <div class="col-sm-12 col-md-6 col-lg-4 col-xl-2">
+
+            </div>
+            <div class="col-sm-12 col-md-6 col-lg-4 col-xl-2">
+
+            </div>
+            
+            <div class="col-sm-12 col-md-6 col-lg-4 col-xl-2">
+
+            </div>
+        </div>
+    </div>
+</body>
+</html>

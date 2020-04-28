@@ -1,0 +1,13 @@
+Primer za vežbu
+Sve naredne komande potrebno je izvršiti koristeci Git Bash. Nije dozvoljeno ni jedan deo (osim 6) uraditi na klasican Windows nacin.
+1. U home direkorijumu kreirajte direkorijum koji se zove ITobuka.
+2. U direkorijumu ITobuka kreirajte direkorijum koji se zove primeri.
+3. Direktorijum primeri koji ste upravo kreirali preimnujte u terminal.
+4. U direkorijumu terminal kreirajte direktorijum komande.
+5. U direkorijumu komande kreirajte dokument mojeomiljenelinuxkomande.html
+6. Veb stranicu mojeomiljenelinuxkomande.html stilizujte na vama omiljen nacin tako da bude lepa i da sadrži pregledan opis bar tri (Vama omiljene) komande koje smo danas naucili.
+7. Pozicionirajte se u direktorijum terminal.
+8. Ispišite sadržaj direktorijuma terminal u datoteku listing.txt. Proverite sadržaj te datoteke. 
+9. Pretražiti datoteke koje imaju ekstenziju .html u direktorijumu terminal.
+10. Pronaci u kojim linijama teksta se nalazi rec html u mojeomiljenelinuxkomande.html.
+11. Kreirati bash fajl kojim se ispisuje tekst "Pozdrav za sve polaznike IT obuke!".

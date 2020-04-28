@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JS JQuery 01</title>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.js"
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+
+
+
+    <script>
+        // Metodi:
+        //      text() i text(text) — dohvata ili postavlja tekstualan sadržaj selektovanog
+        // elementa
+        //      html() i html(htmlString) — dohvata ili postavlja HTML sadržaj selektovanog
+        // elementa
+        //      val() i val(value) — dohvata ili postavlja vrednost elementa formulara
+        //      attr(atributeName) i attr(attributeName, value) — dohvata ili postavlja
+        // vrednost atributa attributeName
+
+        $(document).ready(function () {
+            $("#btn1").click(function () {
+                alert("Text: " + $("#test1").text()); // vraca text
+            });
+            $("#btn2").click(function () {
+                alert("HTML: " + $("#test2").html()); // vraca HTML
+            });
+            $("#btn3").click(function () {
+                alert("Value: " + $("#test3").val()); // vraca vrednost polja forme
+            });
+            $("#btn4").click(function () {
+                alert($("#ITobuka").attr("href")); // vraca vrednost atributa href
+            });
+        });
+    </script>
+</head>
+
+<body>
+
+    <p id="test1">First paragraph</p>
+    <p id="test2">Second paragraph.</p>
+
+    <p>Input field: <input type="text" id="test3" value="Value of the field"></p>
+    <p><a href="http://itobuka.matf.bg.ac.rs/" id="ITobuka">itobuka.matf.bg.ac.rs/</a></p>
+
+    <button id="btn1">Get Text</button>
+    <button id="btn2">Get HTML</button>
+    <button id="btn3">Get Value</button>
+    <button id="btn4">Get Atrribute</button>
+
+</body>
+
+</html>

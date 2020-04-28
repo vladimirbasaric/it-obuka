@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Spoljašnje i untrašnje veze</title>
+</head>
+<body>
+    <!--
+        Veze delimo na spoljasnje i unutrasnje.
+
+        U spoljašnje veze spadaju veze koje vode do dokumenata koji se nalaze na drugom veb serveru. 
+        Možemo ih dodati na stranu korišćenjem elementa <a> sa atributom href postavljenim na 
+        apsolutnu putanju koja vodi do tog dokumenta.
+
+        U unutrašnje veze ubrajamo veze koje vode do dokumenata koji se nalaze na istom veb serveru. 
+        Dodajemo ih na isti način kao i spoljašnje, korišćenjem elementa <a> sa atributom href s tim da 
+        kod ovog tipa veze možemo koristiti i relativne putanje.
+    -->
+    <h1 id="vrh">Spoljasnje i unutrasnje veze</h1>
+    <p>
+        <a href="http://itobuka.matf.bg.ac.rs/">Ova</a> spoljašnja veza vodi do glavne stranice našeg kursa!
+        <br>
+        <br>
+        <a href="1.html">Ova</a> unutrašnja veza vodi do prvog primera!
+    </p>
+
+    <div style="height: 1000px"></div>
+
+    <!--
+        Kao vrednost atributa href mozemo navesti i selektor koji dohvata element po identifikatoru.
+        U tom slucaju, veza ce nas odvesti na deo stranice gde se nalazi element sa zadatim identifikatorom. 
+    -->
+    <a href="#vrh">Vrati se na vrh stranice!</a>
+</body>
+</html>

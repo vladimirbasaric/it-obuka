@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JS JQuery 02</title>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
+    <!-- Bootstrap 4 -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
+    <script>
+        $(document).ready(() => {
+            // Zelimo da dinamicki promenimo CSS nad svim elementima koji poseduju klasu 'list-group-item'.
+            // JQuery nudi metod .css() koji omogucava menjanje CSS stilova.
+            // Postoji vise nacina za koriscenje ove funkcije:
+            // http://api.jquery.com/css/
+            // Mi cemo demonstrirati najopstije, odnosno prosledjivanje JS objekta
+            // ciji su kljucevi CSS atributi, a vrednosti same vrednosti CSS atributa.
+            $('.list-group-item').css({
+                'color': 'blue',
+                'font-style': 'italic',
+            });
+
+            // Mozemo i selektovati po tipu elementa.
+            let sviLiElementi = $('li');
+            sviLiElementi.css({
+                'font-weight': 'bold',
+            });
+
+            // Zelimo da citatima dinamicki dodamo redni broj :)
+            // Nad JQuery selektorem se moze pozvati metod 'each(f)' koji primenjuje
+            // funkcije f nad svakim od elemenata koje selektor dohvati. U nasem slucaju
+            // prosledjena funkcija ce biti primenjana nad svim li elementima.
+            sviLiElementi.each((index, currentLiElement) => {
+                // Ukoliko niste sigurni sta prima funkcija mozete proveriti u konzoli :)
+                console.log(index);
+                console.log(currentLiElement);
+
+                // ipak, currentLiElement nema veze sa bibliotekom JQuery vec predstavlja instancu klase Node
+                // koja postoji u cistom JavaScript-u. Ukoliko zelimo da nad tim objektom pravimo transformacije
+                // koristeci JQuery onda ga moramo pretvoriti u JQuery objekat.
+                let jqueryElement = $(currentLiElement);
+
+                // Hocemo da dodamo redni broj na pocetak elementa
+                jqueryElement.text((index + 1) + '. ' + jqueryElement.text());
+                //                                        ^ citamo staru vrednost elementa
+            });
+
+            // Hocemo da napravimo da na klik dugmica mozemo da reagujemo. Postoji vise nacina, a slede dva najcesca.
+
+            // Nacin 1 - Koristimo JQuery da povezemo klik na dugme.
+            $('#uVelika').click(() => {
+                $('li').each((i, obj) => {
+                    let jqObj = $(obj);
+                    jqObj.text(jqObj.text().toUpperCase());
+                });
+            });
+
+            /*
+            Nacin 2 - u HTML-u za dugme se dodaje atribut onClick i povezuje se odgovarajucom funkcijom.
+            -> Primetite da je funkcija handleToSmallcaps izvucena IZVAN $(document).ready(...) konstrukcije
+                 u kojoj se nalazi ovaj komentar. To je iz razloga sto nakon poziva funkcije .ready(...)
+                 nestaje definicija funkcije i dolazi do greske.
+                 Kada funkciju izvucemo u globalni doseg (direktno unutar skript taga)
+                 onda ce onda ostati da zivi i da bude dostupna tokom rada programa.
+            */
+        });
+
+        function handleToSmallcaps()
+        {
+            $('li').each((i, obj) => {
+                let jqObj = $(obj);
+                jqObj.text(jqObj.text().toLowerCase());
+            });
+        }
+    </script>
+</head>
+
+<body>
+    <div class='container'>
+        <h1>JQuery selektori primer</h1>
+
+        <h2>Neke od pesama o Marku Kraljevicu</h2>
+        <ul class='list-group'>
+            <li class='list-group-item'>Марко Краљевић и Љутица Богдан</li>
+            <li class='list-group-item'>Марко Краљевић и Мина од Костура</li>
+            <li class='list-group-item'>Марко Краљевић и Муса Кесеџија</li>
+            <li class='list-group-item'>Марко Краљевић и орао</li>
+            <li class='list-group-item'>Марко Краљевић и соко</li>
+            <li class='list-group-item'>Марко Краљевић и Филип Маџарин</li>
+            <li class='list-group-item'>Марко Краљевић у Азачкој тамници</li>
+            <li class='list-group-item'>Марко Краљевић укида свадбарину</li>
+        </ul>
+
+        <br>
+        <button class='btn btn-primary' id='uMala' onclick="handleToSmallcaps()">Pretvori u mala</button>
+        <button class='btn btn-primary' id='uVelika'>Pretvori u velika</button>
+    </div>
+</body>
+
+</html>

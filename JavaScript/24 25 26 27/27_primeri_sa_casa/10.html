@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>For petlja</title>
+</head>
+<body>
+	<script>
+		var niska = "informatika";
+
+		/*
+			Promenljivu sadrzi koristicemo kao indikator da 
+			li je pronadjeno slovo 'a' u niski.
+
+			Na pocetku je postavljamo na false, a onda u 
+			petlji proveravamo za svaki karakter da li je 
+			jednak karakteru 'a'.
+
+			Ako ga pronadjemo menjamo vrednost promenljive 
+			sadrzi na true i kasnije na osnovu te vrednosti 
+			ispisujemo odgovarajucu poruku. 
+		*/
+		var sadrzi = false;
+		
+		for (var i=0; i<niska.length; i++) {
+			if(niska.charAt(i) == 'a') {
+				sadrzi = true;
+			}
+		}
+
+		/*
+			Posto if zahteva da vrednost izraza koji 
+			koristimo kao uslov bude true ili false, mozemo 
+			iskoristiti bas promenljivu sadrzi kao uslov 
+			obzirom da je njena vrednost boolean tipa.
+		*/
+		if(sadrzi) {
+			console.log("Da.");
+		}
+		else {
+			console.log("Ne.");
+		}
+		
+	</script>
+</body>
+</html>

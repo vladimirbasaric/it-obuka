@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JS JQuery 01</title>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.js"
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+
+    <style>
+        body {
+            font-size: 17px;
+            font-family: arial;
+            background: #f4f4f4;
+            line-height: 1.5em;
+        }
+
+        header {
+            background: black;
+            color: lightblue;
+            padding: 20px;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        #container {
+            width: 90%;
+            margin: auto;
+            padding: 10px;
+        }
+
+    </style>
+
+    <script>
+        // Da bismo dodali novi sadržaj, možemo koristiti metode:
+        //      append(content) — dodaje sadržaj na kraj selektovanog elementa
+        //      prepend(content) — dodaje sadržaj na početak selektovanog elementa
+        //      after(content) — dodaje sadržaj nakon selektovanog elementa
+        //      before(content) — dodaje sadržaj ispred selektovanog elementa
+        // Sva četiri metoda mogu uzimati veći broj parametara da bi kreirali nov sadržaj.
+        // Na primer:
+        $(document).ready(function () {
+
+            $('ul').append('<li>Append List Item</li>');
+            $('ul').prepend('<li>Prepend List Item</li>');
+            $('.para1').appendTo('.para2');
+            $('.para1').prependTo('.para2');
+            $('ul').before('<h4>Hello</h4>');
+            $('ul').after('<h4>World</h4>');
+
+            // Da bismo obrisali stari sadržaj, možemo koristiti:
+            //      remove(content) — briše selektovani element kao i svu njegovu decu
+            //      empty() — briše svu decu selektovanog elementa
+            // Ukoliko ipak želimo da filtriramo šta želimo da obrišemo, onda možemo proslediti
+            // parametar metodu remove , koji predstavlja jQuery selektor. Na primer, da bismo
+            // obrisali sve p elemente klase "test", možemo koristiti:
+            //      $("p").remove(".test");
+            // Ukoliko želimo da obrišemo još i sve p elemente klase "demo", možemo koristiti:
+            //      $("p").remove(".test, .demo");
+
+            // $('ul').empty();   //sklanja sve unutrasnje elemente
+            // $('ul').detach();  //sklanja ul iz DOM-a skroz
+            // $('a').attr('target', '_blank'); //postavlja atribut target, da bi se otvarao u novom prozoru/tabu
+            // $('a').removeAttr('target');  //sklanja atribut target koji smo postavili
+
+
+            //$('p').wrap('<h1>');  //Postavlja h1 tag oko svakog p
+            //$('p').wrapAll('<h1>'); //Oba paragrafa su u okviru jednog h1
+
+
+            
+            $('#newItem').keyup(function (e) {
+                var code = e.which;  /* Da dobijemo kljuc pritisnutog tastera */
+                if (code == 13) { /* Kada je kod 13, pritisnut je enter */
+                    e.preventDefault();  /* Da ne bude podrazumevano ponasanje */
+                    $('ul').append('<li>' + e.target.value + '</li>'); /* Dodamo novi list item koji je unet u tekstualno polje */
+                }
+            });
+
+
+            /* Postavljanje elemenata niza  u listu
+			var myArr = ['IT obuka polaznik 1', 'IT obuka polaznik 2', 'IT obuka polaznik 3', 'IT obuka polaznik 4'];
+
+			$.each(myArr, function(i, val){
+				$('#users').append('<li>'+val+'</li>');
+            });*/
+            
+            /* Postavljanje elemenata liste u niz 
+            var newArr = $('ul#list li').toArray();
+			$.each(newArr, function(i, val){
+				console.log(val.innerHTML);
+            });*/
+            
+            alert(parent("#newItem"));
+			
+        });
+    </script>
+</head>
+
+<body>
+    <header>
+        <h1>jQuery - DOM Manipulation</h1>
+    </header>
+    <div id="container">
+        <button id="btn1">Button 1</button>
+        <p class="para1">This is the first paragraph</p>
+        <p class="para2">This is the second paragraph</p>
+        <div id="myDiv"></div>
+        <input type="text" id="newItem">
+        <ul id="list">
+            <li>List Item 1</li>
+            <li>List Item 2</li>
+            <li>List Item 3</li>
+            <li>List Item 4</li>
+        </ul>
+        <a href="http://google.com">Google</a>
+        <ul id="users"></ul> <!-- I na ovaj ce se primeniti sve sto se primeni na ul -->
+    </div>
+</body>
+
+</html>

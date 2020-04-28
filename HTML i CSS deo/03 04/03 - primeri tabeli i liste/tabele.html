@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Tabela</title>
+   <style>
+       table{
+
+           border: 5px solid blue;
+           border-spacing: 10px;
+           empty-cells: hide;
+           caption-side: bottom;
+       }
+       tr:nth-child(even){
+
+            background-color: yellow;
+           
+        }  
+        td{
+
+            border: 1px solid green;
+
+        } 
+        #th1{
+            height: 50px;
+        } 
+        #th2{
+            height: 100px;
+        }
+
+       
+   </style>
+</head>
+<body>
+    <table>
+        <caption>Primer tabele</caption>
+        <tr>
+            <th id="th2">Identifikator</th>
+            <th id="th1">Ime</th>
+
+        </tr>
+        <tr>
+            <td>
+                01
+            </td>
+            <td>
+                Nikola
+            </td>
+        </tr>
+        <tr>
+                <td>
+                    02
+                </td>
+                <td>
+                    Marija
+                </td>
+            </tr>
+
+    </table>
+
+    <table>
+        <tr><td rowspan="2"> 1, 4</td> <td>2</td>  <td>3</td> </tr>
+        <tr>  <td></td>  <td>5</td> </tr>
+        <tr><td> 6</td>  <td colspan="2">10</td>   </tr>
+        <tr><td> </td>  <td></td>  <td>7</td> </tr>
+    </table>
+</body>
+</html>

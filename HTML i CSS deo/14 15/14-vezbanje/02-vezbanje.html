@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            position: relative;
+            background-color: red;
+            animation-name: example;
+            animation-duration: 4s;
+        }
+
+        @keyframes example {
+            0% {
+                background-color: red;
+                left: 0px;
+                top: 0px;
+            }
+
+            25% {
+                background-color: blue;
+                left: 0px;
+                top: 200px;
+            }
+
+            50% {
+                background-color: green;
+                left: 200px;
+                top: 200px;
+            }
+
+            75% {
+                background-color: yellow;
+                left: 200px;
+                top: 0px;
+            }
+
+            100% {
+                background-color: red;
+                left: 0px;
+                top: 0px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <p>
+        Dodajte sledecih 5 koraka animaciji example:
+    </p>
+    <ol>
+        <li>0% - Postavite background color na "red", left position na "0px", up position na: "0px"</li>
+        <li>25% - Postavite background color u "blue", left position na "0px", up position na: "200px"</li>
+        <li>50% - Postavite background color u "green", left position na "200px", up position na: "200px"</li>
+        <li>75% - Postavite background color u "yellow", left position na "200px", up position na: "0px"</li>
+        <li>100% - Postavite background color u "red", left position na "0px", up position na: "0px"</li>
+    </ol>
+
+    <div></div>
+
+</body>
+
+</html>
